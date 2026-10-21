@@ -242,6 +242,7 @@ a.xref.t-repertoire { color: var(--c-repertoire); }
 .credits { display: grid; grid-template-columns: 220px 1fr; gap: 28px; align-items: start; }
 @media (max-width: 640px) { .credits { grid-template-columns: 1fr; } }
 .placeholder { background: var(--accent-soft); border-radius: 4px; padding: 0 4px; }
+.credits-photo img { width: 100%; height: auto; display: block; border-radius: var(--radius); box-shadow: var(--shadow); }
 
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--line); margin-top: 60px; padding: 24px 0 40px; font-family: var(--sans); font-size: .8rem; color: var(--muted); }

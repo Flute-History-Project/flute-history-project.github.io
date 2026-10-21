@@ -400,10 +400,13 @@
     app.innerHTML = `<div class="wrap">
       ${pageHead(null, tr("nav_credits"), tr("intro_credits"))}
       <div class="credits">
-        <figure class="entry-figure">${H.illus.portrait(C.name, "var(--accent)")}<figcaption>${esc(tr("credits_photo"))}: <span class="placeholder">[…]</span></figcaption></figure>
+        <figure class="entry-figure credits-photo">${C.photo
+          ? `<img src="${C.photo}" alt="${esc(C.name)}" width="640" height="960" loading="lazy">`
+          : H.illus.portrait(C.name, "var(--accent)")}</figure>
         <div>
           <h2>${esc(C.name)}</h2>
-          <p><span class="placeholder">${esc(loc(C.bio))}</span></p>
+          ${paras(loc(C.bio))}
+          ${C.website ? `<p class="sans"><a class="btn secondary" href="${C.website}" target="_blank" rel="noopener">${esc(tr("credits_website"))}: ${esc(C.website.replace(/^https?:\/\/(www\.)?/, ""))} ↗</a></p>` : ""}
           <h3>${esc(tr("credits_about"))}</h3>
           <p>${esc(loc(C.about))}</p>
           <h3>${esc(tr("credits_instruments"))}</h3>
