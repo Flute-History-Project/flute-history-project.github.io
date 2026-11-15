@@ -194,7 +194,9 @@
         `<ul class="features">${(e.features || []).map((f) => `<li>${inline(loc(f))}</li>`).join("")}</ul>`;
       main = paras(loc(e.description));
     } else if (type === "makers" || type === "flutists") {
-      aside = (e.image ? photo(e.image) : `<figure class="entry-figure">${H.illus.portrait(e.name, color)}</figure>`) +
+      // a long instrument photo (image.wide) goes full width above the text; portraits stay in the side column
+      if (e.image && e.image.wide) figure = photo(e.image, "figure-wide");
+      aside = (e.image && !e.image.wide ? photo(e.image) : `<figure class="entry-figure">${H.illus.portrait(e.name, color)}</figure>`) +
         facts([["life", esc(e.dates)], ["place", esc(e.place)], ["roles", e.roles.map((r) => esc(tr("role_" + r))).join(", ")]]);
       main = paras(loc(e.bio));
     } else if (type === "treatises") {

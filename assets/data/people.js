@@ -193,7 +193,7 @@ HFP.people = [
       "Potter's keys were sealed by conical pewter plugs rather than leather pads, one of the many English patents of the time. His flutes are among the few 18th-century keyed models copied today.",
     wiki: "Richard Potter flute maker",
     sources: [BROWN],
-    image: { src: "assets/img/hfp/p-potter-flute.jpg", caption: "Boxwood keyed flute by Richard Potter, London, c. 1785–1806", credit: "public domain", url: "https://commons.wikimedia.org/wiki/File:Boxwood_Flute_of_Dr._John_B._McDowell,_made_by_Richard_Potter.jpg" },
+    image: { wide: true, src: "assets/img/hfp/p-potter-flute.jpg", caption: "Boxwood keyed flute by Richard Potter, London, c. 1785–1806", credit: "public domain", url: "https://commons.wikimedia.org/wiki/File:Boxwood_Flute_of_Dr._John_B._McDowell,_made_by_Richard_Potter.jpg" },
     links: []
   },
   {
@@ -540,12 +540,12 @@ HFP.people = [
     roles: ["maker"],
     start: 1814, end: 1841, dates: "1774–1841",
     place: "Paris",
-    tagline: "Paris maker of superb simple-system flutes, master of Louis Lot and first French maker of Boehm flutes.",
+    tagline: "Paris workshop famous for its simple-system flutes, where Louis Lot trained, and the first in France to build Boehm flutes.",
     bio:
       "Godfroy's workshop made some of the finest French flutes of the early 19th century, including ten-keyed simple-system flutes for the Paris virtuosos. [[lot|Louis Lot]] trained there and became a partner of the family firm.\n\n" +
       "In 1837 Godfroy & Lot produced the first French commercial version of Boehm's [[boehm-1832|ring-key flute]], and later took the French rights for the [[boehm-1847|cylinder flute]], so the workshop stands at the very start of the French Boehm tradition.",
     sources: [BROWN],
-    image: { src: "assets/img/hfp/flute-godfroy.jpg", caption: "Boehm flute from the Godfroy workshop, Paris, c. 1855", credit: "The Metropolitan Museum of Art · CC0", url: "https://commons.wikimedia.org/wiki/File:Transverse_Flute_MET_midp2000.67.jpg" },
+    image: { wide: true, src: "assets/img/hfp/flute-godfroy-8keys.jpg", caption: "Eight-keyed flute in rosewood with silver keys by Clair Godfroy aîné, Paris, stamped 'GODFROY / AINE' with a sun and a star", credit: "Musée de la musique, Philharmonie de Paris (E.973.4.2) · CC BY-NC-SA 4.0", url: "http://collectionsdumusee.philharmoniedeparis.fr/doc/MUSEE/0160181" },
     links: ["boehm-1832", "lot"]
   },
   {
