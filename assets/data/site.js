@@ -3,6 +3,9 @@
  */
 window.HFP = window.HFP || {};
 
+// Shared source used by many entries (data files load after this one).
+var BROWN = { label: "Rachel Brown, The Early Flute: A Practical Guide (Cambridge, 2002)", url: "https://search.worldcat.org/isbn/9780521813914" };
+
 HFP.config = {
   siteName: "The Historical Flute Project",
   // Address that receives the Contact & Suggestions form (via the visitor's mail app).
@@ -24,6 +27,7 @@ HFP.eras = [
 
 HFP.i18n = {
   en: {
+    nav_playing: "How they played", intro_playing: "Technique and style on historical flutes, from the treatises themselves: posture, fingering, tone, articulation, ornaments, vibrato, and practical advice on choosing and caring for an instrument.",
     tagline: "Historical flutes, their makers, players and music",
     nav_home: "Home", nav_history: "History", nav_flutes: "Flutes", nav_makers: "Makers",
     nav_treatises: "Treatises & Methods", nav_flutists: "Flutists", nav_repertoire: "Repertoire",
@@ -95,6 +99,7 @@ HFP.i18n = {
   },
 
   fr: {
+    nav_playing: "Comment ils jouaient", intro_playing: "La technique et le style sur les flûtes historiques, d’après les traités : tenue, doigtés, son, articulation, ornements, vibrato, et conseils pratiques pour choisir et entretenir un instrument.",
     tagline: "Les flûtes historiques, leurs facteurs, leurs interprètes et leur musique",
     nav_home: "Accueil", nav_history: "Histoire", nav_flutes: "Flûtes", nav_makers: "Facteurs",
     nav_treatises: "Traités & méthodes", nav_flutists: "Flûtistes", nav_repertoire: "Répertoire",
@@ -166,6 +171,7 @@ HFP.i18n = {
   },
 
   it: {
+    nav_playing: "Come suonavano", intro_playing: "Tecnica e stile sui flauti storici, dai trattati stessi: postura, diteggiature, suono, articolazione, ornamenti, vibrato e consigli pratici per scegliere e curare uno strumento.",
     tagline: "Flauti storici, i loro costruttori, interpreti e musica",
     nav_home: "Home", nav_history: "Storia", nav_flutes: "Flauti", nav_makers: "Costruttori",
     nav_treatises: "Trattati & metodi", nav_flutists: "Flautisti", nav_repertoire: "Repertorio",
@@ -261,6 +267,17 @@ HFP.references = [
     }
   },
   {
+    title: "The Early Flute: A Practical Guide",
+    author: "Rachel Brown",
+    year: "Cambridge University Press, 2002",
+    url: "https://search.worldcat.org/isbn/9780521813914",
+    note: {
+      en: "A practical guide to the flute from 1700 to 1900: instruments, technique, style and treatises. Used for the flute types, the treatises and the page How they played.",
+      fr: "Un guide pratique de la flûte de 1700 à 1900 : instruments, technique, style et traités. Utilisé pour les types de flûte, les traités et la page Comment ils jouaient.",
+      it: "Una guida pratica al flauto dal 1700 al 1900: strumenti, tecnica, stile e trattati. Usata per i tipi di flauto, i trattati e la pagina Come suonavano."
+    }
+  },
+  {
     title: "Theobald Böhm's compositions",
     author: "Ludwig Böhm (Theobald Böhm Archive, Munich, 1994)",
     url: "https://thebabelflute.com/?p=13332",
@@ -308,8 +325,8 @@ HFP.credits = {
   },
   instruments: ["baroque-four-piece", "classical-keyed-flute", "boehm-1847"],
   sourcesText: {
-    en: "Texts are original summaries based on standard reference works, above all Ardal Powell's The Flute (Yale University Press, 2002) and his website flutehistory.com, and on the primary sources linked in each entry. Illustrations are schematic drawings. Where photographs are added, they come from public-domain or openly licensed collections (for example Wikimedia Commons and the Dayton C. Miller Flute Collection at the Library of Congress), and each one is credited.",
-    it: "I testi sono sintesi originali basate su opere di riferimento, prima fra tutte The Flute di Ardal Powell (Yale University Press, 2002) e il suo sito flutehistory.com, e sulle fonti primarie indicate in ogni voce. Le illustrazioni sono disegni schematici. Le eventuali fotografie provengono da collezioni di pubblico dominio o con licenza libera (ad esempio Wikimedia Commons e la Dayton C. Miller Flute Collection della Library of Congress), sempre con il relativo credito.",
-    fr: "Les textes sont des synthèses originales fondées sur des ouvrages de référence, en premier lieu The Flute d'Ardal Powell (Yale University Press, 2002) et son site flutehistory.com, et sur les sources primaires indiquées dans chaque fiche. Les illustrations sont des dessins schématiques. Les éventuelles photographies proviennent de collections du domaine public ou sous licence libre (par exemple Wikimedia Commons et la Dayton C. Miller Flute Collection de la Library of Congress) et sont toujours créditées."
+    en: "Texts are original summaries based on standard reference works, above all Ardal Powell's The Flute (Yale University Press, 2002), his website flutehistory.com and Rachel Brown's The Early Flute (Cambridge, 2002), and on the primary sources linked in each entry. Illustrations are schematic drawings and photographs. The photographs come from public-domain or openly licensed collections (for example Wikimedia Commons and the Dayton C. Miller Flute Collection at the Library of Congress), and each one is credited.",
+    it: "I testi sono sintesi originali basate su opere di riferimento, prima fra tutte The Flute di Ardal Powell (Yale University Press, 2002), il suo sito flutehistory.com e The Early Flute di Rachel Brown (Cambridge, 2002), e sulle fonti primarie indicate in ogni voce. Le illustrazioni sono disegni schematici e fotografie. Le fotografie provengono da collezioni di pubblico dominio o con licenza libera (ad esempio Wikimedia Commons e la Dayton C. Miller Flute Collection della Library of Congress), sempre con il relativo credito.",
+    fr: "Les textes sont des synthèses originales fondées sur des ouvrages de référence, en premier lieu The Flute d'Ardal Powell (Yale University Press, 2002), son site flutehistory.com et The Early Flute de Rachel Brown (Cambridge, 2002), et sur les sources primaires indiquées dans chaque fiche. Les illustrations sont des dessins schématiques et des photographies. Les photographies proviennent de collections du domaine public ou sous licence libre (par exemple Wikimedia Commons et la Dayton C. Miller Flute Collection de la Library of Congress) et sont toujours créditées."
   }
 };

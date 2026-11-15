@@ -7,7 +7,7 @@
   const H = window.HFP;
   const LANGS = ["en", "fr", "it"];
   const PAGES = [
-    ["home", "index.html"], ["history", "history.html"], ["flutes", "flutes.html"],
+    ["home", "index.html"], ["history", "history.html"], ["playing", "playing.html"], ["flutes", "flutes.html"],
     ["makers", "makers.html"], ["treatises", "treatises.html"], ["flutists", "flutists.html"],
     ["repertoire", "repertoire.html"], ["map", "map.html"], ["sources", "sources.html"], ["contact", "contact.html"], ["credits", "credits.html"]
   ];
@@ -89,6 +89,16 @@
   const wikiUrl = (q) => `https://${lang}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(q)}`;
   const imslpUrl = (q) => `https://imslp.org/index.php?search=${encodeURIComponent(q)}`;
   const listenUrl = (q) => `https://www.youtube.com/results?search_query=${encodeURIComponent(q)}`;
+
+  /* ---------------- Photos (public-domain / free-licence images) ---------------- */
+  // image: { src, caption, credit, url } — url points to the image's licence page.
+  function photo(img, cls) {
+    if (!img) return "";
+    const cap = loc(img.caption);
+    return `<figure class="entry-figure photo ${cls || ""}">
+      <a href="${img.url}" target="_blank" rel="noopener"><img src="${img.src}" alt="${esc(cap.replace(/\[\[[^|\]]*\|?|\]\]|\*/g, ""))}" loading="lazy"></a>
+      <figcaption>${inline(cap)}${img.credit ? ` <span class="credit">${esc(img.credit)}</span>` : ""}</figcaption></figure>`;
+  }
 
   /* ---------------- Header / footer ---------------- */
   const LOGO = `<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><g transform="rotate(-35 15 15)"><rect x="1" y="12.5" width="28" height="5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="15" r="1.2" fill="currentColor"/><circle cx="14" cy="15" r=".9" fill="currentColor"/><circle cx="17.5" cy="15" r=".9" fill="currentColor"/><circle cx="21" cy="15" r=".9" fill="currentColor"/></g></svg>`;
@@ -177,18 +187,19 @@
     const skip = new Set();
 
     if (type === "flutes") {
-      figure = `<figure class="entry-figure figure-wide">${H.illus.flute(e.drawing, { label: e.name })}<figcaption>${esc(tr("drawing_note"))}</figcaption></figure>`;
+      figure = (e.image ? photo(e.image, "figure-wide") : "") +
+        `<figure class="entry-figure figure-wide">${H.illus.flute(e.drawing, { label: e.name })}<figcaption>${esc(tr("drawing_note"))}</figcaption></figure>`;
       aside = facts([["period", esc(yearSpan(e))], ["origin", esc(e.origin)]]) +
         `<h4 class="sans small muted" style="margin:0 0 4px;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem">${esc(tr("features"))}</h4>` +
         `<ul class="features">${(e.features || []).map((f) => `<li>${inline(loc(f))}</li>`).join("")}</ul>`;
       main = paras(loc(e.description));
     } else if (type === "makers" || type === "flutists") {
-      aside = `<figure class="entry-figure">${H.illus.portrait(e.name, color)}</figure>` +
+      aside = (e.image ? photo(e.image) : `<figure class="entry-figure">${H.illus.portrait(e.name, color)}</figure>`) +
         facts([["life", esc(e.dates)], ["place", esc(e.place)], ["roles", e.roles.map((r) => esc(tr("role_" + r))).join(", ")]]);
       main = paras(loc(e.bio));
     } else if (type === "treatises") {
       const authorName = e.authorName || (e.author ? index[e.author].e.name : "");
-      aside = `<figure class="entry-figure">${H.illus.titlePage(e.name, authorName, e.place.replace(/\s*\(.*\)/, ""), String(e.start))}</figure>` +
+      aside = (e.image ? photo(e.image) : `<figure class="entry-figure">${H.illus.titlePage(e.name, authorName, e.place.replace(/\s*\(.*\)/, ""), String(e.start))}</figure>`) +
         facts([["author", e.author ? `<a class="xref t-${index[e.author].type}" href="${href(e.author)}">${esc(authorName)}</a>` : esc(authorName)],
                ["year", esc(e.start)], ["place", esc(e.place)], ["language", esc(e.language)]]);
       main = paras(loc(e.description)) +
@@ -196,7 +207,7 @@
         `<ul class="features">${(e.contents || []).map((c) => `<li>${inline(loc(c))}</li>`).join("")}</ul>`;
     } else if (type === "repertoire") {
       (e.flutes || []).forEach((f) => skip.add(f));
-      aside = facts([["composer", esc(e.composer)], ["date", esc(e.dates)], ["place", esc(e.place)], ["scoring", esc(e.scoring)], ["kind", esc(tr("kind_" + e.kind))]]) +
+      aside = photo(e.image) + facts([["composer", esc(e.composer)], ["date", esc(e.dates)], ["place", esc(e.place)], ["scoring", esc(e.scoring)], ["kind", esc(tr("kind_" + e.kind))]]) +
         `<div class="related"><div><h4>${esc(tr("playable_on"))}</h4><div class="chips">${(e.flutes || []).map(chip).join("")}</div></div></div>`;
       main = paras(loc(e.description));
     }
@@ -246,7 +257,7 @@
       html += entryHTML(e, type);
     });
     app.innerHTML = `<div class="wrap">
-      ${pageHead(`${list.length} ${tr("entries")}`, tr("nav_" + type), tr("intro_" + type))}
+      ${pageHead(null, tr("nav_" + type), tr("intro_" + type))}
       <div class="toolbar"><input type="search" placeholder="${esc(tr("search"))}" aria-label="${esc(tr("search"))}"></div>
       <div id="list">${html}</div>
       <p class="muted" id="noresults" hidden>${esc(tr("no_results"))}</p>
@@ -294,7 +305,7 @@
     const stack = [["renaissance-flute", "1500"], ["hotteterre-flute", "1680"], ["classical-keyed-flute", "1790"], ["boehm-1847", "1847"]];
     const art = stack.map(([id, y]) => `<a href="${href(id)}" style="display:grid;grid-template-columns:44px 1fr;align-items:center;gap:6px;text-decoration:none;color:var(--muted)" title="${esc(index[id].e.name)}"><span class="sans small">${y}</span>${H.illus.flute(index[id].e.drawing, { label: index[id].e.name })}</a>`).join("");
 
-    const cards = [["history", null, H.history.length]].concat(TYPES.map((t) => [t, t, entriesOf(t).length])).concat([["map", null, null]]);
+    const cards = [["history", null, H.history.length], ["playing", null, H.playing.length]].concat(TYPES.map((t) => [t, t, entriesOf(t).length])).concat([["map", null, null]]);
     const curios = Object.values(index).filter(({ e }) => e.curio);
 
     app.innerHTML = `<div class="wrap">
@@ -310,7 +321,6 @@
       <h2 style="margin-top:32px">${esc(tr("home_explore"))}</h2>
       <div class="cards">${cards.map(([k, t, n]) => `
         <a class="card" href="${PAGE_FILE[k]}" style="${t ? `--type-color:var(--c-${t})` : ""}">
-          ${n !== null ? `<div class="count">${n} ${esc(k === "history" ? "" : tr("entries"))}</div>` : `<div class="count">◎</div>`}
           <h3>${esc(tr("nav_" + k))}</h3><p>${esc(tr("intro_" + k))}</p></a>`).join("")}
       </div>
       <section class="box box-curio" id="curio" style="max-width:720px"></section>
@@ -328,14 +338,16 @@
   }
 
   /* ---------------- History ---------------- */
-  function renderHistory(app) {
+  function renderHistory(app, list, key) {
+    list = list || H.history; key = key || "history";
     app.innerHTML = `<div class="wrap">
-      ${pageHead(null, tr("nav_history"), tr("intro_history"))}
-      <nav class="history-toc">${H.history.map((c) => `<a href="#${c.id}">${esc(loc(c.title))}</a>`).join("")}</nav>
-      ${H.history.map((c) => {
+      ${pageHead(null, tr("nav_" + key), tr("intro_" + key))}
+      <nav class="history-toc">${list.map((c) => `<a href="#${c.id}">${esc(loc(c.title))}</a>`).join("")}</nav>
+      ${list.map((c) => {
         const ids = [...new Set(refsIn(c.body))].filter((id) => index[id]).sort(byStart);
         return `<section class="chapter" id="${c.id}">
           <div class="dates">${esc(c.dates)}</div><h2>${esc(loc(c.title))}</h2>
+          ${c.image ? photo(c.image, "chapter-photo") : ""}
           ${paras(loc(c.body))}
           <div class="chips">${ids.map(chip).join("")}</div>
         </section>`;
@@ -466,6 +478,7 @@
   const app = document.getElementById("app");
   if (page === "home") renderHome(app);
   else if (page === "history") renderHistory(app);
+  else if (page === "playing") renderHistory(app, H.playing, "playing");
   else if (TYPES.includes(page)) renderList(page, app);
   else if (page === "map") H.renderMap(app, { index, graph, href, nameOf, tr, loc, esc, lanesOf, TYPES, pageHead, yearSpan, imslpUrl, eraLabel: (er) => er.label[lang] || er.label.en });
   else if (page === "sources") renderSources(app);

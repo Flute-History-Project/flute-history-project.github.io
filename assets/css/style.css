@@ -281,3 +281,12 @@ a.xref.t-repertoire { color: var(--c-repertoire); }
 .map-panel .type { font-family: var(--sans); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
 .map-panel h3 { margin: 2px 0 2px; }
 .map-panel .actions { display: flex; flex-wrap: wrap; gap: 8px 18px; font-family: var(--sans); font-size: .85rem; margin-top: 10px; }
+
+/* Photos */
+.photo img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.photo.figure-wide { padding: 10px; }
+.photo.figure-wide img { max-height: 340px; object-fit: contain; background: var(--paper-2); }
+aside .photo img { max-height: 420px; object-fit: contain; }
+.photo .credit { display: block; opacity: .8; font-size: .66rem; margin-top: 2px; }
+.chapter-photo { max-width: 640px; margin: 4px 0 18px; }
+.chapter-photo img { max-height: 420px; object-fit: contain; }
