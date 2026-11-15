@@ -369,5 +369,29 @@ HFP.flutes = [
     drawing: { joints: 4, keys: 8, bore: "conical", material: "grenadilla", rings: true, length: 0.98, foot: "c" },
     sources: [BROWN, { label: "flutehistory.com: Post-Boehm flutes", url: FH + "Instrument/PostBoehm.php3" }],
     links: ["german-keyed-flute", "schwedler-1897"]
+  },
+  {
+    id: "midi-flute",
+    short: "MIDI flute (IRCAM)",
+    name: "MIDI flute (IRCAM 4X flute)",
+    start: 1983,
+    end: null,
+    origin: "IRCAM, Paris",
+    tagline: "A Boehm flute with sensors on its keys, built at IRCAM so that a computer could follow the flutist in real time.",
+    features: [
+      "A normal silver Boehm flute (by Yamaha) fitted with switches on the keys",
+      "Sends the position of the fingers as MIDI data, alongside the sound picked up by a microphone",
+      "Connected to the 4X, IRCAM's real-time digital sound processor",
+      "Used in Boulez's ...explosante-fixe... and Manoury's Jupiter"
+    ],
+    description:
+      "In the early 1980s IRCAM, the research centre founded by Pierre Boulez in Paris, built the 4X, one of the first computers able to transform and synthesise sound in real time during a concert. To make it react to a live performer, the computer had to know exactly what the performer was playing. From 1983 Lawrence Beauregard, flutist of the Ensemble Intercontemporain, worked with IRCAM researchers including Xavier Chabot and Andrew Gerzso on a solution: a flute whose keys carry small switches, so that every fingering is sent to the computer as MIDI data while a microphone captures the sound. Knowing the fingering, the 4X could follow the flutist through the score and trigger its transformations at the right moment.\n\n" +
+      "Boulez conceived the instrument for *...explosante-fixe...*, but Beauregard died in 1985, before the project was complete; Boulez's *Mémoriale* is dedicated to his memory, and the final version of *...explosante-fixe...* for MIDI flute, two flutes, ensemble and electronics was completed in the early 1990s. Philippe Manoury's *Jupiter* for flute and 4X, first performed at IRCAM in April 1987, is often described as the first work for flute and real-time digital processing; it is dedicated to Beauregard. To control the 4X for *Jupiter*, Miller Puckette wrote the program that grew into Max, still one of the most widely used tools in electronic music.\n\n" +
+      "The original instrument, built in 1983, and the 4X station are now in the Musée de la musique in Paris. Today the same idea is realised with a microphone and software alone, but the MIDI flute was the first step: the flute became an instrument that could converse with a computer.",
+    curio: "The 4X was so large that it travelled in flight cases on wheels. Today a laptop can do far more, but much of the electronic music written for flute at IRCAM began with this flute and that machine.",
+    drawing: { joints: 3, keys: 16, bore: "cylindrical", material: "silver", rings: false, length: 0.95, foot: "c" },
+    image: { src: "assets/img/hfp/midi-flute-4x.jpg", caption: "The original MIDI flute (IRCAM, 1983) resting on the 4X digital sound processor", credit: "Musée de la musique, Philharmonie de Paris · CC BY-NC-SA 4.0", url: "http://collectionsdumusee.philharmoniedeparis.fr/doc/MUSEE/0158782" },
+    sources: [{ label: "Musée de la musique: Station d'informatique musicale 4X", url: "https://edutheque.philharmoniedeparis.fr/0158770-station-informatique-4x-ircam.aspx" }, { label: "IRCAM (Brahms): Philippe Manoury, Jupiter", url: "https://brahms.ircam.fr/sidney/work/d29b7291-0ef1-4b24-9073-99873abd5546/print" }, { label: "M. Wanderley et al., Gestural Research at IRCAM (1998)", url: "https://www-archive.idmil.org/_media/publications/1998/wanderley_1998_jim.pdf" }],
+    links: ["boehm-1847"]
   }
 ];
