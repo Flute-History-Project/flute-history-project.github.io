@@ -72,59 +72,8 @@
 
   /* ---------------- Text helpers ---------------- */
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  /* ---------------- Citations ----------------
-     {{key, locator; key2, locator}} in any text becomes a numbered note pointing to the
-     entry's reference list; {{?}} marks a statement whose source is still being checked.
-     `notes` collects the citations of one entry (or one chapter); without it they are hidden. */
-  const CITE = /\s*\{\{([^}]+)\}\}/g;
-  function parseCite(body) {
-    if (body.trim() === "?") return [{ key: "?" }];
-    return body.split(";").map((s) => {
-      const m = s.trim().match(/^([a-z0-9]+)\s*(?:,\s*(.+))?$/i);
-      return m ? { key: m[1], loc: (m[2] || "").trim() } : null;
-    }).filter(Boolean);
-  }
-  const citesIn = (t) => [...String(t || "").matchAll(CITE)].flatMap((m) => parseCite(m[1]));
-  const newNotes = (prefix) => ({ prefix, list: [], map: new Map() });
-  function shortCite(key, locator) {
-    const b = H.bib[key];
-    if (!b) return key;
-    return [b.author ? b.author.split(" ").pop() : "", b.title, b.year].filter(Boolean).join(", ") + (locator ? ", " + locator : "");
-  }
-  function citeMark(body, notes) {
-    if (!notes) return "";
-    const parts = parseCite(body).map((it) => {
-      if (it.key === "?") return `<a class="cite-needed" href="sources.html#verify" title="${esc(tr("cite_needed"))}">?</a>`;
-      if (!H.bib[it.key]) console.warn(`[HFP] unknown source "${it.key}"`);
-      const k = it.key + "|" + it.loc;
-      if (!notes.map.has(k)) { notes.list.push(it); notes.map.set(k, notes.list.length); }
-      const n = notes.map.get(k);
-      return `<a href="#${notes.prefix}-ref-${n}" title="${esc(shortCite(it.key, it.loc))}">${n}</a>`;
-    });
-    return `<sup class="cite">[${parts.join(", ")}]</sup>`;
-  }
-  // Full bibliographic reference, used in entry reference lists and on the Sources page.
-  function fullCite(key) {
-    const b = H.bib[key];
-    if (!b) return esc(key);
-    const pub = [b.place && b.publisher ? `${b.place}: ${b.publisher}` : b.place || b.publisher, b.year].filter(Boolean).join(", ");
-    let s = b.author ? esc(b.author) + ", " : "";
-    if (b.journal) s += `‘${esc(b.title)}’, <em>${esc(b.journal)}</em> ${esc(b.volume || "")} (${esc(b.year)})${b.pages ? ", " + esc(b.pages) : ""}`;
-    else if (b.inBook) s += `‘${esc(b.title)}’, in <em>${esc(b.inBook)}</em> (${esc(pub)})${b.pages ? ", " + esc(b.pages) : ""}`;
-    else s += `<em>${esc(b.title)}</em>${pub ? ` (${esc(pub)})` : ""}`;
-    if (b.url) s += ` <a href="${b.url}" target="_blank" rel="noopener" title="${esc(b.isbn ? "ISBN " + b.isbn : b.url)}">↗</a>`;
-    if (b.online) s += ` · <a href="${b.online}" target="_blank" rel="noopener">${esc(tr("online_summary"))} ↗</a>`;
-    return s;
-  }
-  function refsHTML(notes) {
-    if (!notes.list.length) return "";
-    return `<div class="refs"><h4>${esc(tr("refs_title"))}</h4><ol>${notes.list.map((it, i) =>
-      `<li id="${notes.prefix}-ref-${i + 1}">${fullCite(it.key)}${it.loc ? `, ${esc(it.loc)}` : ""}</li>`).join("")}</ol></div>`;
-  }
-
-  function inline(s, notes) {
+  function inline(s) {
     return esc(s)
-      .replace(CITE, (m, body) => citeMark(body, notes))
       .replace(REF, (m, id, label) => {
         const it = index[id];
         if (!it) return label || id;
@@ -132,7 +81,7 @@
       })
       .replace(/\*([^*]+)\*/g, "<em>$1</em>");
   }
-  const paras = (s, notes) => s.split(/\n\n+/).map((p) => `<p>${inline(p, notes)}</p>`).join("");
+  const paras = (s) => s.split(/\n\n+/).map((p) => `<p>${inline(p)}</p>`).join("");
   const chip = (id) => `<a class="chip t-${index[id].type}" href="${href(id)}">${esc(nameOf(id))}</a>`;
   const yearSpan = (e) => (e.end === undefined ? String(e.start) : `${e.start}–${e.end === null ? tr("present") : e.end}`);
   const eraOf = (y) => H.eras.find((er) => y >= er.start && y < er.end) || H.eras[H.eras.length - 1];
@@ -236,7 +185,6 @@
     const color = `var(--c-${type})`;
     let figure = "", aside = "", main = "";
     const skip = new Set();
-    const notes = newNotes(e.id);
 
     if (type === "flutes") {
       figure = (e.image ? photo(e.image, "figure-wide") : "") +
@@ -244,31 +192,30 @@
       aside = facts([["period", esc(yearSpan(e))], ["origin", esc(e.origin)]]) +
         `<h4 class="sans small muted" style="margin:0 0 4px;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem">${esc(tr("features"))}</h4>` +
         `<ul class="features">${(e.features || []).map((f) => `<li>${inline(loc(f))}</li>`).join("")}</ul>`;
-      main = paras(loc(e.description), notes);
+      main = paras(loc(e.description));
     } else if (type === "makers" || type === "flutists") {
       // a long instrument photo (image.wide) goes full width above the text; portraits stay in the side column
       if (e.image && e.image.wide) figure = photo(e.image, "figure-wide");
       aside = (e.image && !e.image.wide ? photo(e.image) : `<figure class="entry-figure">${H.illus.portrait(e.name, color)}</figure>`) +
         facts([["life", esc(e.dates)], ["place", esc(e.place)], ["roles", e.roles.map((r) => esc(tr("role_" + r))).join(", ")]]);
-      main = paras(loc(e.bio), notes);
+      main = paras(loc(e.bio));
     } else if (type === "treatises") {
       const authorName = e.authorName || (e.author ? index[e.author].e.name : "");
       aside = (e.image ? photo(e.image) : `<figure class="entry-figure">${H.illus.titlePage(e.name, authorName, e.place.replace(/\s*\(.*\)/, ""), String(e.start))}</figure>`) +
         facts([["author", e.author ? `<a class="xref t-${index[e.author].type}" href="${href(e.author)}">${esc(authorName)}</a>` : esc(authorName)],
                ["year", esc(e.start)], ["place", esc(e.place)], ["language", esc(e.language)]]);
-      main = paras(loc(e.description), notes) +
+      main = paras(loc(e.description)) +
         `<h4 class="sans small muted" style="margin:0 0 4px;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem">${esc(tr("contents"))}</h4>` +
         `<ul class="features">${(e.contents || []).map((c) => `<li>${inline(loc(c))}</li>`).join("")}</ul>`;
     } else if (type === "repertoire") {
       (e.flutes || []).forEach((f) => skip.add(f));
       aside = photo(e.image) + facts([["composer", esc(e.composer)], ["date", esc(e.dates)], ["place", esc(e.place)], ["scoring", esc(e.scoring)], ["kind", esc(tr("kind_" + e.kind))]]) +
         `<div class="related"><div><h4>${esc(tr("playable_on"))}</h4><div class="chips">${(e.flutes || []).map(chip).join("")}</div></div></div>`;
-      main = paras(loc(e.description), notes);
+      main = paras(loc(e.description));
     }
 
-    if (e.tips) main += `<div class="box box-tips"><h4>${esc(tr("tips"))}</h4>${paras(loc(e.tips), notes)}</div>`;
-    if (e.curio) main += `<div class="box box-curio"><h4>${esc(tr("did_you_know"))}</h4>${paras(loc(e.curio), notes)}</div>`;
-    main += refsHTML(notes);
+    if (e.tips) main += `<div class="box box-tips"><h4>${esc(tr("tips"))}</h4>${paras(loc(e.tips))}</div>`;
+    if (e.curio) main += `<div class="box box-curio"><h4>${esc(tr("did_you_know"))}</h4>${paras(loc(e.curio))}</div>`;
     main += relatedHTML(e, type, skip);
 
     const links = [];
@@ -276,7 +223,7 @@
     if (e.wiki) links.push(ext(wikiUrl(e.wiki), tr("wiki")));
     if (e.imslp) links.push(ext(imslpUrl(e.imslp), type === "treatises" ? tr("imslp_t") : type === "repertoire" ? tr("imslp") : "IMSLP"));
     if (e.listen) links.push(ext(listenUrl(e.listen), tr("listen")));
-    if (links.length) main += `<div class="related"><div><h4>${esc(tr("further"))}</h4><div class="small sans" style="display:flex;flex-wrap:wrap;gap:6px 16px">${links.join("")}</div></div></div>`;
+    if (links.length) main += `<div class="related"><div><h4>${esc(tr("sources"))}</h4><div class="small sans" style="display:flex;flex-wrap:wrap;gap:6px 16px">${links.join("")}</div></div></div>`;
 
     const actions = `<div class="entry-actions">
         <a href="map.html?focus=${e.id}">◎ ${esc(tr("show_on_map"))}</a>
@@ -351,10 +298,6 @@
     if (el.tagName === "DETAILS") {
       el.open = true;
       el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
-    } else {
-      // e.g. a reference note (#entry-ref-2) inside a closed entry
-      const d = el.closest("details"); if (d) d.open = true;
-      el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
     }
     setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 30);
   }
@@ -404,13 +347,10 @@
       <nav class="history-toc">${list.map((c) => `<a href="#${c.id}">${esc(loc(c.title))}</a>`).join("")}</nav>
       ${list.map((c) => {
         const ids = [...new Set(refsIn(c.body))].filter((id) => index[id]).sort(byStart);
-        const notes = newNotes(c.id);
-        const body = paras(loc(c.body), notes);
         return `<section class="chapter" id="${c.id}">
           <div class="dates">${esc(c.dates)}</div><h2>${esc(loc(c.title))}</h2>
           ${c.image ? photo(c.image, "chapter-photo") : ""}
-          ${body}
-          ${refsHTML(notes)}
+          ${paras(loc(c.body))}
           <div class="chips">${ids.map(chip).join("")}</div>
         </section>`;
       }).join("")}
