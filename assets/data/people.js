@@ -542,11 +542,12 @@ HFP.people = [
     place: "Paris",
     tagline: "Paris workshop famous for its simple-system flutes, where Louis Lot trained, and the first in France to build Boehm flutes.",
     bio:
-      "Godfroy's workshop made some of the finest French flutes of the early 19th century, including ten-keyed simple-system flutes for the Paris virtuosos. [[lot|Louis Lot]] trained there and became a partner of the family firm.\n\n" +
-      "In 1837 Godfroy & Lot produced the first French commercial version of Boehm's [[boehm-1832|ring-key flute]], and later took the French rights for the [[boehm-1847|cylinder flute]], so the workshop stands at the very start of the French Boehm tradition.",
+      "The Godfroys were one of the woodwind-making families of La Couture-Boussey in Normandy, the village of the [[hotteterre|Hotteterres]] and the [[thomas-lot|Lots]]. Clair Godfroy, called 'aîné' (the elder) to distinguish him from a younger relative in the same trade, set up his workshop in Paris and made it one of the finest in France. Its flutes carry the stamp 'GODFROY / AINE' with a sun and a star, or later 'CLAIR / Godfroy aîné / A PARIS'.\n\n" +
+      "For most of its history the workshop built simple-system flutes: one-keyed and four- to five-keyed flutes in boxwood, ebony or rosewood, piccolos and even walking-stick flutes, and, by the 1830s, eight- and ten-keyed flutes in rosewood with silver keys for the Paris virtuosos. These were the instruments of the French school of [[devienne|Devienne]]'s successors and of [[tulou|Tulou]]'s generation. [[lot|Louis Lot]], also from La Couture, trained in the workshop and became a partner of Clair's son, Vincent Hypolite Godfroy.\n\n" +
+      "Boehm flutes came only later, and they were the work of the next generation. In 1837 the firm of Godfroy & Lot produced the first French commercial version of Boehm's [[boehm-1832|ring-key flute]], and after Clair's death it took the French rights for Boehm's [[boehm-1847|cylinder flute]] of 1847. So the name Godfroy stands both for the last great French simple-system flutes and for the very start of the French Boehm tradition, which Lot carried on alone from 1855.",
     sources: [BROWN],
     image: { wide: true, src: "assets/img/hfp/flute-godfroy-8keys.jpg", caption: "Eight-keyed flute in rosewood with silver keys by Clair Godfroy aîné, Paris, stamped 'GODFROY / AINE' with a sun and a star", credit: "Musée de la musique, Philharmonie de Paris (E.973.4.2) · CC BY-NC-SA 4.0", url: "http://collectionsdumusee.philharmoniedeparis.fr/doc/MUSEE/0160181" },
-    links: ["boehm-1832", "lot"]
+    links: ["boehm-1832", "boehm-1847", "lot", "tulou"]
   },
   {
     id: "ribas",
