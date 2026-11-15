@@ -3,8 +3,6 @@
  */
 window.HFP = window.HFP || {};
 
-// Shared source used by many entries (data files load after this one).
-var BROWN = { label: "Rachel Brown, The Early Flute: A Practical Guide (Cambridge, 2002)", url: "https://search.worldcat.org/isbn/9780521813914" };
 
 HFP.config = {
   siteName: "The Historical Flute Project",
@@ -76,16 +74,26 @@ HFP.i18n = {
     f_message_ph: "What should be added or changed? Please mention your sources if you can.",
     f_send: "Send suggestion", f_note: "Pressing the button opens your email app with the message ready to send.",
 
+    intro_sources: "Everything this site is built on. Every statement in the entries carries a numbered note that leads to a printed source (a book, an article or a historical document), with the page or chapter.",
+    src_method: "How the sources work",
+    src_method_text: "All texts are original summaries in our own words, never copied. Each paragraph ends with numbered notes such as [1]: click one to see the book, article or historical document it comes from, with the page or chapter, in the entry's list of references.\n\nOnly printed sources count as sources. Websites (including Wikipedia, IMSLP and the author's own pages on flutehistory.com) are offered as further reading and scores, never as the only basis for a statement.\n\nA question mark [?] means that a statement has not yet been checked against a printed source. Those passages are listed at the bottom of this page; if you can help, please get in touch.",
+    src_secondary: "Books and articles",
+    src_primary: "Historical documents and treatises",
+    src_primary_note: "Sources written at the time. Each treatise also has its own page in Treatises & Methods.",
+    src_online: "Online resources",
+    src_online_note: "Further reading, scores and images. Not used as the sole source of any statement.",
+    src_pages: "Web pages linked from the entries",
+    src_used_in: "Cited in",
+    src_verify: "Being checked",
+    src_verify_note: "Work in progress, shown openly. The passages below are still waiting for a printed source, or for page numbers to be confirmed in the book.",
+    src_needs: "Entries with statements marked [?]",
+    src_uncited: "Entries and chapters with no references yet",
+    src_pages_pending: "Sources whose page numbers are still being checked",
+    refs_title: "References",
+    further: "Further reading & online",
+    online_summary: "online summary by the author", online_copy: "text reproduced online",
+    cite_needed: "Source still being checked",
     nav_sources: "Sources",
-    intro_sources: "Everything this site is built on: the main references, the historical treatises, and every source cited in the individual entries.",
-    src_method: "How the texts are written",
-    src_method_text: "All texts are original summaries in our own words, never copied. They are based on the references below and on the primary sources linked in each entry. Where an entry does not yet cite a specific source, it rests on general reference knowledge and is listed at the bottom of this page so it can be checked. Wikipedia and IMSLP links in the entries are offered as further reading and scores, not as sources for the texts.",
-    src_general: "Main references",
-    src_primary: "Primary sources: the treatises",
-    src_by_entry: "Sources cited in the entries",
-    src_used_in: "Used in",
-    src_pending: "Entries without a specific source yet",
-    src_pending_note: "These entries are based on general reference knowledge and still need a specific citation. If you can suggest one, please get in touch.",
 
     support_link: "Support this project",
     support_title: "Support the project",
@@ -148,16 +156,26 @@ HFP.i18n = {
     f_message_ph: "Que faudrait-il ajouter ou modifier ? Indiquez vos sources si possible.",
     f_send: "Envoyer la suggestion", f_note: "Le bouton ouvre votre messagerie avec le message prêt à être envoyé.",
 
+    intro_sources: "Tout ce sur quoi repose ce site. Chaque affirmation des fiches porte une note numérotée qui renvoie à une source imprimée (livre, article ou document historique), avec la page ou le chapitre.",
+    src_method: "Comment fonctionnent les sources",
+    src_method_text: "Tous les textes sont des synthèses originales, jamais copiées. Chaque paragraphe se termine par des notes numérotées comme [1] : cliquez pour voir le livre, l'article ou le document historique dont il provient, avec la page ou le chapitre, dans la liste des références de la fiche.\n\nSeules les sources imprimées comptent comme sources. Les sites web (y compris Wikipédia, IMSLP et les pages de l'auteur sur flutehistory.com) sont proposés comme lectures et partitions, jamais comme seul fondement d'une affirmation.\n\nUn point d'interrogation [?] signale une affirmation pas encore vérifiée sur une source imprimée. Ces passages sont listés en bas de cette page ; si vous pouvez aider, écrivez-nous.",
+    src_secondary: "Livres et articles",
+    src_primary: "Documents historiques et traités",
+    src_primary_note: "Sources de l'époque. Chaque traité a aussi sa propre fiche dans Traités & méthodes.",
+    src_online: "Ressources en ligne",
+    src_online_note: "Lectures, partitions et images. Jamais utilisées comme seule source d'une affirmation.",
+    src_pages: "Pages web liées depuis les fiches",
+    src_used_in: "Citée dans",
+    src_verify: "En cours de vérification",
+    src_verify_note: "Travail en cours, montré ouvertement. Les passages ci-dessous attendent encore une source imprimée, ou la confirmation des numéros de page.",
+    src_needs: "Fiches avec des affirmations marquées [?]",
+    src_uncited: "Fiches et chapitres encore sans références",
+    src_pages_pending: "Sources dont les numéros de page sont en cours de vérification",
+    refs_title: "Références",
+    further: "Lectures & ressources en ligne",
+    online_summary: "résumé en ligne de l'auteur", online_copy: "texte reproduit en ligne",
+    cite_needed: "Source en cours de vérification",
     nav_sources: "Sources",
-    intro_sources: "Tout ce sur quoi repose ce site : les ouvrages de référence, les traités historiques et chaque source citée dans les fiches.",
-    src_method: "Comment les textes sont rédigés",
-    src_method_text: "Tous les textes sont des synthèses originales, jamais copiées. Ils s'appuient sur les références ci-dessous et sur les sources primaires indiquées dans chaque fiche. Lorsqu'une fiche ne cite pas encore de source précise, elle repose sur des connaissances de référence générales ; elle figure alors en bas de cette page pour être vérifiée. Les liens vers Wikipédia et IMSLP sont proposés comme lectures et partitions, non comme sources des textes.",
-    src_general: "Références principales",
-    src_primary: "Sources primaires : les traités",
-    src_by_entry: "Sources citées dans les fiches",
-    src_used_in: "Utilisée dans",
-    src_pending: "Fiches sans source précise pour l'instant",
-    src_pending_note: "Ces fiches reposent sur des connaissances générales et attendent encore une citation précise. Si vous pouvez en proposer une, écrivez-nous.",
 
     support_link: "Soutenir le projet",
     support_title: "Soutenir le projet",
@@ -220,16 +238,26 @@ HFP.i18n = {
     f_message_ph: "Cosa andrebbe aggiunto o modificato? Se puoi, indica le tue fonti.",
     f_send: "Invia il suggerimento", f_note: "Il pulsante apre il tuo programma di posta con il messaggio pronto da inviare.",
 
+    intro_sources: "Tutto ciò su cui si basa questo sito. Ogni affermazione delle voci porta una nota numerata che rimanda a una fonte a stampa (libro, articolo o documento storico), con la pagina o il capitolo.",
+    src_method: "Come funzionano le fonti",
+    src_method_text: "Tutti i testi sono sintesi originali, mai copiate. Ogni paragrafo termina con note numerate come [1]: cliccandole si vede il libro, l'articolo o il documento storico da cui proviene, con la pagina o il capitolo, nell'elenco dei riferimenti della voce.\n\nSolo le fonti a stampa contano come fonti. I siti web (compresi Wikipedia, IMSLP e le pagine dell'autore su flutehistory.com) sono indicati come approfondimenti e partiture, mai come unico fondamento di un'affermazione.\n\nUn punto interrogativo [?] indica un'affermazione non ancora verificata su una fonte a stampa. Questi passi sono elencati in fondo alla pagina; se puoi aiutare, scrivici.",
+    src_secondary: "Libri e articoli",
+    src_primary: "Documenti storici e trattati",
+    src_primary_note: "Fonti dell'epoca. Ogni trattato ha anche una sua voce in Trattati & metodi.",
+    src_online: "Risorse online",
+    src_online_note: "Approfondimenti, partiture e immagini. Mai usate come unica fonte di un'affermazione.",
+    src_pages: "Pagine web collegate dalle voci",
+    src_used_in: "Citata in",
+    src_verify: "In verifica",
+    src_verify_note: "Lavori in corso, mostrati apertamente. I passi qui sotto attendono ancora una fonte a stampa, o la conferma dei numeri di pagina sul libro.",
+    src_needs: "Voci con affermazioni segnate [?]",
+    src_uncited: "Voci e capitoli ancora senza riferimenti",
+    src_pages_pending: "Fonti i cui numeri di pagina sono in verifica",
+    refs_title: "Riferimenti",
+    further: "Approfondimenti & online",
+    online_summary: "riassunto online dell'autore", online_copy: "testo riprodotto online",
+    cite_needed: "Fonte in verifica",
     nav_sources: "Fonti",
-    intro_sources: "Tutto ciò su cui si basa questo sito: le opere di riferimento, i trattati storici e ogni fonte citata nelle singole voci.",
-    src_method: "Come sono scritti i testi",
-    src_method_text: "Tutti i testi sono sintesi originali, mai copiate. Si basano sui riferimenti qui sotto e sulle fonti primarie indicate in ogni voce. Quando una voce non cita ancora una fonte specifica, si basa su conoscenze generali di riferimento ed è elencata in fondo a questa pagina, così da poter essere verificata. I link a Wikipedia e IMSLP nelle voci sono letture e partiture di approfondimento, non fonti dei testi.",
-    src_general: "Riferimenti principali",
-    src_primary: "Fonti primarie: i trattati",
-    src_by_entry: "Fonti citate nelle voci",
-    src_used_in: "Usata in",
-    src_pending: "Voci ancora senza una fonte specifica",
-    src_pending_note: "Queste voci si basano su conoscenze generali e attendono ancora una citazione precisa. Se puoi suggerirne una, scrivici.",
 
     support_link: "Sostieni il progetto",
     support_title: "Sostieni il progetto",
@@ -242,71 +270,6 @@ HFP.i18n = {
     footer: "Un progetto sui flauti storici. Contenuti verificati a mano. I suggerimenti sono benvenuti."
   }
 };
-
-/* Main references used to write and check the site. Entry-level sources live in each entry's `sources`. */
-HFP.references = [
-  {
-    title: "flutehistory.com",
-    author: "Ardal Powell",
-    url: "http://www.flutehistory.com/",
-    note: {
-      en: "The main secondary source for the site: pages on periods, flute types, makers and players, used to check and expand most entries.",
-      fr: "Principale source secondaire du site : pages sur les périodes, les types de flûte, les facteurs et les interprètes, utilisées pour vérifier et enrichir la plupart des fiches.",
-      it: "La principale fonte secondaria del sito: pagine su periodi, tipi di flauto, costruttori e interpreti, usate per verificare e ampliare la maggior parte delle voci."
-    }
-  },
-  {
-    title: "The Flute",
-    author: "Ardal Powell",
-    year: "Yale University Press, 2002",
-    url: "https://yalebooks.yale.edu/book/9780300094985/the-flute/",
-    note: {
-      en: "The standard history of the transverse flute, on which flutehistory.com is based. Recommended for anyone who wants to go deeper.",
-      fr: "L'histoire de référence de la flûte traversière, sur laquelle repose flutehistory.com. Recommandée pour approfondir.",
-      it: "La storia di riferimento del flauto traverso, su cui si basa flutehistory.com. Consigliata a chi vuole approfondire."
-    }
-  },
-  {
-    title: "The Early Flute: A Practical Guide",
-    author: "Rachel Brown",
-    year: "Cambridge University Press, 2002",
-    url: "https://search.worldcat.org/isbn/9780521813914",
-    note: {
-      en: "A practical guide to the flute from 1700 to 1900: instruments, technique, style and treatises. Used for the flute types, the treatises and the page How they played.",
-      fr: "Un guide pratique de la flûte de 1700 à 1900 : instruments, technique, style et traités. Utilisé pour les types de flûte, les traités et la page Comment ils jouaient.",
-      it: "Una guida pratica al flauto dal 1700 al 1900: strumenti, tecnica, stile e trattati. Usata per i tipi di flauto, i trattati e la pagina Come suonavano."
-    }
-  },
-  {
-    title: "Theobald Böhm's compositions",
-    author: "Ludwig Böhm (Theobald Böhm Archive, Munich, 1994)",
-    url: "https://thebabelflute.com/?p=13332",
-    note: {
-      en: "Catalogue and dating of Boehm's works, and their relationship to his new flutes.",
-      fr: "Catalogue et datation des œuvres de Boehm, et leur lien avec ses nouvelles flûtes.",
-      it: "Catalogo e datazione delle opere di Boehm e loro rapporto con i nuovi flauti."
-    }
-  },
-  {
-    title: "IMSLP – Petrucci Music Library",
-    url: "https://imslp.org/",
-    note: {
-      en: "Public-domain scores and facsimiles of the historical treatises, linked from each entry.",
-      fr: "Partitions du domaine public et fac-similés des traités historiques, liés depuis chaque fiche.",
-      it: "Partiture di pubblico dominio e facsimili dei trattati storici, collegati da ogni voce."
-    }
-  },
-  {
-    title: "Dayton C. Miller Flute Collection",
-    author: "Library of Congress",
-    url: "https://www.loc.gov/collections/dayton-c-miller-collection/",
-    note: {
-      en: "The largest flute collection in the world, with photographs and documents. Planned source for images.",
-      fr: "La plus grande collection de flûtes au monde, avec photographies et documents. Source prévue pour les images.",
-      it: "La più grande collezione di flauti al mondo, con fotografie e documenti. Fonte prevista per le immagini."
-    }
-  }
-];
 
 /* Credits page text (placeholders to be replaced). */
 HFP.credits = {

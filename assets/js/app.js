@@ -72,8 +72,60 @@
 
   /* ---------------- Text helpers ---------------- */
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  function inline(s) {
+  /* ---------------- Citations ----------------
+     {{key, locator; key2, locator}} in any text becomes a numbered note pointing to the
+     entry's reference list; {{?}} marks a statement whose source is still being checked.
+     `notes` collects the citations of one entry (or one chapter); without it they are hidden. */
+  const CITE = /\s*\{\{([^}]+)\}\}/g;
+  function parseCite(body) {
+    if (body.trim() === "?") return [{ key: "?" }];
+    return body.split(";").map((s) => {
+      const m = s.trim().match(/^([a-z0-9]+)\s*(?:,\s*(.+))?$/i);
+      return m ? { key: m[1], loc: (m[2] || "").trim() } : null;
+    }).filter(Boolean);
+  }
+  const citesIn = (t) => [...String(t || "").matchAll(CITE)].flatMap((m) => parseCite(m[1]));
+  const newNotes = (prefix) => ({ prefix, list: [], map: new Map() });
+  function shortCite(key, locator) {
+    const b = H.bib[key];
+    if (!b) return key;
+    return [b.author ? b.author.split(" ").pop() : "", b.title, b.year].filter(Boolean).join(", ") + (locator ? ", " + locator : "");
+  }
+  function citeMark(body, notes) {
+    if (!notes) return "";
+    const parts = parseCite(body).map((it) => {
+      if (it.key === "?") return `<a class="cite-needed" href="sources.html#verify" title="${esc(tr("cite_needed"))}">?</a>`;
+      if (!H.bib[it.key]) console.warn(`[HFP] unknown source "${it.key}"`);
+      const k = it.key + "|" + it.loc;
+      if (!notes.map.has(k)) { notes.list.push(it); notes.map.set(k, notes.list.length); }
+      const n = notes.map.get(k);
+      return `<a href="#${notes.prefix}-ref-${n}" title="${esc(shortCite(it.key, it.loc))}">${n}</a>`;
+    });
+    return `<sup class="cite">[${parts.join(", ")}]</sup>`;
+  }
+  // Full bibliographic reference, used in entry reference lists and on the Sources page.
+  function fullCite(key, locator) {
+    const b = H.bib[key];
+    if (!b) return esc(key) + (locator ? ", " + esc(locator) : "");
+    const pub = [b.place && b.publisher ? `${b.place}: ${b.publisher}` : b.place || b.publisher, b.year].filter(Boolean).join(", ");
+    let s = b.author ? esc(b.author) + ", " : "";
+    if (b.journal) s += `‘${esc(b.title)}’, <em>${esc(b.journal)}</em> ${esc(b.volume || "")} (${esc(b.year)})${b.pages ? ", " + esc(b.pages) : ""}`;
+    else if (b.inBook) s += `‘${esc(b.title)}’, in <em>${esc(b.inBook)}</em> (${esc(pub)})${b.pages ? ", " + esc(b.pages) : ""}`;
+    else s += `<em>${esc(b.title)}</em>${pub ? ` (${esc(pub)})` : ""}`;
+    if (locator) s += ", " + esc(locator);
+    if (b.url) s += ` <a href="${b.url}" target="_blank" rel="noopener" title="${esc(b.isbn ? "ISBN " + b.isbn : b.url)}">↗</a>`;
+    if (b.online) s += ` · <a href="${b.online}" target="_blank" rel="noopener">${esc(tr(b.onlineLabel || "online_summary"))} ↗</a>`;
+    return s;
+  }
+  function refsHTML(notes) {
+    if (!notes.list.length) return "";
+    return `<div class="refs"><h4>${esc(tr("refs_title"))}</h4><ol>${notes.list.map((it, i) =>
+      `<li id="${notes.prefix}-ref-${i + 1}">${fullCite(it.key, it.loc)}</li>`).join("")}</ol></div>`;
+  }
+
+  function inline(s, notes) {
     return esc(s)
+      .replace(CITE, (m, body) => citeMark(body, notes))
       .replace(REF, (m, id, label) => {
         const it = index[id];
         if (!it) return label || id;
@@ -81,7 +133,7 @@
       })
       .replace(/\*([^*]+)\*/g, "<em>$1</em>");
   }
-  const paras = (s) => s.split(/\n\n+/).map((p) => `<p>${inline(p)}</p>`).join("");
+  const paras = (s, notes) => s.split(/\n\n+/).map((p) => `<p>${inline(p, notes)}</p>`).join("");
   const chip = (id) => `<a class="chip t-${index[id].type}" href="${href(id)}">${esc(nameOf(id))}</a>`;
   const yearSpan = (e) => (e.end === undefined ? String(e.start) : `${e.start}–${e.end === null ? tr("present") : e.end}`);
   const eraOf = (y) => H.eras.find((er) => y >= er.start && y < er.end) || H.eras[H.eras.length - 1];
@@ -185,6 +237,7 @@
     const color = `var(--c-${type})`;
     let figure = "", aside = "", main = "";
     const skip = new Set();
+    const notes = newNotes(e.id);
 
     if (type === "flutes") {
       figure = (e.image ? photo(e.image, "figure-wide") : "") +
@@ -192,30 +245,31 @@
       aside = facts([["period", esc(yearSpan(e))], ["origin", esc(e.origin)]]) +
         `<h4 class="sans small muted" style="margin:0 0 4px;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem">${esc(tr("features"))}</h4>` +
         `<ul class="features">${(e.features || []).map((f) => `<li>${inline(loc(f))}</li>`).join("")}</ul>`;
-      main = paras(loc(e.description));
+      main = paras(loc(e.description), notes);
     } else if (type === "makers" || type === "flutists") {
       // a long instrument photo (image.wide) goes full width above the text; portraits stay in the side column
       if (e.image && e.image.wide) figure = photo(e.image, "figure-wide");
       aside = (e.image && !e.image.wide ? photo(e.image) : `<figure class="entry-figure">${H.illus.portrait(e.name, color)}</figure>`) +
         facts([["life", esc(e.dates)], ["place", esc(e.place)], ["roles", e.roles.map((r) => esc(tr("role_" + r))).join(", ")]]);
-      main = paras(loc(e.bio));
+      main = paras(loc(e.bio), notes);
     } else if (type === "treatises") {
       const authorName = e.authorName || (e.author ? index[e.author].e.name : "");
       aside = (e.image ? photo(e.image) : `<figure class="entry-figure">${H.illus.titlePage(e.name, authorName, e.place.replace(/\s*\(.*\)/, ""), String(e.start))}</figure>`) +
         facts([["author", e.author ? `<a class="xref t-${index[e.author].type}" href="${href(e.author)}">${esc(authorName)}</a>` : esc(authorName)],
                ["year", esc(e.start)], ["place", esc(e.place)], ["language", esc(e.language)]]);
-      main = paras(loc(e.description)) +
+      main = paras(loc(e.description), notes) +
         `<h4 class="sans small muted" style="margin:0 0 4px;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem">${esc(tr("contents"))}</h4>` +
         `<ul class="features">${(e.contents || []).map((c) => `<li>${inline(loc(c))}</li>`).join("")}</ul>`;
     } else if (type === "repertoire") {
       (e.flutes || []).forEach((f) => skip.add(f));
       aside = photo(e.image) + facts([["composer", esc(e.composer)], ["date", esc(e.dates)], ["place", esc(e.place)], ["scoring", esc(e.scoring)], ["kind", esc(tr("kind_" + e.kind))]]) +
         `<div class="related"><div><h4>${esc(tr("playable_on"))}</h4><div class="chips">${(e.flutes || []).map(chip).join("")}</div></div></div>`;
-      main = paras(loc(e.description));
+      main = paras(loc(e.description), notes);
     }
 
-    if (e.tips) main += `<div class="box box-tips"><h4>${esc(tr("tips"))}</h4>${paras(loc(e.tips))}</div>`;
-    if (e.curio) main += `<div class="box box-curio"><h4>${esc(tr("did_you_know"))}</h4>${paras(loc(e.curio))}</div>`;
+    if (e.tips) main += `<div class="box box-tips"><h4>${esc(tr("tips"))}</h4>${paras(loc(e.tips), notes)}</div>`;
+    if (e.curio) main += `<div class="box box-curio"><h4>${esc(tr("did_you_know"))}</h4>${paras(loc(e.curio), notes)}</div>`;
+    main += refsHTML(notes);
     main += relatedHTML(e, type, skip);
 
     const links = [];
@@ -223,7 +277,7 @@
     if (e.wiki) links.push(ext(wikiUrl(e.wiki), tr("wiki")));
     if (e.imslp) links.push(ext(imslpUrl(e.imslp), type === "treatises" ? tr("imslp_t") : type === "repertoire" ? tr("imslp") : "IMSLP"));
     if (e.listen) links.push(ext(listenUrl(e.listen), tr("listen")));
-    if (links.length) main += `<div class="related"><div><h4>${esc(tr("sources"))}</h4><div class="small sans" style="display:flex;flex-wrap:wrap;gap:6px 16px">${links.join("")}</div></div></div>`;
+    if (links.length) main += `<div class="related"><div><h4>${esc(tr("further"))}</h4><div class="small sans" style="display:flex;flex-wrap:wrap;gap:6px 16px">${links.join("")}</div></div></div>`;
 
     const actions = `<div class="entry-actions">
         <a href="map.html?focus=${e.id}">◎ ${esc(tr("show_on_map"))}</a>
@@ -298,6 +352,10 @@
     if (el.tagName === "DETAILS") {
       el.open = true;
       el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
+    } else {
+      // e.g. a reference note (#entry-ref-2) inside a closed entry
+      const d = el.closest("details"); if (d) d.open = true;
+      el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
     }
     setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 30);
   }
@@ -347,10 +405,13 @@
       <nav class="history-toc">${list.map((c) => `<a href="#${c.id}">${esc(loc(c.title))}</a>`).join("")}</nav>
       ${list.map((c) => {
         const ids = [...new Set(refsIn(c.body))].filter((id) => index[id]).sort(byStart);
+        const notes = newNotes(c.id);
+        const body = paras(loc(c.body), notes);
         return `<section class="chapter" id="${c.id}">
           <div class="dates">${esc(c.dates)}</div><h2>${esc(loc(c.title))}</h2>
           ${c.image ? photo(c.image, "chapter-photo") : ""}
-          ${paras(loc(c.body))}
+          ${body}
+          ${refsHTML(notes)}
           <div class="chips">${ids.map(chip).join("")}</div>
         </section>`;
       }).join("")}
@@ -441,37 +502,68 @@
 
 
   /* ---------------- Sources ---------------- */
+  // Every text-bearing unit of the site: entries, history chapters and "How they played" chapters.
+  function textUnits() {
+    const units = Object.values(index).map(({ e, type }) => ({
+      id: e.id, start: e.start || 0, chip: chip(e.id),
+      texts: ["description", "bio", "tips", "curio", "body"].map((f) => loc(e[f])).filter(Boolean)
+    }));
+    [["history", H.history], ["playing", H.playing]].forEach(([key, list]) => (list || []).forEach((c) => units.push({
+      id: c.id, start: 0, chip: `<a class="chip" href="${key}.html#${c.id}">${esc(loc(c.title))}</a>`, texts: [loc(c.body)]
+    })));
+    return units;
+  }
+
   function renderSources(app) {
-    const h4 = (t) => `<h2 style="margin-top:36px">${esc(t)}</h2>`;
-    const refs = (H.references || []).map((r) => `<li style="margin-bottom:12px">
-        <a href="${r.url}" target="_blank" rel="noopener"><em>${esc(r.title)}</em> ↗</a>${r.author ? `, ${esc(r.author)}` : ""}${r.year ? `, ${esc(r.year)}` : ""}
-        <div class="small muted">${esc(loc(r.note))}</div></li>`).join("");
+    const h2 = (t, id) => `<h2${id ? ` id="${id}"` : ""} style="margin-top:36px">${esc(t)}</h2>`;
+    const units = textUnits();
+    const citedIn = {};   // source key -> set of unit chips
+    const needs = [];     // units with a {{?}} marker
+    const uncited = [];   // units with no citation at all
+    units.forEach((u) => {
+      const cs = u.texts.flatMap(citesIn);
+      cs.forEach((c) => { if (c.key !== "?") (citedIn[c.key] = citedIn[c.key] || new Map()).set(u.id, u.chip); });
+      if (cs.some((c) => c.key === "?")) needs.push(u);
+      else if (!cs.length) uncited.push(u);
+    });
+    const used = (key) => citedIn[key] ? `<div class="chips" style="margin-top:4px"><span class="small muted sans">${esc(tr("src_used_in"))} (${citedIn[key].size}):</span>${[...citedIn[key].values()].join("")}</div>` : "";
+    const bibList = (kind) => Object.keys(H.bib).filter((k) => H.bib[k].kind === kind)
+      .sort((a, b) => (citedIn[b] ? citedIn[b].size : 0) - (citedIn[a] ? citedIn[a].size : 0))
+      .map((k) => `<li id="src-${k}" style="margin-bottom:14px">${fullCite(k)}
+        ${H.bib[k].note ? `<div class="small muted">${esc(loc(H.bib[k].note))}</div>` : ""}${used(k)}</li>`).join("");
 
     const treatises = entriesOf("treatises").map((e) => {
       const author = e.authorName || (e.author ? index[e.author].e.name : "");
       return `<li>${esc(author)}, <a class="xref t-treatises" href="${href(e.id)}"><em>${esc(e.name)}</em></a> (${esc(e.place)}, ${e.start})</li>`;
     }).join("");
 
-    // every source cited in any entry, merged by URL, with the entries that use it
+    // web pages linked from the entries for further reading, merged by URL
     const byUrl = new Map();
     Object.values(index).forEach(({ e }) => (e.sources || []).forEach((src) => {
       if (!byUrl.has(src.url)) byUrl.set(src.url, { label: src.label, url: src.url, ids: [] });
       byUrl.get(src.url).ids.push(e.id);
     }));
-    const cited = [...byUrl.values()].sort((a, b) => a.label.localeCompare(b.label)).map((src) =>
-      `<li style="margin-bottom:10px"><a href="${src.url}" target="_blank" rel="noopener">${esc(src.label)} ↗</a>
-        <div class="chips" style="margin-top:4px"><span class="small muted sans">${esc(tr("src_used_in"))}:</span>${src.ids.sort(byStart).map(chip).join("")}</div></li>`).join("");
+    const pages = [...byUrl.values()].sort((a, b) => a.label.localeCompare(b.label)).map((src) =>
+      `<li style="margin-bottom:8px"><a href="${src.url}" target="_blank" rel="noopener">${esc(src.label)} ↗</a>
+        <span class="chips" style="margin-left:6px">${src.ids.sort(byStart).map(chip).join("")}</span></li>`).join("");
 
-    const pending = Object.keys(index).filter((id) => !(index[id].e.sources || []).length).sort(byStart);
+    const toCheck = Object.keys(H.bib).filter((k) => H.bib[k].verify && citedIn[k]).map((k) => `<li>${fullCite(k)}</li>`).join("");
 
-    app.innerHTML = `<div class="wrap">
+    app.innerHTML = `<div class="wrap sources-page">
       ${pageHead(null, tr("nav_sources"), tr("intro_sources"))}
-      <section class="box box-curio" style="max-width:760px"><h4>${esc(tr("src_method"))}</h4><p>${esc(tr("src_method_text"))}</p></section>
-      ${h4(tr("src_general"))}<ul style="max-width:760px">${refs}</ul>
-      ${h4(tr("src_primary"))}<ul style="max-width:760px">${treatises}</ul>
-      ${h4(tr("src_by_entry"))}<ul style="max-width:760px;padding-left:1.1em">${cited}</ul>
-      ${pending.length ? `${h4(tr("src_pending"))}<p class="muted" style="max-width:760px">${esc(tr("src_pending_note"))}</p><div class="chips">${pending.map(chip).join("")}</div>` : ""}
+      <section class="box box-curio" style="max-width:760px"><h4>${esc(tr("src_method"))}</h4>${paras(tr("src_method_text"))}</section>
+      ${h2(tr("src_secondary"), "secondary")}<ul class="biblio">${bibList("secondary")}</ul>
+      ${h2(tr("src_primary"), "primary")}<p class="muted" style="max-width:760px">${esc(tr("src_primary_note"))}</p>
+      <ul class="biblio">${bibList("primary")}</ul><ul style="max-width:760px">${treatises}</ul>
+      ${h2(tr("src_online"), "online")}<p class="muted" style="max-width:760px">${esc(tr("src_online_note"))}</p>
+      <ul class="biblio">${bibList("online")}</ul>
+      <details style="max-width:760px"><summary class="sans small">${esc(tr("src_pages"))}</summary><ul class="small">${pages}</ul></details>
+      ${h2(tr("src_verify"), "verify")}<p class="muted" style="max-width:760px">${esc(tr("src_verify_note"))}</p>
+      ${needs.length ? `<h4>${esc(tr("src_needs"))}</h4><div class="chips">${needs.map((u) => u.chip).join("")}</div>` : ""}
+      ${uncited.length ? `<h4>${esc(tr("src_uncited"))}</h4><div class="chips">${uncited.map((u) => u.chip).join("")}</div>` : ""}
+      ${toCheck ? `<h4>${esc(tr("src_pages_pending"))}</h4><ul class="small">${toCheck}</ul>` : ""}
     </div>`;
+    openFromHash();
   }
 
   /* ---------------- Boot ---------------- */

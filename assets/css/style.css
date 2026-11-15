@@ -290,3 +290,17 @@ aside .photo img { max-height: 420px; object-fit: contain; }
 .photo .credit { display: block; opacity: .8; font-size: .66rem; margin-top: 2px; }
 .chapter-photo { max-width: 640px; margin: 4px 0 18px; }
 .chapter-photo img { max-height: 420px; object-fit: contain; }
+
+/* ---------- Citations ---------- */
+sup.cite { font-family: var(--sans); font-size: .68em; line-height: 0; margin-left: 1px; color: var(--muted); white-space: nowrap; }
+sup.cite a { color: inherit; text-decoration: none; padding: 0 1px; }
+sup.cite a:hover, sup.cite a:focus-visible { color: var(--ink); text-decoration: underline; }
+sup.cite .cite-needed { color: #a0522d; font-weight: 600; }
+.refs { margin-top: 16px; }
+.refs h4 { font-family: var(--sans); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 4px; color: var(--muted); }
+.refs ol { margin: 0; padding-left: 1.6em; font-size: .88rem; line-height: 1.45; }
+.refs li { margin-bottom: 4px; padding: 2px 4px; border-radius: 3px; }
+.refs li a { text-decoration: none; }
+.refs li:target, .refs li.flash { background: color-mix(in srgb, var(--line) 60%, transparent); }
+.biblio { max-width: 760px; padding-left: 1.1em; }
+.sources-page h4 { margin: 20px 0 6px; }
