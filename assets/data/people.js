@@ -32,7 +32,7 @@ HFP.people = [
     place: "Lyon, France",
     tagline: "Among the first flute makers in recorded history, and the makers of more surviving Renaissance flutes than anyone else.",
     bio:
-      "Michaud Raffin of Lyon is listed as a flutist in 1512 and as a maker of flutes in 1523, which places him among the first flute makers in recorded history. His son Claude continued the trade. {{powell2002, ch. 2}} Claude was famous enough to be praised by the poet Clément Marot. {{?}}\n\n" +
+      "Michaud Raffin of Lyon is listed as a flutist in 1512 and as a maker of flutes in 1523, which places him among the first flute makers in recorded history. His son Claude continued the trade. {{powell2002, ch. 2}}\n\n" +
       "More of the surviving [[renaissance-flute|Renaissance flutes]] were made by Claude Rafi than by any other identifiable maker, so his instruments are key models for today's copies. The Rafis worked at a time when the flute was the most popular instrument for amateurs to play together in consort. {{powell2002, ch. 2}}",
     wiki: "Claude Rafi",
     sources: [{ label: "flutehistory.com: The Rafis", url: FH + "Instrument/Makers/Rafis/index.php3" }],
@@ -76,8 +76,8 @@ HFP.people = [
     place: "Nuremberg, Germany",
     tagline: "Leading Nuremberg woodwind maker of the high Baroque.",
     bio:
-      "Son of Johann Christoph Denner, who is traditionally credited with developing the clarinet, Jacob Denner ran one of the most important woodwind workshops in Nuremberg, a city with a long instrument-making tradition. {{?}}\n\n" +
-      "He made recorders, oboes and transverse flutes of very high quality. His surviving [[baroque-four-piece|traversos]] are studied and copied by modern makers. {{brown2002, pp. 20, 35; ?}}\n\n" +
+      "Jacob Denner (1681–1735) was probably a son of Johann Christoph Denner, whom the Nuremberg historian Doppelmayr credited in 1730 with inventing the clarinet. {{brown2002, p. 20; eb1911, vol. 6, 'Clarinet'; doppelmayr1730, p. 305}}\n\n" +
+      "His surviving [[baroque-four-piece|traversos]] are studied and copied by modern makers, and a model after Denner is a natural choice for the main German baroque repertoire. {{brown2002, pp. 16, 35}}\n\n" +
       "A recently rediscovered Denner flute has four interchangeable middle joints: the shortest plays well at about a′ = 415, and the longest turns it into a [[flute-damour|flûte d'amour]]. Another Denner flute, with alternative feet for d′ and c′, is thought to be the earliest surviving flute that reaches c′. {{brown2002, p. 20}}",
     curio: "A contemporary wrote that Denner's flutes were famous throughout the world, reaching Constantinople and Isfahan and even, through missionaries, China. {{brown2002, p. 35}}",
     wiki: "Jacob Denner",
@@ -87,12 +87,12 @@ HFP.people = [
     id: "palanca",
     name: "Carlo Palanca",
     roles: ["maker"],
-    start: 1690, end: 1783, dates: "c.1690–1783",
+    start: 1691, end: 1773, dates: "c.1691–1773",
     place: "Turin, Italy",
-    tagline: "The great Italian traverso maker of the 18th century.",
+    tagline: "Turin woodwind maker whose traversos are copied by makers today.",
     bio:
-      "Carlo Palanca worked in Turin, capital of the Kingdom of Sardinia, and was one of the leading Italian woodwind makers of the 18th century. His long career spanned the late Baroque and the early Classical era. {{?}}\n\n" +
-      "His four-piece [[baroque-four-piece|traversos]], with their warm and flexible sound, are much admired by baroque flutists today and are among the most popular models for modern copies. {{brown2002, p. 36; ?}}",
+      "Carlo Palanca was a woodwind maker in Turin; recorders as well as flutes by him survive. A recent survey of Italian baroque recorders gives his dates as c.1691–1773. {{braga2012, table 1}}\n\n" +
+      "His four-piece [[baroque-four-piece|traversos]] are among the 18th-century models that modern makers copy. {{brown2002, p. 36}}",
     wiki: "Carlo Palanca",
     links: []
   },
@@ -185,10 +185,10 @@ HFP.people = [
     roles: ["maker"],
     start: 1726, end: 1806, dates: "1726–1806",
     place: "London, England",
-    tagline: "London's leading flute maker and an early champion of the keyed flute.",
+    tagline: "London flute maker who patented metal conical valves for the keys in 1785.",
     bio:
-      "Richard Potter was the leading English flute maker of the late 18th century. In 1785 he patented several improvements, including keys closed by conical metal plugs instead of leather pads and a tuning register in the foot joint. {{?}}\n\n" +
-      "His workshop was among the first to produce four- and six-keyed flutes in large numbers, and London, where makers first added keys in the late 1750s, was the laboratory of the [[classical-keyed-flute|keyed flute]]. His son William Henry Potter carried on the business. {{?}}\n\n" +
+      "Richard Potter was a London flute maker. In 1785 he patented metal conical valves for the keys, closing holes lined with metal tubes (an idea first used by J. F. Boie of Göttingen), and in the same year he improved the tuning slide in the head joint and the register in the foot. {{eb1911, vol. 10, 'Flute'}}\n\n" +
+      "London, where makers first added keys in the late 1750s, was the laboratory of the [[classical-keyed-flute|keyed flute]] {{powell2002, ch. 6}}, and Tromlitz, writing in 1800, seems to credit Potter with inventing the F, G♯ and B♭ keys. {{eb1911, vol. 10, 'Flute'}}\n\n" +
       "Potter's keys were sealed by conical pewter plugs rather than leather pads, one of the many English patents of the time. His flutes are among the few 18th-century keyed models copied today. {{brown2002, pp. 21–22, 36}}",
     wiki: "Richard Potter flute maker",
         image: { wide: true, src: "assets/img/hfp/p-potter-flute.jpg", caption: "Boxwood keyed flute by Richard Potter, London, c. 1785–1806", credit: "public domain", url: "https://commons.wikimedia.org/wiki/File:Boxwood_Flute_of_Dr._John_B._McDowell,_made_by_Richard_Potter.jpg" },
@@ -202,8 +202,8 @@ HFP.people = [
     place: "Joinville (Champagne) → Paris",
     tagline: "Flutist, bassoonist and composer: a central figure of French flute playing around 1800.",
     bio:
-      "Flutist, bassoonist and prolific composer, Devienne played at the Paris Opéra and the Concert Spirituel and, after the Revolution, in the band of the National Guard. His opera *Les Visitandines* (1792) was a great success. {{?}}\n\n" +
-      "When the Paris Conservatoire was founded in 1795 he became one of its first professors. His [[devienne-methode|Nouvelle méthode]] (1794) and his concertos made him the central figure of French flute playing around 1800. He died at 44 in the asylum at Charenton. {{brown2002, pp. 11, 22; ?}}",
+      "Devienne was trained by his brother, played in the band of the Gardes-Suisses and in 1788 joined the orchestra of the Théâtre de Monsieur as a bassoonist. Flutist, bassoonist and prolific composer, he also wrote operas: *Les Visitandines* (Théâtre Feydeau, 1792) was a lasting success. {{fetis1866, vol. 3, s.v. 'Devienne'}}\n\n" +
+      "He taught at the Paris Conservatoire until the reforms of 1802, and his [[devienne-methode|Nouvelle méthode]] (1794) marks, with Hugot and Wunderlich's method of 1804, the late arrival of the keyed flute in France. {{brown2002, p. 11}} Overwork affected his mind; he was confined at Charenton, where he died on 5 September 1803. {{fetis1866, vol. 3, s.v. 'Devienne'}}",
     curio: "Devienne's method acknowledged the new keys on the flute, but he never used them himself. He preferred a mellow sound and condemned hard, oboe-like tones. {{brown2002, p. 11}}",
     wiki: "François Devienne",
     imslp: "Devienne, François",
@@ -507,9 +507,9 @@ HFP.people = [
     roles: ["maker"],
     start: 1713, end: 1754, dates: "1692–1754",
     place: "London",
-    tagline: "Leading London woodwind maker, among the first to extend the flute down to low C.",
+    tagline: "London woodwind maker, said by his successors to have extended the flute down to low C.",
     bio:
-      "Son of a woodwind maker of the same name, Thomas Stanesby junior was one of the most respected London makers of recorders, oboes and flutes in the first half of the 18th century. Large flutes by him survive, including instruments pitched like a [[flute-damour|flûte d'amour]]. {{brown2002, pp. 20, 33; ?}}\n\n" +
+      "Thomas Stanesby junior was a London woodwind maker, one of the renowned makers whose large flutes survive, including instruments pitched like a [[flute-damour|flûte d'amour]]. {{brown2002, p. 33}}\n\n" +
       "When John Mason advertised a 'new' foot joint down to c′ in 1756, Stanesby's successors replied that he had already made such extensions about twenty years before, just as John Just Schuchart's successors claimed the same for their master. Copies of Stanesby's flutes are popular today. {{brown2002, pp. 20, 36}}",
         links: ["baroque-four-piece"]
   },
@@ -533,8 +533,7 @@ HFP.people = [
     place: "Paris",
     tagline: "Paris workshop famous for its simple-system flutes, where Louis Lot trained, and the first in France to build Boehm flutes.",
     bio:
-      "Clair Godfroy, called 'aîné' (the elder), ran one of the finest woodwind workshops in Paris. His ten-keyed simple-system flutes are among the best French flutes of the early 19th century, and [[lot|Louis Lot]] learned his trade there as his apprentice. {{brown2002, pp. 25–26}} The Godfroys, like the [[hotteterre|Hotteterres]] and the [[thomas-lot|Lots]], came from the woodwind-making village of La Couture-Boussey in Normandy. {{?}}\n\n" +
-      "The workshop built mostly simple-system flutes: one-keyed and four- to five-keyed flutes in boxwood, ebony or rosewood, piccolos and even walking-stick flutes, and, by the 1830s, eight- and ten-keyed flutes in rosewood with silver keys for the Paris virtuosos of [[tulou|Tulou]]'s generation. Its flutes are stamped 'GODFROY / AINE' with a sun and a star, or later 'CLAIR / Godfroy aîné / A PARIS'. {{?}}\n\n" +
+      "Clair Godfroy, called 'aîné' (the elder), ran one of the finest woodwind workshops in Paris. His ten-keyed simple-system flutes are among the best French flutes of the early 19th century, and [[lot|Louis Lot]] learned his trade there as his apprentice. {{brown2002, pp. 25–26}}\n\n" +
       "Boehm flutes were the work of the next generation. Lot's partner was Vincent Hypolite Godfroy, and in 1837 the firm of Godfroy & Lot produced the first French commercial version of Boehm's [[boehm-1832|ring-key flute]]; ten years later it bought the French rights to the [[boehm-1847|cylinder flute]]. {{brown2002, p. 27; powell2002, ch. 11}} The history of both families is told in Tula Giannini's *Great Flute Makers of France* (1993). {{giannini1993b}}",
         image: { wide: true, src: "assets/img/hfp/flute-godfroy-8keys.jpg", caption: "Eight-keyed flute in rosewood with silver keys by Clair Godfroy aîné, Paris, stamped 'GODFROY / AINE' with a sun and a star", credit: "Musée de la musique, Philharmonie de Paris (E.973.4.2) · CC BY-NC-SA 4.0", url: "http://collectionsdumusee.philharmoniedeparis.fr/doc/MUSEE/0160181" },
     links: ["boehm-1832", "boehm-1847", "lot", "tulou"]
@@ -560,7 +559,7 @@ HFP.people = [
     tagline: "The first American maker of Boehm flutes.",
     bio:
       "Badger began making [[boehm-1832|Boehm flutes]] in 1845, bringing the new system to the United States only a few years after Paris and London. He later built [[boehm-1847|cylinder flutes]] too, in wood and metal. {{brown2002, p. 27; powell2002, ch. 11}}\n\n" +
-      "His work prepared the ground for the great American flute industry that grew up in Boston at the end of the century with makers such as [[haynes|William S. Haynes]]. {{?}}",
+      "As no patent protected Boehm's cylinder flute in the United States, Badger also made unlicensed cylinder flutes after 1847. {{powell2002, ch. 11}}",
     wiki: "Alfred G. Badger",
         links: ["boehm-1832"]
   },
@@ -572,7 +571,7 @@ HFP.people = [
     place: "Terni → Rome → London → Florence",
     tagline: "Italian virtuoso who gave the Boehm flute its B♭ thumb key.",
     bio:
-      "Briccialdi was one of the most famous Italian flutists of the 19th century, touring widely as a virtuoso and composing operatic fantasies, studies and chamber music for the flute. {{?}}\n\n" +
+      "Born in Terni in 1818, Briccialdi was appointed flute teacher by the Accademia di Santa Cecilia in Rome at seventeen, and toured as a virtuoso in Italy, Vienna and later America, composing concertos, operatic fantasies and salon pieces for the flute. {{fetis1866, vol. 2, s.v. 'Briccialdi'; pougin1878, vol. 1, s.v. 'Briccialdi'}}\n\n" +
       "His lasting gift to every flutist is the thumb key for B♭ (B♭ above B♮), which replaced [[boehm|Boehm]]'s own arrangement and is standard on almost all [[boehm-1847|modern flutes]]. Changing system was a huge risk for an established virtuoso, yet Briccialdi gave an acclaimed concert only two weeks after receiving his new closed-G♯ Boehm flute. {{brown2002, p. 28}}",
     wiki: "Giulio Briccialdi",
         image: { src: "assets/img/hfp/p-briccialdi.jpg", caption: "Giulio Briccialdi, lithograph by Josef Kriehuber, 1842", credit: "Archivio Storico Ricordi · CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Giulio_Baldassarre_Briccialdi_by_Joseph_Kriehuber_(1842)_-_Archivio_Storico_Ricordi_ICON010461.jpg" },
@@ -611,10 +610,10 @@ HFP.people = [
     roles: ["maker"],
     start: 1807, end: 1828, dates: "1772–1828",
     place: "Vienna",
-    tagline: "The leading Viennese woodwind maker of Beethoven's and Schubert's time.",
+    tagline: "Viennese woodwind maker whose flutes Fürstenau strongly recommended.",
     bio:
-      "Koch ran one of the most important woodwind workshops in Vienna in the first decades of the 19th century, making flutes, oboes, clarinets and the csakan, a walking-stick flute popular with Viennese amateurs. {{?}}\n\n" +
-      "His flutes are classic examples of the [[viennese-flute|Viennese flute]]: conical, with many keys and often a long foot joint reaching below the normal low C. [[fuerstenau|Fürstenau]], the great Dresden virtuoso, strongly recommended flutes by Koch or by [[liebel|Liebel]], and Viennese instruments of this type were heard in the first performances of Beethoven's and Schubert's music. {{brown2002, p. 26; ?}}",
+      "Stephan Koch was a Viennese woodwind maker. With Ziegler's, his flutes represent the Viennese type that, alongside the Meyer flute, remained the usual orchestral flute in German-speaking countries through much of the 19th century. {{powell2002, ch. 10}}\n\n" +
+      "Viennese flutes of this kind had a penetrating tone and often a foot reaching below the normal low C, and were heard in the first performances of Beethoven's symphonies. {{powell2002, chs. 8, 10}} [[fuerstenau|Fürstenau]], the great Dresden virtuoso, strongly recommended flutes by Koch or by [[liebel|Liebel]]. {{brown2002, p. 26}}",
     sources: [{ label: "flutehistory.com: Nineteenth-century flutes", url: "http://www.flutehistory.com/Instrument/19C.php3" }],
     links: ["viennese-flute", "german-keyed-flute"]
   }

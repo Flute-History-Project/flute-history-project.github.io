@@ -80,6 +80,7 @@
   function parseCite(body) {
     if (body.trim() === "?") return [{ key: "?" }];
     return body.split(";").map((s) => {
+      if (s.trim() === "?") return { key: "?" };
       const m = s.trim().match(/^([a-z0-9]+)\s*(?:,\s*(.+))?$/i);
       return m ? { key: m[1], loc: (m[2] || "").trim() } : null;
     }).filter(Boolean);
@@ -107,7 +108,7 @@
   function fullCite(key, locator) {
     const b = H.bib[key];
     if (!b) return esc(key) + (locator ? ", " + esc(locator) : "");
-    const pub = [b.place && b.publisher ? `${b.place}: ${b.publisher}` : b.place || b.publisher, b.year].filter(Boolean).join(", ");
+    const pub = [b.edition, b.place && b.publisher ? `${b.place}: ${b.publisher}` : b.place || b.publisher, b.year, b.journal ? "" : b.volume].filter(Boolean).join(", ");
     let s = b.author ? esc(b.author) + ", " : "";
     if (b.journal) s += `‘${esc(b.title)}’, <em>${esc(b.journal)}</em> ${esc(b.volume || "")} (${esc(b.year)})${b.pages ? ", " + esc(b.pages) : ""}`;
     else if (b.inBook) s += `‘${esc(b.title)}’, in <em>${esc(b.inBook)}</em> (${esc(pub)})${b.pages ? ", " + esc(b.pages) : ""}`;

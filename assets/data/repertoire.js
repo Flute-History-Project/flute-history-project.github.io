@@ -19,8 +19,8 @@ HFP.repertoire = [
     scoring: "Four-part consort",
     flutes: ["renaissance-flute"],
     description:
-      "In 1533 the Paris printer Pierre Attaingnant published 27 four-part chansons with a table marking which ones suit the 'German flute' (a), which suit the recorder (b), and which suit both. It is one of the earliest printed pieces of evidence for music chosen with the [[renaissance-flute|flute consort]] in mind. {{?}}",
-    tips: "Use a bass flute for the lowest line and tenors for the others. Choose the chansons marked 'a' first: consort flutes sound best in the upper part of their range, so transpose if needed, as players did at the time. {{?}}",
+      "In April 1533 the Paris printer Pierre Attaingnant published *Vingt et sept chansons musicales à quatre parties*, marking in the table of contents the chansons best suited to the 'German flute' (a), to the nine-holed flute, that is the recorder (b), and to both (ab): early printed evidence of music chosen with the [[renaissance-flute|flute consort]] in mind. {{attaingnant1533; heartz1969}}",
+    tips: "Use a bass flute for the lowest line and tenors for the others, and start with the chansons marked 'a'. Consort music was often transposed to suit the instruments, so transpose if needed. {{powell2002, chs. 2–3}}",
     imslp: "Attaingnant Vingt et sept chansons",
     links: ["agricola-1529"]
   },
@@ -35,9 +35,9 @@ HFP.repertoire = [
     scoring: "Flute and basso continuo",
     flutes: ["hotteterre-flute", "baroque-four-piece"],
     description:
-      "Suites of dance movements and character pieces with carefully marked ornaments, written by the author of the [[hotteterre-principes|Principes]] as a companion to his method. They are the heart of the early French flute repertoire. {{?}}\n\n" +
+      "Suites of dance movements and character pieces with carefully marked ornaments, by the author of the [[hotteterre-principes|Principes]]; the second edition (1715) adds a preface on how to play the ornaments. {{brown2002, pp. 9, 121}}\n\n" +
       "The book exists in two strikingly different printings. The first edition (1708) was printed from movable type, with clumsy, separately printed notes; the second (1715) was engraved, clearer and more elegant, and its preface adds advice on performance. Comparing the Allemande 'La Fontainebleau' of the E minor Suite in both shows how much music printing improved in a few years. {{brown2002, pp. 5–7, 121}}\n\nReading the facsimile takes a little practice. The flute part uses the French violin clef, with g′ on the bottom line; an accidental applies only to immediately repeated notes; a sharp sign can cancel a flat; a small 'custos' at the end of a line announces the next note; and movement titles often appear below the music. {{brown2002, pp. 5–6}}",
-    tips: "Ideal on a three-piece flute at low French pitch (a′ ≈ 392). Read the ornament signs with the Principes in hand, play stepwise quavers unequally (notes inégales), and keep the tone soft and close. {{?}}\n\n" +
+    tips: "Ideal on a three-piece flute at low French pitch (a′ ≈ 392). Read the ornament signs with the Principes in hand, play stepwise quavers unequally (notes inégales), and keep the tone soft and close. {{brown2002, pp. 9, 35, 121}}\n\n" +
       "Use the 1715 edition if you can, and read the [[hotteterre-preluder|L'Art de préluder]] for its examples of notes inégales. {{brown2002, p. 9}}",
     imslp: "Hotteterre Pièces pour la flûte traversière Op.2",
         image: { src: "assets/img/hfp/r-hotteterre-op2.jpg", caption: "Title page of the Premier livre de pièces, Op. 2, engraved edition of 1715", credit: "Bibliothèque nationale de France (Gallica) · public domain", url: "https://commons.wikimedia.org/wiki/File:Premier_livre_de_pi%C3%A8ces_pour_la_fl%C3%BBte_traversi%C3%A8re_et_autres_instruments,_avec_la_basse..._Oeuvre_second._Nouvelle_%C3%A9d._grav%C3%A9e_sur_l%27imprim%C3%A9,_et_augment%C3%A9e_de_plusieurs_agr%C3%A9ments,_et_d%27une..._-_btv1b108626249_(01_of_48).jpg" },
@@ -48,14 +48,14 @@ HFP.repertoire = [
     composer: "Johann Sebastian Bach",
     name: "Partita in A minor for solo flute, BWV 1013",
     short: "Bach, Partita BWV 1013",
-    start: 1720, dates: "c.1718–1723",
-    place: "Köthen",
+    start: 1725, dates: "manuscript copy, probably 1720s",
+    place: "unknown",
     kind: "piece",
     scoring: "Solo flute",
     flutes: ["baroque-four-piece", "hotteterre-flute"],
     description:
-      "Four dance movements (Allemande, Corrente, Sarabande, Bourrée anglaise) that survive in a single manuscript copy titled 'Solo pour la flûte traversière'. The Allemande runs without a single rest, so the player must find their own breaths. {{?}}",
-    tips: "Plan breaths by leaving out notes of the implied bass line. The high a‴ at the end of the Allemande is a real challenge on a one-keyed flute, so practise it on its own. Enjoy the colours of the forked notes rather than trying to hide them. {{?}}",
+      "Four dance movements (Allemande, Corrente, Sarabande, Bourrée anglaise) that survive in a single 18th-century manuscript copy, probably made in the 1720s and titled 'Solo p[our une] flûte traversière par J. S. Bach'; the name 'Partita' comes from modern editors. The Allemande runs without a single rest, so the player must find their own breaths. {{bachP968; henle457}}",
+    tips: "Plan breaths by leaving out notes of the implied bass line. The high a‴ at the end of the Allemande is a real challenge on a one-keyed flute, so practise it on its own. {{brown2002, p. 19}} Enjoy the colours of the forked notes rather than trying to hide them.",
     imslp: "Partita in A minor BWV 1013",
     links: ["quantz-versuch"]
   },
@@ -70,8 +70,8 @@ HFP.repertoire = [
     scoring: "Flute and basso continuo",
     flutes: ["baroque-four-piece"],
     description:
-      "Six sonatas by [[blavet|Blavet]] that mix Italian sonata movements with French character pieces bearing titles. Written for amateurs, they stay in easy keys, but they show the meeting of the two national styles that defined flute playing in Paris in the 1730s. {{?}}",
-    tips: "A four-piece flute in the style of [[thomas-lot|Thomas Lot]], Blavet's own maker, is the natural choice. Change your ornament style from movement to movement: French agréments in the character pieces, freer Italian embellishment in the slow movements. {{?}}",
+      "Six sonatas by [[blavet|Blavet]] whose title, *Sonates mêlées de pièces*, announces the mix of Italian sonata movements with French character pieces bearing titles. {{blavet1732}} Written for amateurs, they stay in easy keys. {{powell2002, chs. 4–5}}",
+    tips: "A four-piece flute in the style of [[thomas-lot|Thomas Lot]], who built flutes for Blavet, is the natural choice. {{powell2002, ch. 4}} Change your ornament style from movement to movement: French agréments in the character pieces, freer Italian embellishment in the slow movements.",
     imslp: "Blavet Sonates mêlées de pièces Op.2",
     image: { src: "assets/img/hfp/r-blavet-op2.jpg", caption: "Title page of Blavet's Sonates mêlées de pièces, Op. 2 (Paris, 1732)", credit: "Bibliothèque nationale de France (Gallica) · public domain", url: "https://commons.wikimedia.org/wiki/File:Sonates_mel%C3%A9es_de_pi%C3%A8ces_pour_la_fl%C3%BBte_traversi%C3%A8re_avec_la_basse...._Grav%C3%A9es_par_Dumont._Oeuvre_II_-_btv1b9078980v_(02_of_43).jpg" },
     links: []
@@ -87,8 +87,8 @@ HFP.repertoire = [
     scoring: "Solo flute",
     flutes: ["baroque-four-piece"],
     description:
-      "Twelve short pieces that suggest harmony and counterpoint on a single line, mixing fugues, dances and free preludes. Telemann engraved and published them himself in Hamburg. {{?}}",
-    tips: "Shape the implied voices with dynamics and timing. The fantasias move through many keys, which makes them an excellent way to learn the colours of cross-fingerings on the traverso. {{?}}",
+      "Twelve short pieces that suggest harmony and counterpoint on a single line, mixing fugues, dances and free preludes. Telemann published them himself in Hamburg around 1732–33; a single copy of the first edition survives. {{telemann1733; henle556}}",
+    tips: "Shape the implied voices with dynamics and timing. The fantasias move through many keys, which makes them an excellent way to learn the colours of cross-fingerings on the traverso.",
     imslp: "12 Fantasias for Flute without Bass TWV 40:2-13",
     links: ["quantz-versuch"]
   },
@@ -103,8 +103,8 @@ HFP.repertoire = [
     scoring: "Flute, violin, viola da gamba (or cello) and continuo",
     flutes: ["baroque-four-piece"],
     description:
-      "During his visit to Paris in 1737–38 Telemann published these six quartets and played them with a star cast that included [[blavet|Michel Blavet]] on the flute. Telemann himself reported how much they impressed the Paris audience. {{?}}",
-    tips: "A conversation among equals: the flute is one voice among four, not a soloist. Blend with the violin in unisons and let the gamba lead when it has the theme. {{?}}",
+      "During his visit to Paris in 1737–38 Telemann published these six quartets. In his autobiography he recalled how they were played by Blavet (flute), Guignon (violin), Forqueray the younger (viola da gamba) and Édouard (cello), and how much they impressed their listeners. {{mattheson1740}}",
+    tips: "A conversation among equals: the flute is one voice among four, not a soloist. Blend with the violin in unisons and let the gamba lead when it has the theme.",
     imslp: "Nouveaux quatuors en six suites Telemann",
     image: { src: "assets/img/hfp/r-telemann-quatuors.jpg", caption: "Title page of the Nouveaux quatuors (Paris edition)", credit: "Bibliothèque nationale de France (Gallica) · public domain", url: "https://commons.wikimedia.org/wiki/File:Nouveaux_quatuors_en_six_suites_a_une_flute_traversi%C3%A8re,_un_violon,_une_basse_de_viole_ou_violoncel,_et_basse_continue...,_grav%C3%A9s_par_Denise_Vincent..._-_btv1b9066215z_(002_of_142).jpg" },
     links: []
@@ -120,8 +120,8 @@ HFP.repertoire = [
     scoring: "Solo flute",
     flutes: ["baroque-four-piece", "classical-keyed-flute"],
     description:
-      "Written while C.P.E. Bach was harpsichordist to Frederick the Great, at the same court as [[quantz|Quantz]]. This three-movement sonata is a manifesto of the 'sensitive style' (*empfindsamer Stil*), full of sudden contrasts, sighs and wide leaps. It was published in 1763. {{?}}",
-    tips: "At Frederick's court it would have been played on a Quantz-type flute; a slimmer one-keyed classical flute suits the 1763 printed version well too. Let the different colours of the low and high registers become part of the expression rather than evening them out. {{?}}",
+      "Written around 1747 in Berlin, while C. P. E. Bach was harpsichordist to Frederick the Great, at the same court as [[quantz|Quantz]]. A three-movement sonata full of sudden contrasts, sighs and wide leaps, it was printed in 1763 in the anthology *Musikalisches Mancherley*. {{cpe1763}}",
+    tips: "At Frederick's court it would have been played on a Quantz-type flute {{brown2002, p. 17}}; a slimmer one-keyed classical flute suits the 1763 printed version well too. Let the different colours of the low and high registers become part of the expression rather than evening them out.",
     imslp: "Flute Sonata in A minor Wq.132",
     curio: "Quantz's notebook of studies, the Solfeggi, shows how he articulated passages from C. P. E. Bach's music, a rare glimpse of real 18th-century performance. {{brown2002, p. 61}}",
     links: []
@@ -137,8 +137,8 @@ HFP.repertoire = [
     scoring: "Flute and orchestra",
     flutes: ["classical-keyed-flute"],
     description:
-      "Commissioned by the Dutch amateur flutist Ferdinand De Jean during Mozart's stay in Mannheim, where his friend Johann Baptist Wendling was principal flute. Mozart complained in a letter about writing for the flute, yet the concerto became one of the cornerstones of the repertoire. {{?}}",
-    tips: "In Mannheim in 1778 keyed flutes were still rare on the Continent: the natural choice is a one-keyed classical flute (Grenser type, a′ ≈ 430), possibly with a few extra keys. No original cadenzas survive, so write your own in period style. {{?}}\n\n" +
+      "Commissioned in Mannheim in the winter of 1777–78 by Ferdinand Dejean, a wealthy amateur flutist and surgeon working for the Dutch East India Company, who asked for 'three small, easy and short concertos and several quartets'. Mozart, a close friend of the Mannheim flutist Johann Baptist Wendling, never completed the commission and was paid 96 florins instead of 200. In a letter of the time he wrote that he lost interest whenever he had to write for an instrument he disliked, yet the concerto became one of the cornerstones of the repertoire. {{brown2002, pp. 141–142}}",
+    tips: "Dejean probably played a one-keyed flute, so a one-keyed classical flute (Grenser type, a′ ≈ 430) is the natural choice; a flute with a few extra keys is also possible. {{brown2002, pp. 36, 142}} Write your own cadenzas in period style.\n\n" +
       "Mozart's concertos can be played on a one-keyed flute as long as its f‴ is good: the contrast of strong and veiled notes suits his chromatic lines. Others prefer a six- or eight-keyed flute for evenness. Leopold Mozart's [[mozart-violinschule|Violinschule]] is the best guide to articulation and vibrato in this style. {{brown2002, pp. 11, 22, 46}}",
     imslp: "Flute Concerto in G major K.313",
         links: ["tromlitz-unterricht"]
@@ -148,14 +148,14 @@ HFP.repertoire = [
     composer: "Ludwig van Beethoven",
     name: "Serenade in D major for flute, violin and viola, Op. 25",
     short: "Beethoven, Serenade Op. 25",
-    start: 1801, dates: "1801",
+    start: 1802, dates: "publ. 1802",
     place: "Vienna",
     kind: "piece",
     scoring: "Flute, violin and viola",
     flutes: ["viennese-flute", "classical-keyed-flute"],
     description:
-      "A light, sunny divertimento in several short movements, from the years when Beethoven was conquering Vienna. The flute leads much of the time, with brilliant writing in the opening Entrata and the final Allegro. {{?}}",
-    tips: "A Viennese or classical keyed flute of around 1800 balances naturally with gut-strung violin and viola, so the flute does not need to dominate. Keep the character of a serenade: light articulation and lots of wit. {{?}}",
+      "A light divertimento in six short movements, from the opening Entrata (Allegro) to the final Allegro vivace e disinvolto; the flute leads much of the time. It was published in Vienna by Cappi in 1802. {{beethoven1802}}",
+    tips: "A Viennese or classical keyed flute of around 1800 balances naturally with gut-strung violin and viola, so the flute does not need to dominate. Keep the character of a serenade: light articulation and lots of wit.",
     imslp: "Serenade Op.25 Beethoven",
     links: []
   },
@@ -170,8 +170,8 @@ HFP.repertoire = [
     scoring: "Flute and piano",
     flutes: ["viennese-flute", "classical-keyed-flute"],
     description:
-      "Based on a song from Schubert's cycle *Die schöne Müllerin*, the variations were written for the Viennese flutist Ferdinand Bogner. They are among the most demanding Romantic works for flute and piano, for both players. {{?}}",
-    tips: "With a Viennese multi-keyed flute and a Viennese fortepiano, the balance problems of modern performances largely disappear. Try it at least once. {{?}}",
+      "Introduction and variations on 'Trockne Blumen', a song from Schubert's cycle *Die schöne Müllerin*, composed in January 1824. The first edition, published by Diabelli only in 1850 as op. 160, is dedicated to the Viennese flutist Ferdinand Bogner. Both parts are very demanding. {{schubert1850; henle474}}",
+    tips: "With a Viennese multi-keyed flute and a Viennese fortepiano, the balance problems of modern performances largely disappear. Try it at least once.",
     imslp: "Introduction and Variations on Trockne Blumen D.802",
     links: []
   },
@@ -187,7 +187,7 @@ HFP.repertoire = [
     flutes: ["english-flute"],
     description:
       "One of [[nicholson|Nicholson]]'s 'National Melodies': a Scottish air treated in the expressive Adagio style he was famous for, followed by variations. Some continental critics found the style in poor taste, but it remained typical of English playing until the recording era. {{?}}",
-    tips: "Written for a large-holed English flute, which favours flat keys like F minor. Use glides and finger vibrato ('vibration') as expressive ornaments, as Nicholson did. {{?}}",
+    tips: "Written for a large-holed English flute, which favours flat keys like F minor. {{powell2002, ch. 8}} Use glides and finger vibrato as expressive ornaments, as Nicholson did. {{brown2002, pp. 117–118}}",
     imslp: "Nicholson Roslin Castle",
     links: []
   },
@@ -203,7 +203,7 @@ HFP.repertoire = [
     flutes: ["boehm-1832", "boehm-1847"],
     description:
       "Brilliant variations in E major on a popular German song, published by Schott in Mainz in 1840. According to the Theobald Böhm Archive, Boehm's Opp. 19–26 were written during and after the invention of the [[boehm-1832|ring-key flute]] and were meant to show off the new instrument's advantages. Op. 22 was a showpiece in Boehm's own concerts. After a charity concert at the Munich court theatre in 1843, the *Münchner Tagblatt* wrote of the 'real jubilation' stirred by 'Böhm's magic flute'. {{boehm1994; tagblatt1843, p. 455}}",
-    tips: "Played on a conical ring-key flute, it sounds as Boehm meant it: a warm wooden tone with the even scale and clean passagework of the new system. On a modern flute, keep the light, singing character of a Biedermeier variation set rather than turning it into a power piece. Op. 20 (Variations on a Tyrolean air, 1838) comes from the same years and makes a good companion piece. {{?}}",
+    tips: "Played on a conical ring-key flute, it sounds as Boehm meant it: a warm wooden tone with the even scale and clean passagework of the new system. On a modern flute, keep the light, singing character of a Biedermeier variation set rather than turning it into a power piece. Op. 20 (Variations on a Tyrolean air, 1838) comes from the same years and makes a good companion piece. {{boehm1994}}",
     imslp: "Boehm Variations Du du liegst mir im Herzen Op.22",
     sources: [
       { label: "Ludwig Böhm, 'Theobald Böhm's compositions' (Theobald Böhm Archive, 1994)", url: "https://thebabelflute.com/?p=13332" },
@@ -222,9 +222,9 @@ HFP.repertoire = [
     scoring: "Flute and piano",
     flutes: ["german-keyed-flute", "boehm-1847"],
     description:
-      "A Romantic sonata inspired by Fouqué's tale of the water spirit Undine, by the conductor of the Leipzig Gewandhaus Orchestra. In Leipzig at that time the leading flutists, [[schwedler|Schwedler]] among them, played conical keyed flutes rather than Boehm flutes. {{?}}\n\n" +
+      "A Romantic sonata named after Undine, the water spirit of Fouqué's tale, by the conductor of the Leipzig Gewandhaus Orchestra. In Leipzig at that time the leading flutists, [[schwedler|Schwedler]] among them, played conical keyed flutes rather than Boehm flutes. {{brown2002, pp. 29–30, 114}}\n\n" +
       "On its first appearance, the haunting slow melody is marked 'without any trembling of the tone'. Since the sonata is dedicated to [[barge-1880|Wilhelm Barge]] of the Leipzig Gewandhaus, the marking suggests that some vibrato was normal among the Leipzig players, and that here Reinecke wanted a mysterious, pure sound. {{brown2002, p. 114}}",
-    tips: "Try it on a Meyer-type flute: the darker, more veiled sound and the blend with the piano change the character of the piece completely. {{?}}",
+    tips: "Try it on a Meyer-type flute: the darker, more veiled sound and the blend with the piano change the character of the piece completely.",
     imslp: "Undine Sonata Op.167 Reinecke",
         image: { src: "assets/img/hfp/r-undine.jpg", caption: "The opening theme of the Undine Sonata", credit: "public domain", url: "https://commons.wikimedia.org/wiki/File:Undine_theme.gif" },
     links: []
@@ -240,8 +240,8 @@ HFP.repertoire = [
     scoring: "Flute and piano",
     flutes: ["boehm-1847"],
     description:
-      "Written as the test piece for the 1898 Paris Conservatoire flute competition and dedicated to [[taffanel|Taffanel]]. A lyrical Andantino followed by a dazzling Allegro shows, in a few minutes, everything the jury wanted to hear. {{?}}",
-    tips: "On a [[lot|Louis Lot]] or another French silver flute of the period, aim for the light, clear sound Taffanel prized rather than maximum power. {{?}}",
+      "Written in June and July 1898 as the test piece for that year's Paris Conservatoire flute competition and dedicated to [[taffanel|Taffanel]], professor of the flute class; all eight of his students played it at the competition on 28 July 1898. A lyrical Andantino is followed by a dazzling Allegro. {{faure1898; henle580}}",
+    tips: "On a [[lot|Louis Lot]] or another French silver flute of the period, aim for the light, clear sound Taffanel prized rather than maximum power.",
     imslp: "Fantaisie Op.79 Fauré",
     image: { src: "assets/img/hfp/r-faure.jpg", caption: "Title page of the first edition of the Fantaisie", credit: "Bibliothèque nationale de France (Gallica) · public domain", url: "https://commons.wikimedia.org/wiki/File:Fantaisie_pour_fl%C3%BBte_et_piano_-_op._79_-_par_Gabriel_Faur%C3%A9_-_btv1b10876425p_(01_of_22).jpg" },
     links: []
@@ -257,8 +257,8 @@ HFP.repertoire = [
     scoring: "Solo flute",
     flutes: ["boehm-1847"],
     description:
-      "Composed as incidental music for Gabriel Mourey's play *Psyché* and first played, offstage, by Louis Fleury. It is often called the first important piece for unaccompanied flute since [[cpe-bach-wq132|C.P.E. Bach's sonata]]. {{?}}",
-    tips: "The piece was first heard from behind the scenes, so keep the dynamics intimate. Let the final descent to low D♭ fade away rather than end. {{?}}",
+      "Written in 1913 as incidental music for Gabriel Mourey's play *Psyché*, under the title *La Flûte de Pan*, and first played by Louis Fleury in December 1913. It was published only in 1927, by Jobert, as *Syrinx*, with a dedication to Fleury. {{henle496; debussy1927}}",
+    tips: "Keep the dynamics intimate, and let the final descent to low D♭ fade away rather than end.",
     imslp: "Syrinx Debussy",
     image: { src: "assets/img/hfp/r-syrinx.jpg", caption: "First page of Syrinx, first edition (Paris, Jobert, 1927)", credit: "Bibliothèque nationale de France (Gallica) · public domain", url: "https://commons.wikimedia.org/wiki/File:Syrinx,_pour_fl%C3%BBte_seule_-_btv1b108721522_(3_of_5).jpg" },
     links: ["taffanel"]
@@ -274,8 +274,8 @@ HFP.repertoire = [
     scoring: "Solo flute",
     flutes: ["boehm-1847"],
     description:
-      "The daily technical exercises from the [[taffanel-gaubert|Taffanel–Gaubert method]]: scales, arpeggios and intervals through every key. Flutists know them simply as 'E.J. 1', 'E.J. 4' and so on. {{?}}",
-    tips: "Practise slowly with a drone and vary the articulations. Written for the Boehm flute's even scale: on earlier flutes the fingerings change completely, so use the historical treatises instead. {{?}}",
+      "The daily technical exercises from the [[taffanel-gaubert|Taffanel–Gaubert method]] (1923): scales, arpeggios and intervals through every key. Flutists know them simply as 'E.J. 1', 'E.J. 4' and so on. {{brown2002, p. 149; ?}}",
+    tips: "Practise slowly with a drone and vary the articulations. Written for the Boehm flute's even scale: on earlier flutes the fingerings change completely, so use the historical treatises instead.",
     links: []
   },
   {
@@ -289,8 +289,8 @@ HFP.repertoire = [
     scoring: "Flute and orchestra",
     flutes: ["boehm-1847"],
     description:
-      "Dedicated to [[moyse|Marcel Moyse]], who gave the premiere in Paris in 1934, Ibert's concerto pairs neoclassical energy with a deeply lyrical slow movement. Its virtuoso finale is a regular competition and audition piece. {{?}}",
-    tips: "Moyse's own playing is the best guide to the style. Listen for his flexible vibrato and the way he speaks the fast passages rather than hammering them. {{?}}",
+      "Dedicated to [[moyse|Marcel Moyse]], who gave the first performance in Paris in 1934, Ibert's concerto pairs neoclassical energy with a deeply lyrical slow movement. {{ibertscore; mccutchan1994}}",
+    tips: "Moyse's own playing is the best guide to the style. Listen for his flexible vibrato and the way he speaks the fast passages rather than hammering them.",
     links: []
   },
   {
@@ -304,8 +304,8 @@ HFP.repertoire = [
     scoring: "Solo flute",
     flutes: ["boehm-1847"],
     description:
-      "[[moyse|Moyse]]'s short book of tone exercises, starting with the famous descending semitones from B, teaches how to build an even, flexible sound note by note. {{?}}",
-    tips: "Its goal, an even sound on every note, belongs to the Boehm flute. On historical flutes the long-tone idea is still useful, but the unevenness between notes is part of the instrument's character, not a defect. {{?}}",
+      "[[moyse|Moyse]]'s short book of tone exercises, part of his *Enseignement complet de la flûte*. Its first exercise, on the 'colour and homogeneity of tone in the three registers', starts on B and descends by semitones, building an even, flexible sound note by note. {{moyse1934, pp. 3–5}}",
+    tips: "Its goal, an even sound on every note, belongs to the Boehm flute. On historical flutes the long-tone idea is still useful, but the unevenness between notes is part of the instrument's character, not a defect.",
     links: ["taffanel-gaubert"]
   },
   {

@@ -40,7 +40,7 @@ HFP.treatises = [
       "A revised edition (1545) recommends a 'trembling' breath, an early mention of vibrato"
     ],
     description:
-      "Written in rhyming German verse so that amateurs could memorise it, Agricola's book is one of the earliest sources to describe the [[renaissance-flute|Renaissance flute]] in practical detail, with woodcut illustrations and fingering charts. {{?}}",
+      "Written mostly in rhymed German verse, with woodcut illustrations and fingering charts, and modelled on Virdung's book of 1511, Agricola's treatise is one of the earliest sources to describe the [[renaissance-flute|Renaissance flute]] in practical detail. {{hettrick1994}}",
     wiki: "Martin Agricola",
     imslp: "Musica instrumentalis deudsch",
     image: { src: "assets/img/hfp/d-agricola.jpg", caption: "Agricola's six-holed Swiss pipe, redrawn from Musica instrumentalis deudsch", credit: "H. M. Fitzgibbon, The Story of the Flute (1914) · public domain", url: "https://commons.wikimedia.org/wiki/File:Agricola%27s_Schweitzerpfeiff_(pg_30,_The_Story_of_the_Flute,_1914).png" },
@@ -64,7 +64,7 @@ HFP.treatises = [
       "Further chapters on the recorder and the oboe"
     ],
     description:
-      "Short, clear and practical, Jacques-Martin [[hotteterre|Hotteterre]]'s Principes was reprinted and translated for decades. It is the first-hand guide to playing the [[hotteterre-flute|three-piece baroque flute]] and its French repertoire, starting with Hotteterre's own [[hotteterre-op2|Pièces]]. {{?}}\n\n" +
+      "Short, clear and practical, Jacques-Martin [[hotteterre|Hotteterre]]'s Principes was reprinted, translated and plagiarised for decades. {{vester1985, pp. 241–243}} It was the first treatise written for the one-keyed flute, the [[hotteterre-flute|three-piece baroque flute]] of the early French repertoire, and the preface to the second edition of Hotteterre's own [[hotteterre-op2|Pièces]] adds further advice. {{brown2002, pp. 8–9}}\n\n" +
       "It was the first treatise written for the one-keyed flute. Concise as it is, it explains the favoured tu-ru articulation in depth, and counts the flattement (finger vibrato) among the ornaments 'absolutely necessary' for good playing. Hotteterre is an open-minded author: he sets out other views beside his own and lets the reader choose the fingering or tonguing that works best. His fingering chart is full of notes on turning the flute in or out and softening the breath, and further advice appears in the preface to the second edition of his Pièces. Prelleur's English [[prelleur-1731|Newest Method]] is based on it, and it was translated by David Lasocki in 1968. {{brown2002, pp. 8–9, 40, 147}}",
     imslp: "Principes de la flûte traversière Hotteterre",
         image: { src: "assets/img/hfp/t-principes-title.jpg", caption: "Title page of the Principes, Paris edition of 1722", credit: "Bibliothèque nationale de France (Gallica) · public domain", url: "https://commons.wikimedia.org/wiki/File:Principes_de_la_flute_traversi%C3%A8re,_ou_flute_d%27Allemagne_;_de_la_flute_%C3%A0_bec,_ou_flute_douce_;_et_du_hautbois_;_diviser_par_traitez._Par_le_sieur_Hotteterre_le-Romain,_ordinaire_de_la_musique_du_roy_-_bpt6k9633016w_(011_of_140).jpg" },
@@ -113,7 +113,7 @@ HFP.treatises = [
       "Preceded by a short essay (Kurze Abhandlung, 1786) and followed by a book on flutes with several keys (1800)"
     ],
     description:
-      "[[tromlitz|Tromlitz]] wrote as both performer and maker. His Unterricht is the key source for playing the [[classical-keyed-flute|keyed flute]] and for the late-18th-century German style: subtle articulation, careful tuning, singing phrasing. {{?}}\n\n" +
+      "[[tromlitz|Tromlitz]] wrote as both performer and maker, and his advice on caring for the instrument comes from the workshop. With Quantz's Versuch, his Unterricht is one of the two comprehensive flute treatises of the 18th century, with very specific advice on tone, fingering, articulation and ornamentation in the late-18th-century German style. {{brown2002, pp. 9–10}}\n\n" +
       "In many ways Tromlitz is even more thorough than Quantz, and his musical examples belong to the next, Classical generation. He gives note-by-note intonation advice for every scale and an unparalleled discussion of articulation, and his Adagio, ornamented three times over, points towards the florid style of the 19th century. His ideal of an even, 'metallic' sound across the whole compass was also forward-looking. Ardal Powell's translation, *The Virtuoso Flute-Player* (1991), is very readable. {{brown2002, pp. 8–10}}",
     imslp: "Ausführlicher und gründlicher Unterricht die Flöte zu spielen",
         links: ["mozart-k313", "tromlitz-1800", "quantz-versuch"]
@@ -133,7 +133,7 @@ HFP.treatises = [
       "Progressive duets for teacher and pupil"
     ],
     description:
-      "[[devienne|Devienne]]'s method was reprinted many times and shaped French teaching in the first decades of the Conservatoire. Its duets are still a pleasant way to learn the [[classical-keyed-flute|Classical flute]]. {{?}}\n\n" +
+      "[[devienne|Devienne]]'s method and Hugot and Wunderlich's Conservatoire method of 1804 mark the late arrival of the keyed flute in France: Devienne acknowledged the keys but never used them himself. {{brown2002, p. 11}}\n\n" +
       "Devienne acknowledged the new keys but never used them himself. His method favours mellow tone colours, condemns hard sounds and describes an early form of the modern 'dou-gue' double tongue. Like most French tutors of the time it contains many preludes for improvising, some of them suitable as cadenzas. A decade later the Conservatoire's official [[hugot-wunderlich-1804|method by Hugot and Wunderlich]] fully embraced the four-keyed flute. {{brown2002, p. 11}}",
     imslp: "Nouvelle méthode théorique et pratique pour la flûte Devienne",
         image: { src: "assets/img/hfp/t-devienne.jpg", caption: "Title page of Devienne's Nouvelle méthode (Paris, Imbault)", credit: "Bibliothèque nationale de France (Gallica) · public domain", url: "https://commons.wikimedia.org/wiki/File:Nouvelle_m%C3%A9thode_th%C3%A9orique_et_pratique_pour_la_fl%C3%BBte..._suivie_de_20_petits_airs,_18_petits_duos_et_6_sonates_gradu%C3%A9es_-_btv1b10862515z_(02_of_83).jpg" },
@@ -155,7 +155,7 @@ HFP.treatises = [
       "Tone, technique and how to practise"
     ],
     description:
-      "In this short book [[boehm|Boehm]] explains why the [[boehm-1847|modern flute]] is built the way it is. Dayton C. Miller's English translation (2nd edition, Cleveland, 1922) made it a classic, and Miller's own huge flute collection is now at the Library of Congress. {{?}}\n\n" +
+      "In this short book [[boehm|Boehm]] explains why the [[boehm-1847|modern flute]] is built the way it is. It was translated into English by Dayton C. Miller (2nd edition, Cleveland, 1922) {{brown2002, p. 148}}, whose own huge flute collection is now at the Library of Congress. {{powell2002, ch. 9}}\n\n" +
       "Boehm's pages on expression are as interesting as his acoustics. He urged flutists to study vocal music, whose words show where phrases go and where to save the full strength of the tone. He described portamento as a perfect legato in which the notes are joined 'like a series of pearls' on the thread of the air stream, and warned that a badly made glide sounds like cats on the rooftops. {{brown2002, pp. 72, 119}}",
     imslp: "Die Flöte und das Flötenspiel",
         image: { src: "assets/img/hfp/d-boehm-1832.jpg", caption: "Boehm's ring-key flute of 1832", credit: "H. M. Fitzgibbon, The Story of the Flute (1914) · public domain", url: "https://commons.wikimedia.org/wiki/File:B%C3%B6hm%27s_Flute_of_1832_(pg_51,_The_Story_of_the_Flute,_1914).png" },
@@ -176,7 +176,7 @@ HFP.treatises = [
       "Follows Fürstenau's earlier Flöten-Schule, Op. 42 (1826)"
     ],
     description:
-      "[[fuerstenau|Fürstenau]]'s tutors are the essential guide to the [[german-keyed-flute|German keyed flute]] in its golden age. They give extensive technical advice, especially on fingerings, and show the special style and feeling of German flute playing in Weber's time. {{?}}\n\n" +
+      "[[fuerstenau|Fürstenau]]'s articles and tutors are key sources for the [[german-keyed-flute|German keyed flute]]: they give extensive technical advice, especially on fingerings for German and Viennese keyed flutes, and show the special style and feeling of German flute playing in his time. {{powell2002, chs. 8, 10; brown2002, p. 12}}\n\n" +
       "*Die Kunst* assumes a high level of virtuosity and adds the final artistic polish. Unusually, Fürstenau discusses technique and style through his own compositions, and he follows closely Spohr's *Violinschule* of 1832. He shows long phrases linked by quick, hidden breaths, expects a good flutist to play six to eight bars of a 4/4 Allegro in one breath, and allows vibrato only on the single climactic note of a passionate phrase. {{brown2002, p. 12}}",
     imslp: "Fürstenau Die Kunst des Flötenspiels Op.138",
         links: []
@@ -196,7 +196,7 @@ HFP.treatises = [
       "Arguments for the traditional German sound"
     ],
     description:
-      "[[schwedler|Schwedler]], principal flute of the Leipzig Gewandhaus, set out in this book the ideals behind the [[german-keyed-flute|German conical flute]] at the moment when it was losing ground to the Boehm flute. It was revised and reissued in the 20th century. {{?}}\n\n" +
+      "[[schwedler|Schwedler]], principal flute of the Leipzig Gewandhaus and the last opponent of the Boehm flute, set out in this book the ideals behind the [[german-keyed-flute|German conical flute]]. It was renamed *Flöte und Flötenspiel* in its second (1910) and third (1923) editions. {{brown2002, pp. 12, 149}}\n\n" +
       "Schwedler, the last opponent of the Boehm flute, gives the 19th century's closest description of a vibrato used to ennoble and strengthen the tone in general, not as an ornament on single notes. He still used the old soft double tongue 'di-l'. An English translation by John Robert Bailey exists as a dissertation (1987). {{brown2002, pp. 8, 12, 112}}",
     imslp: "Schwedler Katechismus der Flöte",
         links: ["reform-flute"]
@@ -218,7 +218,7 @@ HFP.treatises = [
       "Studies and advice on style"
     ],
     description:
-      "Begun by [[taffanel|Taffanel]] and completed after his death by his pupil Philippe Gaubert, this method fixed the teaching of the French school on the [[boehm-1847|Boehm flute]]. Its [[tg-17-exercises|daily exercises]] are still played every day around the world. {{?}}\n\n" +
+      "Begun by [[taffanel|Taffanel]] and completed after his death by his pupil Philippe Gaubert, this method of the French school on the [[boehm-1847|Boehm flute]] was published in 1923. {{powell2002, ch. 11; brown2002, p. 149}} Its [[tg-17-exercises|daily exercises]] are still widely practised.\n\n" +
       "It is a reminder of how recent today's vibrato is: the method insists that in Bach and the great classical composers there should be no vibrato at all. Vibrato, it says, distorts the natural character of the instrument and is a vulgar artifice of inferior players; the music must be conveyed by the tone itself. {{brown2002, pp. 11, 115}}",
         image: { src: "assets/img/hfp/t-taffanel.jpg", caption: "Title page of the first edition (Paris, Leduc, 1923)", credit: "Bibliothèque nationale de France (Gallica) · public domain", url: "https://commons.wikimedia.org/wiki/File:M%C3%A9thode_compl%C3%A8te_de_fl%C3%BBte_en_huit_parties_(1re_%C3%A9dition)_-_btv1b525026221_(007_of_240).jpg" },
     links: ["moyse"]
@@ -387,7 +387,7 @@ HFP.treatises = [
     language: "Italian",
     tagline: "One of the very few 18th-century flute treatises written in Italian.",
     contents: ["Technique of the one-keyed flute", "Ornaments and expression", "Much material drawn from Quantz"],
-    description: "Italy produced great flute music but very few flute books, which makes Lorenzoni's *Saggio* precious. Much of it summarises [[quantz-versuch|Quantz]] for Italian readers. {{brown2002, p. 147; ?}}",
+    description: "Lorenzoni's *Saggio* (Vicenza, 1779) is the only Italian treatise in Rachel Brown's chronological list of flute tutors. {{brown2002, p. 147}}",
     imslp: "Lorenzoni Saggio per ben sonare il flauto traverso",
         links: ["quantz-versuch"]
   },

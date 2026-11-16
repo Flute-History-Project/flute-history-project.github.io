@@ -104,7 +104,121 @@ HFP.bib = {
     }
   },
 
+  fetis1866: {
+    kind: "secondary",
+    author: "François-Joseph Fétis",
+    title: "Biographie universelle des musiciens et bibliographie générale de la musique",
+    edition: "2nd edn", place: "Paris", publisher: "Firmin-Didot", year: "1860–65", volume: "8 vols",
+    url: "https://archive.org/details/biographieuniver03ftuoft",
+    note: {
+      en: "The great 19th-century biographical dictionary of musicians; public domain and readable online.",
+      fr: "Le grand dictionnaire biographique des musiciens du XIXᵉ siècle ; domaine public, consultable en ligne.",
+      it: "Il grande dizionario biografico dei musicisti dell'Ottocento; di pubblico dominio e consultabile online."
+    }
+  },
+  pougin1878: {
+    kind: "secondary",
+    author: "Arthur Pougin (ed.)",
+    title: "Biographie universelle des musiciens: Supplément et complément",
+    place: "Paris", publisher: "Firmin-Didot", year: "1878–80", volume: "2 vols",
+    url: "https://archive.org/details/biographieuniver187801ft"
+  },
+  eb1911: {
+    kind: "secondary",
+    title: "Encyclopaedia Britannica",
+    edition: "11th edn", place: "Cambridge", publisher: "Cambridge University Press", year: "1910–11",
+    url: "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Flute",
+    note: {
+      en: "Cited for its long articles 'Flute' (vol. 10) and 'Clarinet' (vol. 6).",
+      fr: "Citée pour ses longs articles « Flute » (vol. 10) et « Clarinet » (vol. 6).",
+      it: "Citata per i lunghi articoli 'Flute' (vol. 10) e 'Clarinet' (vol. 6)."
+    }
+  },
+  braga2012: {
+    kind: "secondary",
+    author: "Inês de Avena Braga",
+    title: "The Panormo Alto Recorder: a Dolce Flauto Dolce?",
+    journal: "Journal of the American Musical Instrument Society", volume: "38", year: "2012",
+    url: "https://amis.mircat.org/jamis/2012_034.pdf"
+  },
+  hettrick1994: {
+    kind: "secondary",
+    author: "William E. Hettrick (trans. and ed.)",
+    title: "The 'Musica instrumentalis deudsch' of Martin Agricola: A Treatise on Musical Instruments, 1529 and 1545",
+    place: "Cambridge", publisher: "Cambridge University Press", year: "1994",
+    verify: true
+  },
+  heartz1969: {
+    kind: "secondary",
+    author: "Daniel Heartz",
+    title: "Pierre Attaingnant, Royal Printer of Music: A Historical Study and Bibliographical Catalogue",
+    place: "Berkeley and Los Angeles", publisher: "University of California Press", year: "1969",
+    verify: true
+  },
+  henle457: { kind: "secondary", author: "G. Henle Verlag", title: "J. S. Bach, Partita in A minor for flute solo BWV 1013, Urtext edition HN 457: preface and critical commentary", place: "Munich", verify: true },
+  henle556: { kind: "secondary", author: "G. Henle Verlag", title: "G. P. Telemann, Twelve Fantasias for flute solo TWV 40:2–13, Urtext edition HN 556: preface", place: "Munich", verify: true },
+  henle580: { kind: "secondary", author: "G. Henle Verlag", title: "G. Fauré, Fantaisie op. 79, Urtext edition HN 580: preface and critical commentary", place: "Munich", verify: true },
+  henle496: { kind: "secondary", author: "G. Henle Verlag", title: "C. Debussy, Syrinx, Urtext edition HN 496: preface", place: "Munich", verify: true },
+  henle474: { kind: "secondary", author: "G. Henle Verlag", title: "F. Schubert, Variations on 'Trockne Blumen' D 802, Urtext edition HN 474: preface", place: "Munich", verify: true },
+
   /* ---------- Primary sources (documents; the treatises have their own pages) ---------- */
+  doppelmayr1730: {
+    kind: "primary",
+    author: "Johann Gabriel Doppelmayr",
+    title: "Historische Nachricht von den Nürnbergischen Mathematicis und Künstlern",
+    place: "Nuremberg", year: "1730",
+    note: { en: "Quoted in the Encyclopaedia Britannica (1911), 'Clarinet'.", fr: "Cité dans l'Encyclopaedia Britannica (1911), « Clarinet ».", it: "Citato nell'Encyclopaedia Britannica (1911), 'Clarinet'." },
+    verify: true
+  },
+  mattheson1740: {
+    kind: "primary",
+    author: "Georg Philipp Telemann",
+    title: "Autobiography",
+    inBook: "Johann Mattheson, Grundlage einer Ehren-Pforte",
+    place: "Hamburg", year: "1740",
+    verify: true
+  },
+  attaingnant1533: {
+    kind: "primary",
+    author: "Pierre Attaingnant (publ.)",
+    title: "Vingt et sept chansons musicales a quatre parties",
+    place: "Paris", publisher: "Pierre Attaingnant", year: "April 1533",
+    url: "https://catalogue.bnf.fr/ark:/12148/cb42821175z"
+  },
+  bachP968: {
+    kind: "primary",
+    author: "J. S. Bach",
+    title: "Solo p[our une] flûte traversière par J. S. Bach (BWV 1013), 18th-century manuscript copy",
+    place: "Berlin, Staatsbibliothek, Mus. ms. Bach P 968"
+  },
+  blavet1732: {
+    kind: "primary",
+    author: "Michel Blavet",
+    title: "Sonates mêlées de pièces pour la flûte traversière avec la basse, op. 2",
+    place: "Paris", year: "1732",
+    verify: true
+  },
+  telemann1733: {
+    kind: "primary",
+    author: "Georg Philipp Telemann",
+    title: "Fantaisies pour la flûte-traversière sans basse",
+    place: "Hamburg", publisher: "the author", year: "[1732–33]",
+    note: { en: "A single copy of the first edition survives (Brussels, Conservatoire royal).", fr: "Un seul exemplaire de la première édition est conservé (Bruxelles, Conservatoire royal).", it: "Ne sopravvive un solo esemplare della prima edizione (Bruxelles, Conservatoire royal)." }
+  },
+  cpe1763: {
+    kind: "primary",
+    author: "C. P. E. Bach",
+    title: "Sonata in A minor for flute solo (Wq 132)",
+    inBook: "Musikalisches Mancherley",
+    place: "Berlin", year: "1763",
+    verify: true
+  },
+  beethoven1802: { kind: "primary", author: "Ludwig van Beethoven", title: "Serenade in D major for flute, violin and viola, op. 25", place: "Vienna", publisher: "Giovanni Cappi", year: "1802" },
+  schubert1850: { kind: "primary", author: "Franz Schubert", title: "Introduction et variations sur un thème original pour piano et flûte, op. 160 (D 802)", place: "Vienna", publisher: "A. Diabelli & Comp.", year: "1850" },
+  faure1898: { kind: "primary", author: "Gabriel Fauré", title: "Fantaisie pour flûte et piano, op. 79 ('à Paul Taffanel')", place: "Paris", publisher: "J. Hamelle", year: "1898" },
+  debussy1927: { kind: "primary", author: "Claude Debussy", title: "Syrinx, pour flûte seule", place: "Paris", publisher: "Jobert", year: "1927" },
+  ibertscore: { kind: "primary", author: "Jacques Ibert", title: "Concerto pour flûte et orchestre (dedicated to Marcel Moyse)", place: "Paris", publisher: "Alphonse Leduc", verify: true },
+  moyse1934: { kind: "primary", author: "Marcel Moyse", title: "De la sonorité: art et technique (Enseignement complet de la flûte)", place: "Paris", publisher: "Alphonse Leduc", year: "1934", verify: true },
   quantz1755: {
     kind: "primary",
     author: "Johann Joachim Quantz",
