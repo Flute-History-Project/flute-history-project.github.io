@@ -185,7 +185,9 @@
     const support = H.config.donateUrl
       ? `<a class="support-link" href="${H.config.donateUrl}" target="_blank" rel="noopener">☕ ${esc(tr("support_link"))}</a>`
       : `<a class="support-link" href="credits.html#support">☕ ${esc(tr("support_link"))}</a>`;
-    foot.innerHTML = `<div class="wrap"><span>${esc(H.config.siteName)} · ${esc(tr("footer"))}</span>
+    const band = `<div class="support-band"><div class="wrap"><p>${esc(tr("support_band"))}</p>
+      <a class="btn kofi" href="${H.config.donateUrl || "credits.html#support"}"${H.config.donateUrl ? ' target="_blank" rel="noopener"' : ""}>☕ ${esc(tr("support_btn"))} · ${esc(H.config.donateLabel)}</a></div></div>`;
+    foot.innerHTML = band + `<div class="wrap"><span>${esc(H.config.siteName)} · ${esc(tr("footer"))}</span>
       <span class="footer-links">${support}<a href="contact.html">${esc(tr("nav_contact"))}</a></span></div>`;
     document.title = (page === "home" ? "" : tr("nav_" + page) + " · ") + H.config.siteName;
   }
