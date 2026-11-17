@@ -16,6 +16,8 @@ HFP.config = {
 };
 
 HFP.eras = [
+  { id: "prehistory", start: -100000, end: -1000, label: { en: "Prehistory", fr: "Préhistoire", it: "Preistoria" } },
+  { id: "antiquity", start: -1000, end: 1450, label: { en: "Antiquity and Middle Ages", fr: "Antiquité et Moyen Âge", it: "Antichità e Medioevo" } },
   { id: "renaissance", start: 1450, end: 1650, label: { en: "Renaissance", fr: "Renaissance", it: "Rinascimento" } },
   { id: "baroque", start: 1650, end: 1750, label: { en: "Baroque", fr: "Baroque", it: "Barocco" } },
   { id: "classical", start: 1750, end: 1820, label: { en: "Classical", fr: "Classique", it: "Classicismo" } },
@@ -42,7 +44,7 @@ HFP.i18n = {
     another: "Another one",
 
     intro_history: "A short, general history of the flute, from Renaissance consorts to the French school. It covers instruments, the personalities who shaped flute playing, and how the flute has been taught.",
-    intro_flutes: "The main historical models of the flute, in rough chronological order. Open an entry for a description, key features and the repertoire it suits.",
+    intro_flutes: "The main historical models of the flute, in rough chronological order, from the bone pipes of the Ice Age to the present. Open an entry for a description, key features and the repertoire it suits.",
     intro_makers: "The workshops behind the instruments: where they worked, what they built and which flutes they shaped.",
     intro_treatises: "The books flutists learned from: from Renaissance fingering charts to the methods of the 20th century.",
     intro_flutists: "Players who shaped the history of the flute, with links to their instruments, their books and the music written for them.",
@@ -125,7 +127,7 @@ HFP.i18n = {
     another: "Une autre",
 
     intro_history: "Une histoire brève et générale de la flûte, des consorts de la Renaissance à l'école française : les instruments, les personnalités qui ont marqué le jeu de la flûte et la manière dont on l'a enseignée.",
-    intro_flutes: "Les principaux modèles historiques de flûte, dans un ordre à peu près chronologique. Ouvrez une fiche pour lire la description, les caractéristiques et le répertoire adapté.",
+    intro_flutes: "Les principaux modèles historiques de flûte, dans un ordre à peu près chronologique, des flûtes en os de l'âge glaciaire à nos jours. Ouvrez une fiche pour lire la description, les caractéristiques et le répertoire adapté.",
     intro_makers: "Les ateliers derrière les instruments : où ils travaillaient, ce qu'ils fabriquaient et quelles flûtes ils ont façonnées.",
     intro_treatises: "Les livres dans lesquels les flûtistes ont appris, des tablatures de la Renaissance aux méthodes du XXᵉ siècle.",
     intro_flutists: "Les interprètes qui ont marqué l'histoire de la flûte, avec des liens vers leurs instruments, leurs livres et la musique écrite pour eux.",
@@ -208,7 +210,7 @@ HFP.i18n = {
     another: "Un'altra",
 
     intro_history: "Una storia breve e generale del flauto, dai consort rinascimentali alla scuola francese: gli strumenti, le personalità che hanno segnato il modo di suonare e il modo in cui il flauto è stato insegnato.",
-    intro_flutes: "I principali modelli storici di flauto, in ordine grosso modo cronologico. Apri una voce per leggere la descrizione, le caratteristiche e il repertorio adatto.",
+    intro_flutes: "I principali modelli storici di flauto, in ordine grosso modo cronologico, dai flauti d'osso dell'era glaciale a oggi. Apri una voce per leggere la descrizione, le caratteristiche e il repertorio adatto.",
     intro_makers: "Le botteghe dietro gli strumenti: dove lavoravano, cosa costruivano e quali flauti hanno plasmato.",
     intro_treatises: "I libri su cui i flautisti hanno studiato, dalle tavole di diteggiatura rinascimentali ai metodi del Novecento.",
     intro_flutists: "Gli interpreti che hanno segnato la storia del flauto, con collegamenti ai loro strumenti, ai loro libri e alla musica scritta per loro.",

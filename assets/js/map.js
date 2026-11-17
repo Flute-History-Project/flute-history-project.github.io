@@ -14,6 +14,7 @@ HFP.renderMap = function (app, api) {
   const items = [];
   Object.keys(index).forEach((id) => {
     const e = index[id].e;
+    if (e.start < Y0) return; // prehistoric and ancient entries sit before the map's range: they live on the Flutes page
     lanesOf(id).forEach((lane) => {
       const span = e.end !== undefined;
       items.push({ id, lane, start: e.start, end: span ? (e.end === null ? Y1 : Math.min(e.end, Y1)) : null, label: e.mapLabel || (e.roles ? e.name.replace(/\s*\(.*\)/, "").replace(/ family$/, "").split(" ").pop() : nameOf(id)) });
@@ -61,7 +62,7 @@ HFP.renderMap = function (app, api) {
     });
     const height = y + 8;
 
-    const eras = HFP.eras.map((er, i) => {
+    const eras = HFP.eras.filter((er) => er.end > Y0 && er.start < Y1).map((er, i) => {
       const a = X(Math.max(er.start, Y0)), b = X(Math.min(er.end, Y1));
       return `<rect x="${a}" y="0" width="${b - a}" height="${height}" style="fill:${i % 2 ? "transparent" : "var(--paper-2)"}"/>
         <text x="${a + 6}" y="15" style="fill:var(--muted);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase">${esc(eraLabel(er))}</text>`;

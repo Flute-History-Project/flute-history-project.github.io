@@ -10,6 +10,99 @@
 window.HFP = window.HFP || {};
 var FH = "http://www.flutehistory.com/";
 HFP.flutes = [
+  /* ---------- Before the Middle Ages: archaeological finds (no schematic drawing: drawing is null; `when` replaces the year span) ---------- */
+  {
+    id: "divje-babe",
+    short: "Divje babe bone (disputed)",
+    name: "The Divje babe 'Neanderthal flute' (disputed)",
+    start: -50000, // sort key only: the period shown is `when`
+    when: "Middle Palaeolithic: disputed",
+    origin: "Divje babe I cave, Slovenia",
+    tagline: "A perforated cave-bear bone that may be the oldest flute in the world, or may be the work of a hyena.",
+    features: [
+      "Thigh bone (femur) of a young cave bear, with holes",
+      "Found in a Mousterian (Middle Palaeolithic) layer: made, if at all, by Neanderthals",
+      "Not accepted by everyone as an instrument: the holes may be tooth marks"
+    ],
+    description:
+      "Whether holes in cave-bear bones are artificial or natural is an old question: it was already debated in 1928 and 1931. The best documented case is a piece of cave-bear femur from the cave of Divje babe I in Slovenia, which its excavators described, in their very first publication of 1995, as a possible Mousterian or Neanderthal flute. {{turk2016, p. 401}}\n\n" +
+      "Whether it is a flute at all is still argued. When the Swabian flutes were reported in 2009, their discoverers wrote that the arguments for Neanderthal music had no concrete evidence behind them. {{conard2009, p. 737}} In 2015 Cajus Diedrich argued that such punctured cave-bear femora are not instruments and not human-made, but the work of spotted hyenas feeding on bear cubs. {{diedrich2015}} The excavators replied in 2016 that his article was full of factual errors and underrated the archaeological and musical evidence. {{turk2016, p. 401}}\n\n" +
+      "It is shown here as an open question rather than as a model. The authors of the 2009 Nature report found no convincing evidence for musical instruments older than about 30,000 years outside the Swabian caves (see [[swabian-flutes|the Ice Age flutes of Swabia]]). {{conard2009, p. 740}}",
+    curio: "Among about 550 thigh bones of bear cubs and young bears from Divje babe, the excavators found, apart from this one, only one with a single etched hole and another with two unusually placed, irregular holes. {{turk2016, p. 404}}",
+    drawing: null,
+    wiki: "Divje Babe flute",
+    image: { src: "assets/img/hfp/flute-divje-babe.jpg", caption: "The perforated cave-bear femur from Divje babe I, National Museum of Slovenia", credit: "Photo Petar Milošević · CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Divje_Babe_flute_(Late_Pleistocene_flute).jpg" },
+    links: ["swabian-flutes"]
+  },
+  {
+    id: "swabian-flutes",
+    short: "Ice Age flutes (Swabia)",
+    name: "Ice Age flutes of the Swabian Jura (Hohle Fels, Geißenklösterle, Vogelherd)",
+    start: -40000, // sort key only: the period shown is `when`
+    when: "c. 40,000 years ago (Aurignacian)",
+    origin: "Swabian Jura, south-western Germany",
+    tagline: "Flutes of vulture bone, swan bone and mammoth ivory, made when modern humans settled the upper Danube region.",
+    features: [
+      "Hohle Fels: a vulture wing bone, 21.8 cm preserved, with five finger holes",
+      "Two deep V-shaped notches at the blowing end",
+      "Also a three-holed swan-bone flute, played by blowing obliquely into its end, and flutes of mammoth ivory",
+      "Four bone flutes and four ivory ones in all"
+    ],
+    description:
+      "On 17 September 2008 excavators at the Hohle Fels cave, 20 km west of Ulm, found in twelve pieces a flute carved from the radius (a wing bone) of a griffon vulture. The part that survives is 21.8 cm long and about 8 mm across; the whole bone would have been about 34 cm. It has five finger holes, with fine lines cut beside them that probably mark where to make the holes, and two deep V-shaped notches at the end where the player blew. {{conard2009, pp. 737–738}}\n\n" +
+      "The flute lay in the lowest Aurignacian layer, from the first settlement of the region by modern humans, about 40,000 calendar years ago; radiocarbon dates show that it is older than 35,000 calendar years. Nearby caves have yielded other flutes: one made from a swan's wing bone, with three finger holes, which can be played by blowing obliquely into the end and gives four basic notes plus overtones; and several of mammoth ivory, made by splitting a curved tusk, hollowing out the halves, carving the holes and sealing the halves together with airtight seams, a far more complicated job than making a flute from a bird bone. In all, the Swabian caves have given four bone flutes and four ivory ones. {{conard2009, pp. 738–740}}\n\n" +
+      "The 2009 report considered the flutes of Hohle Fels older than those of nearby Geißenklösterle. {{conard2009, p. 739}} Music appears here together with early figurative art: the Hohle Fels flute lay only 70 cm from a female figurine of similar age, and apart from the Swabian caves there is no convincing evidence for musical instruments older than about 30,000 years. {{conard2009, p. 740}}",
+    curio: "The vulture was a deliberate choice: a griffon vulture's wings span 230 to 265 cm, and its bones are ideal for large flutes. {{conard2009, p. 737}}",
+    drawing: null,
+    wiki: "Paleolithic flute",
+    sources: [{ label: "Nature: New flutes document the earliest musical tradition in southwestern Germany", url: "https://www.nature.com/articles/nature08169" }],
+    image: { src: "assets/img/hfp/flute-hohle-fels.jpg", caption: "Vulture-bone flute from Hohle Fels, on display at the Museum of Prehistory, Blaubeuren", credit: "Photo Tomatenpflanze · CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Fl%C3%B6te_aus_G%C3%A4nsegeierknochen_vom_Hohle_Fels_im_urmu.jpg" },
+    links: ["divje-babe", "isturitz-flutes"]
+  },
+  {
+    id: "isturitz-flutes",
+    short: "Isturitz bird-bone flutes",
+    name: "Bird-bone flutes of Isturitz (Upper Palaeolithic)",
+    start: -30000, // sort key only: the period shown is `when`
+    when: "Upper Palaeolithic: Gravettian to Magdalenian",
+    origin: "Isturitz cave, French Pyrenees",
+    tagline: "Twenty-two bird-bone flutes from a single cave, from several periods of the Ice Age.",
+    features: [
+      "Made of bird bone, with finger holes",
+      "22 flutes from a single cave",
+      "Attributed to the Gravettian, Solutrean and Magdalenian layers",
+      "One may be Aurignacian, but comes from poorly documented early 20th-century excavations"
+    ],
+    description:
+      "The cave of Isturitz, in the French Pyrenees, has produced 22 Upper Palaeolithic flutes made of bird bone. One of them could be Aurignacian, but it was found in poorly documented excavations of the early 20th century; the others are attributed to the Gravettian, Solutrean and Magdalenian layers of the site. {{conard2009, p. 740}}\n\n" +
+      "Apart from the Swabian caves, the earliest secure evidence for music comes from sites in France and Austria that are less than 30,000 years old. {{conard2009, p. 737}} Conard and colleagues also mention a bone flute from the open-air site of Grubgraben, in the Wachau of Lower Austria, about 19,000 years old. {{conard2009, p. 740}}",
+    drawing: null,
+    image: { src: "assets/img/hfp/flute-isturitz.jpg", caption: "Flute of vulture bone from Isturitz, Gravettian, Musée d'archéologie nationale, Saint-Germain-en-Laye", credit: "Photo Marie-Lan Taÿ Pamart · public domain", url: "https://commons.wikimedia.org/wiki/File:Isturitz_flute_MAN_MAN_75252-A3%2BMAN_83888.jpg" },
+    links: ["swabian-flutes"]
+  },
+  {
+    id: "jiahu-flutes",
+    short: "Jiahu crane-bone flutes",
+    name: "The crane-bone flutes of Jiahu (Neolithic China)",
+    start: -7000,
+    end: -5700,
+    when: "c. 7000–5700 BC (Neolithic)",
+    origin: "Jiahu, Henan province, China",
+    tagline: "Flutes made from crane wing bones in a Neolithic village of central China, with five to eight finger holes.",
+    features: [
+      "Made from the wing bone (ulna) of the red-crowned crane",
+      "Five, six, seven or eight finger holes; all held vertically",
+      "Six complete flutes found, with fragments of perhaps 30 more",
+      "The best-preserved one has been played and its notes analysed"
+    ],
+    description:
+      "Jiahu, an early Neolithic site in Henan province, China, was occupied from 7000 BC to 5700 BC. Its excavators found six complete flutes in radiocarbon-dated layers, along with fragments of perhaps thirty more. They are made from the wing bones (ulnae) of the red-crowned crane and have five, six, seven or eight holes; all six are of the vertically held type. {{zhang1999, pp. 366–368}}\n\n" +
+      "The authors called them possibly the earliest complete, playable, tightly dated multinote instruments, noting that earlier flutes from Neanderthal contexts (see [[divje-babe|Divje babe]]) are so fragmentary that their sound can only be guessed at. The best-preserved flute, which has seven main holes and a tiny one near the seventh, was tested with a sound-analysing stroboscope; the authors add that, without testing more flutes, they cannot say whether its scale is the ancestor of later Chinese scales. Fewer than 5% of the site had been excavated. {{zhang1999, pp. 366–368}}",
+    drawing: null,
+    wiki: "Jiahu",
+    image: { src: "assets/img/hfp/flute-jiahu.jpg", caption: "Bone flute excavated at Jiahu, Luohe Museum", credit: "Photo ASHillocks · CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Jiahu_Bone_Flute.jpg" },
+    links: ["divje-babe"]
+  },
   {
     id: "fife",
     short: "Fife (military flute)",

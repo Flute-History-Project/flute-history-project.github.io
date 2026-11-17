@@ -148,6 +148,36 @@ HFP.bib = {
     place: "Cambridge", publisher: "Cambridge University Press", year: "1994",
     verify: true
   },
+  conard2009: {
+    kind: "secondary",
+    author: "Nicholas J. Conard, Maria Malina and Susanne C. Münzel",
+    title: "New flutes document the earliest musical tradition in southwestern Germany",
+    journal: "Nature", volume: "460", year: "2009", pages: "pp. 737–740",
+    url: "https://doi.org/10.1038/nature08169",
+    note: { en: "The excavators' report on the Hohle Fels, Vogelherd and Geißenklösterle flutes; page numbers checked on the article.", fr: "Le rapport des fouilleurs sur les flûtes de Hohle Fels, Vogelherd et Geißenklösterle ; pages vérifiées sur l'article.", it: "Il rapporto degli scavatori sui flauti di Hohle Fels, Vogelherd e Geißenklösterle; pagine verificate sull'articolo." }
+  },
+  zhang1999: {
+    kind: "secondary",
+    author: "Juzhong Zhang, Garman Harbottle, Changsui Wang and Zhaochen Kong",
+    title: "Oldest playable musical instruments found at Jiahu early Neolithic site in China",
+    journal: "Nature", volume: "401", year: "1999", pages: "pp. 366–368",
+    url: "https://doi.org/10.1038/43865"
+  },
+  turk2016: {
+    kind: "secondary",
+    author: "Ivan Turk, Matija Turk and Borut Toškan",
+    title: "Could a cave hyena have made a musical instrument? A reply to Cajus G. Diedrich",
+    journal: "Arheološki vestnik", volume: "67", year: "2016", pages: "pp. 401–407",
+    url: "https://ojs.zrc-sazu.si/av/article/view/7813",
+    note: { en: "The reply of the Divje babe excavators to Diedrich; page numbers checked on the article.", fr: "La réponse des fouilleurs de Divje babe à Diedrich ; pages vérifiées sur l'article.", it: "La risposta degli scavatori di Divje babe a Diedrich; pagine verificate sull'articolo." }
+  },
+  diedrich2015: {
+    kind: "secondary",
+    author: "Cajus G. Diedrich",
+    title: "‘Neanderthal bone flutes’: simply products of Ice Age spotted hyena scavenging activities on cave bear cubs in European cave bear dens",
+    journal: "Royal Society Open Science", volume: "2", year: "2015", pages: "article 140022",
+    url: "https://doi.org/10.1098/rsos.140022"
+  },
   heartz1969: {
     kind: "secondary",
     author: "Daniel Heartz",
@@ -162,6 +192,14 @@ HFP.bib = {
   henle474: { kind: "secondary", author: "G. Henle Verlag", title: "F. Schubert, Variations on 'Trockne Blumen' D 802, Urtext edition HN 474: preface", place: "Munich", verify: true },
 
   /* ---------- Primary sources (documents; the treatises have their own pages) ---------- */
+  agricola1529: {
+    kind: "primary",
+    author: "Martin Agricola",
+    title: "Musica instrumentalis deudsch",
+    place: "Wittenberg", publisher: "Georg Rhau", year: "1529",
+    url: "https://archive.org/details/musicainstrument0000agri_g2b3",
+    note: { en: "Digitised copy on the Internet Archive; folio numbers read from the scan. The translation by Hettrick (1994) is listed under the secondary literature.", fr: "Exemplaire numérisé sur l'Internet Archive ; numéros de feuillets lus sur la numérisation. La traduction de Hettrick (1994) figure dans la littérature secondaire.", it: "Esemplare digitalizzato su Internet Archive; numeri di carta letti sulla scansione. La traduzione di Hettrick (1994) è tra la letteratura secondaria." }
+  },
   doppelmayr1730: {
     kind: "primary",
     author: "Johann Gabriel Doppelmayr",

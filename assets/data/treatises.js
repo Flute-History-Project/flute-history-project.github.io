@@ -40,10 +40,11 @@ HFP.treatises = [
       "A revised edition (1545) recommends a 'trembling' breath, an early mention of vibrato"
     ],
     description:
-      "Written mostly in rhymed German verse, with woodcut illustrations and fingering charts, and modelled on Virdung's book of 1511, Agricola's treatise is one of the earliest sources to describe the [[renaissance-flute|Renaissance flute]] in practical detail. {{hettrick1994}}",
+      "Written mostly in rhymed German verse, with woodcut illustrations and fingering charts, and modelled on Virdung's book of 1511, Agricola's treatise is one of the earliest sources to describe the [[renaissance-flute|Renaissance flute]] in practical detail. {{hettrick1994}}\n\n" +
+      "A woodcut headed 'Vier Schweitzer Pfeiffen' (four Swiss pipes) shows Discantus, Altus, Tenor and Bassus drawn side by side as plain cylindrical tubes, each with a blowing hole near the upper end and six finger holes in a row further down. The verses that introduce the fingering charts speak of 'a Swiss pipe or Querpfeiff', that is, a transverse flute, and tell the player to blow gently on the lowest notes and ever harder on the highest. {{agricola1529, fols. xij–xiiij}}",
     wiki: "Martin Agricola",
     imslp: "Musica instrumentalis deudsch",
-    image: { src: "assets/img/hfp/d-agricola.jpg", caption: "Agricola's six-holed Swiss pipe, redrawn from Musica instrumentalis deudsch", credit: "H. M. Fitzgibbon, The Story of the Flute (1914) · public domain", url: "https://commons.wikimedia.org/wiki/File:Agricola%27s_Schweitzerpfeiff_(pg_30,_The_Story_of_the_Flute,_1914).png" },
+    image: { src: "assets/img/hfp/d-agricola-schweitzer.jpg", caption: "‘Vier Schweitzer Pfeiffen’: Discantus, Altus, Tenor and Bassus, in Agricola's own woodcut (fol. xiii, 1529)", credit: "Internet Archive copy · public domain", url: "https://archive.org/details/musicainstrument0000agri_g2b3" },
     links: ["attaingnant-1533"]
   },
   {

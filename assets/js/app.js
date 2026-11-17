@@ -136,7 +136,7 @@
   }
   const paras = (s, notes) => s.split(/\n\n+/).map((p) => `<p>${inline(p, notes)}</p>`).join("");
   const chip = (id) => `<a class="chip t-${index[id].type}" href="${href(id)}">${esc(nameOf(id))}</a>`;
-  const yearSpan = (e) => (e.end === undefined ? String(e.start) : `${e.start}–${e.end === null ? tr("present") : e.end}`);
+  const yearSpan = (e) => e.when ? loc(e.when) : (e.end === undefined ? String(e.start) : `${e.start}–${e.end === null ? tr("present") : e.end}`);
   const eraOf = (y) => H.eras.find((er) => y >= er.start && y < er.end) || H.eras[H.eras.length - 1];
   const ext = (url, label) => `<a href="${url}" target="_blank" rel="noopener">${esc(label)} ↗</a>`;
   const wikiUrl = (q) => `https://${lang}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(q)}`;
@@ -243,8 +243,9 @@
     const notes = newNotes(e.id);
 
     if (type === "flutes") {
+      // prehistoric finds have no schematic drawing (drawing: null): the photograph stands alone
       figure = (e.image ? photo(e.image, "figure-wide") : "") +
-        `<figure class="entry-figure figure-wide">${H.illus.flute(e.drawing, { label: e.name })}<figcaption>${esc(tr("drawing_note"))}</figcaption></figure>`;
+        (e.drawing ? `<figure class="entry-figure figure-wide">${H.illus.flute(e.drawing, { label: e.name })}<figcaption>${esc(tr("drawing_note"))}</figcaption></figure>` : "");
       aside = facts([["period", esc(yearSpan(e))], ["origin", esc(e.origin)]]) +
         `<h4 class="sans small muted" style="margin:0 0 4px;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem">${esc(tr("features"))}</h4>` +
         `<ul class="features">${(e.features || []).map((f) => `<li>${inline(loc(f))}</li>`).join("")}</ul>`;
