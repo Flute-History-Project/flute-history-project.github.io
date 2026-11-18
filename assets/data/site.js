@@ -69,6 +69,7 @@ HFP.i18n = {
     map_lanes: "Show", zoom_in: "Zoom in", zoom_out: "Zoom out",
     map_hint: "Click on any element of the map to see its connections.",
     map_open: "Open the full entry →", map_connected: "Connected to",
+    map_group_show: "Show its {n} works on the map ▸", map_group_hide: "Hide them again ▾",
 
     f_name: "Your name", f_email: "Your email", f_type: "Type of suggestion", t_new: "New entry",
     t_correction: "Correction to an existing entry", t_source: "Source, document or image", t_other: "Other / just saying hello",
@@ -152,6 +153,7 @@ HFP.i18n = {
     map_lanes: "Afficher", zoom_in: "Zoom avant", zoom_out: "Zoom arrière",
     map_hint: "Cliquez sur un élément de la carte pour voir ses liens.",
     map_open: "Ouvrir la fiche complète →", map_connected: "Lié à",
+    map_group_show: "Afficher ses {n} œuvres sur la carte ▸", map_group_hide: "Les masquer de nouveau ▾",
 
     f_name: "Votre nom", f_email: "Votre e-mail", f_type: "Type de suggestion", t_new: "Nouvelle fiche",
     t_correction: "Correction d'une fiche existante", t_source: "Source, document ou image", t_other: "Autre / simple bonjour",
@@ -235,6 +237,7 @@ HFP.i18n = {
     map_lanes: "Mostra", zoom_in: "Ingrandisci", zoom_out: "Riduci",
     map_hint: "Clicca su un elemento della mappa per vederne i collegamenti.",
     map_open: "Apri la voce completa →", map_connected: "Collegato a",
+    map_group_show: "Mostra le sue {n} opere sulla mappa ▸", map_group_hide: "Nascondile di nuovo ▾",
 
     f_name: "Il tuo nome", f_email: "La tua email", f_type: "Tipo di suggerimento", t_new: "Nuova voce",
     t_correction: "Correzione a una voce esistente", t_source: "Fonte, documento o immagine", t_other: "Altro / solo un saluto",

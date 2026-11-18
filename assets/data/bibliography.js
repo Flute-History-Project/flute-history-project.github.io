@@ -191,6 +191,153 @@ HFP.bib = {
   henle496: { kind: "secondary", author: "G. Henle Verlag", title: "C. Debussy, Syrinx, Urtext edition HN 496: preface", place: "Munich", verify: true },
   henle474: { kind: "secondary", author: "G. Henle Verlag", title: "F. Schubert, Variations on 'Trockne Blumen' D 802, Urtext edition HN 474: preface", place: "Munich", verify: true },
 
+  /* Bach's flute works: prefaces of scholarly editions (read in full on the publishers' free previews), two open-access
+     articles, and the programme notes of the Netherlands Bach Society's "All of Bach" project. */
+  leisinger2003: {
+    kind: "secondary",
+    author: "Ulrich Leisinger",
+    title: "Preface",
+    inBook: "J. S. Bach, Four Sonatas BWV 1034, 1035, 1030, 1032, Urtext of the New Bach Edition, ed. H.-P. Schmitz, rev. U. Leisinger",
+    edition: "BA 5198", place: "Kassel", publisher: "Bärenreiter", year: "2003",
+    url: "https://www.barenreiter.co.uk/prefaces/9790006447992_Innenansicht.pdf",
+    note: {
+      en: "By the director of the Bach-Archiv Leipzig. The best short account of the four authentic flute sonatas and of their sources; page numbers checked on the publisher's preview.",
+      fr: "Par le directeur du Bach-Archiv de Leipzig. Le meilleur exposé succinct des quatre sonates pour flûte authentiques et de leurs sources ; pages vérifiées sur l'aperçu de l'éditeur.",
+      it: "A cura del direttore del Bach-Archiv di Lipsia. La migliore sintesi sulle quattro sonate per flauto autentiche e sulle loro fonti; pagine verificate sull'anteprima dell'editore."
+    }
+  },
+  tomita2024: {
+    kind: "secondary",
+    author: "Yo Tomita",
+    title: "Introduction",
+    inBook: "J. S. Bach, Flute Sonata in B minor BWV 1030, facsimile of the autograph P 975, with a commentary by Martina Rebmann",
+    edition: "HN 3232", place: "Munich", publisher: "G. Henle Verlag", year: "2024",
+    url: "https://henle.de/jp/Flute-Sonata-b-minor-BWV-1030/HN-3232",
+    note: {
+      en: "A detailed study of the autograph, its flute part, its earlier G minor version and its owners. Page numbers (roman) checked on the publisher's free preview of the introduction.",
+      fr: "Étude détaillée de l'autographe, de sa partie de flûte, de sa version antérieure en sol mineur et de ses propriétaires. Pages (en chiffres romains) vérifiées sur l'aperçu gratuit de l'introduction.",
+      it: "Studio dettagliato dell'autografo, della sua parte di flauto, della versione precedente in sol minore e dei suoi proprietari. Pagine (in numeri romani) verificate sull'anteprima gratuita dell'introduzione."
+    }
+  },
+  duerr1975: {
+    kind: "secondary",
+    author: "Alfred Dürr",
+    title: "Preface",
+    inBook: "J. S. Bach, Sonatas BWV 1033, 1031, 1020, handed down as works by Johann Sebastian Bach",
+    edition: "BA 5220", place: "Kassel", publisher: "Bärenreiter", year: "1975",
+    url: "https://www.barenreiter.co.uk/prefaces/9790006507047_Innenansicht.pdf"
+  },
+  eppstein1981: {
+    kind: "secondary",
+    author: "Hans Eppstein",
+    title: "Preface",
+    inBook: "J. S. Bach, Flötensonaten II: BWV 1031, 1033, 1020",
+    edition: "HN 328", place: "Munich", publisher: "G. Henle Verlag", year: "1981",
+    url: "https://www.henle.de/media/36/e0/80/1690886059/0328-1690886059-sync.pdf"
+  },
+  eppstein1978: {
+    kind: "secondary",
+    author: "Hans Eppstein",
+    title: "Bemerkungen (list of sources)",
+    inBook: "J. S. Bach, Flötensonaten I: Die vier authentischen Sonaten BWV 1030, 1032, 1034, 1035",
+    place: "Munich", publisher: "G. Henle Verlag", year: "1978",
+    url: "https://www.henle.de/media/b2/11/c8/1690886039/0269-1690886039-sync.pdf"
+  },
+  eppstein1980: {
+    kind: "secondary",
+    author: "Hans Eppstein",
+    title: "Preface",
+    inBook: "J. S. Bach, Trio Sonata in G major for two flutes BWV 1039",
+    edition: "HN 329", place: "Munich", publisher: "G. Henle Verlag", year: "1980",
+    url: "https://www.henle.de/media/b3/94/7a/1690886075/0329-1690886075-sync.pdf"
+  },
+  leisinger2002: {
+    kind: "secondary",
+    author: "Ulrich Leisinger",
+    title: "Epilogue",
+    inBook: "J. S. Bach, Trio Sonata in G major for two flutes BWV 1039, Urtext of the New Bach Edition, ed. H.-P. Schmitz, rev. U. Leisinger",
+    place: "Kassel", publisher: "Bärenreiter", year: "2002",
+    url: "https://www.barenreiter.co.uk/prefaces/9790006505432_Innenansicht.pdf"
+  },
+  wollny2013: {
+    kind: "secondary",
+    author: "Peter Wollny",
+    title: "Preface",
+    inBook: "J. S. Bach, Trio Sonata in G major for flute, violin and basso continuo BWV 1038",
+    edition: "HN 554", place: "Munich", publisher: "G. Henle Verlag", year: "2013",
+    url: "https://www.henle.de/media/32/46/5d/1697725933/0554-1697725932-sync.pdf"
+  },
+  gruessTP193: {
+    kind: "secondary",
+    author: "Hans Grüß",
+    title: "Preface",
+    inBook: "J. S. Bach, Overture (Orchestral Suite) in B minor BWV 1067, Urtext of the New Bach Edition, study score",
+    edition: "TP 193", place: "Kassel", publisher: "Bärenreiter",
+    url: "https://www.barenreiter.co.uk/prefaces/9790006201624.pdf"
+  },
+  breig2003: {
+    kind: "secondary",
+    author: "Werner Breig",
+    title: "Preface",
+    inBook: "J. S. Bach, Overture (Suite) No. 2 in B minor BWV 1067, Urtext",
+    edition: "PB 5397", place: "Wiesbaden", publisher: "Breitkopf & Härtel", year: "2003",
+    url: "https://breitkopf.com/assets/pdf/637_VORWORT_PB%205397Vw.pdf"
+  },
+  wolffTP198: {
+    kind: "secondary",
+    author: "Christoph Wolff",
+    title: "Preface",
+    inBook: "J. S. Bach, Musical Offering BWV 1079, Urtext of the New Bach Edition, study score",
+    edition: "TP 198", place: "Kassel", publisher: "Bärenreiter",
+    url: "https://www.barenreiter.co.uk/prefaces/9790006201679_Innenansicht.pdf"
+  },
+  wolffBA5155: {
+    kind: "secondary",
+    author: "Christoph Wolff",
+    title: "Epilogue",
+    inBook: "J. S. Bach, Musical Offering: Trio Sonata in C minor for flute, violin and basso continuo BWV 1079 II",
+    edition: "BA 5155", place: "Kassel", publisher: "Bärenreiter", year: "1987",
+    url: "https://www.barenreiter.co.uk/prefaces/9790006465866_Innenansicht.pdf"
+  },
+  alves2021: {
+    kind: "secondary",
+    author: "Ricardo M. Alves",
+    title: "J. S. Bach – The Authentic (?) Flute Sonata in E-Flat Major",
+    journal: "Bulletin of the Transilvania University of Brașov, Series VIII: Performing Arts", volume: "14 (63), no. 2", year: "2021", pages: "pp. 7–20",
+    url: "https://doi.org/10.31926/but.pa.2021.14.63.2.1",
+    note: {
+      en: "An open-access review of the literature on BWV 1031 (sources, dating, authorship); it summarises the views of Dürr, Marshall, Swack and Kuijken, which are cited here only through this article.",
+      fr: "Une synthèse en libre accès de la littérature sur BWV 1031 (sources, datation, paternité) ; elle résume les positions de Dürr, Marshall, Swack et Kuijken, citées ici seulement à travers cet article.",
+      it: "Una rassegna ad accesso libero della letteratura su BWV 1031 (fonti, datazione, paternità); riassume le posizioni di Dürr, Marshall, Swack e Kuijken, qui citate solo attraverso questo articolo."
+    }
+  },
+  rife2023: {
+    kind: "secondary",
+    author: "Jordi Rifé i Santaló",
+    title: "Bach's Sonata BWV 1035 and the Empfindsamer Stil",
+    journal: "Revista Catalana de Musicologia", volume: "16", year: "2023", pages: "pp. 99–122",
+    url: "https://doi.org/10.2436/20.1003.01.131"
+  },
+  nbs1013: {
+    kind: "secondary",
+    author: "Netherlands Bach Society",
+    title: "Partita for traverso in A minor, BWV 1013",
+    inBook: "All of Bach, online programme notes and video", year: "2016",
+    url: "https://www.bachvereniging.nl/en/bwv/bwv-1013",
+    note: {
+      en: "The Netherlands Bach Society's project All of Bach films every work by Bach on period instruments and adds a programme note to each. The notes are written for a general audience: they are used here for context and for the summary of the sources, and where they only suggest a hypothesis the text says so.",
+      fr: "Le projet All of Bach de la Société néerlandaise Bach filme toute l'œuvre de Bach sur instruments d'époque et ajoute une notice à chaque pièce. Ces notices s'adressent à un large public : elles servent ici de contexte et de résumé des sources ; quand elles ne font que suggérer une hypothèse, le texte le dit.",
+      it: "Il progetto All of Bach della Società olandese Bach filma tutte le opere di Bach su strumenti d'epoca e aggiunge una scheda a ciascuna. Le schede sono scritte per un pubblico ampio: qui servono come contesto e come sintesi delle fonti; quando propongono solo un'ipotesi, il testo lo dice."
+    }
+  },
+  nbs1030: { kind: "secondary", author: "Netherlands Bach Society", title: "Flute sonata in B minor, BWV 1030", inBook: "All of Bach, online programme notes and video", year: "2016", url: "https://www.bachvereniging.nl/en/bwv/bwv-1030" },
+  nbs1032: { kind: "secondary", author: "Netherlands Bach Society", title: "Flute sonata in A major, BWV 1032", inBook: "All of Bach, online programme notes and video", year: "2021", url: "https://www.bachvereniging.nl/en/bwv/bwv-1032" },
+  nbs1033: { kind: "secondary", author: "Netherlands Bach Society", title: "Flute sonata in C major, BWV 1033", inBook: "All of Bach, online programme notes and video", year: "2026", url: "https://www.bachvereniging.nl/en/bwv/bwv-1033" },
+  nbs1034: { kind: "secondary", author: "Netherlands Bach Society", title: "Flute sonata in E minor, BWV 1034", inBook: "All of Bach, online programme notes and video", year: "2024", url: "https://www.bachvereniging.nl/en/bwv/bwv-1034" },
+  nbs1038: { kind: "secondary", author: "Netherlands Bach Society", title: "Trio sonata in G major, BWV 1038", inBook: "All of Bach, online programme notes and video", year: "2015", url: "https://www.bachvereniging.nl/en/bwv/bwv-1038" },
+  nbs1039: { kind: "secondary", author: "Netherlands Bach Society", title: "Trio sonata in G major for two flutes, BWV 1039", inBook: "All of Bach, online programme notes and video", year: "2022", url: "https://www.bachvereniging.nl/en/bwv/bwv-1039" },
+  nbs1067: { kind: "secondary", author: "Netherlands Bach Society", title: "Orchestral Suite No. 2 in B minor, BWV 1067", inBook: "All of Bach, online programme notes and video", year: "2015", url: "https://www.bachvereniging.nl/en/bwv/bwv-1067" },
+
   /* ---------- Primary sources (documents; the treatises have their own pages) ---------- */
   agricola1529: {
     kind: "primary",
