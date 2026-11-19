@@ -463,5 +463,246 @@ HFP.bib = {
       fr: "La plus grande collection de flûtes au monde, avec photographies et documents.",
       it: "La più grande collezione di flauti al mondo, con fotografie e documenti."
     }
+  },
+
+  /* Mozart's flute works and the Dejean commission.
+     Read in full: the prefaces of the Neue Mozart-Ausgabe study scores and of the Henle and Breitkopf editions (free previews
+     on the publishers' sites), the English translations of the family letters in the Digital Mozart Edition, and two articles
+     in Pan (British Flute Society, September 2006). Not read: Bleker & Lequin 2013 and Lequin 1981 (known only through the
+     sources that cite them: verify). */
+  mozartletters: {
+    kind: "primary",
+    author: "W. A. Mozart and his family",
+    title: "Briefe und Aufzeichnungen (Bauer–Deutsch): letters and documents, with English translations and commentary",
+    series: "Digital Mozart Edition",
+    place: "Salzburg", publisher: "Internationale Stiftung Mozarteum",
+    url: "https://dme.mozarteum.at/DME/briefe/",
+    note: {
+      en: "The family letters, in German transcription and English translation, with the commentary of Bauer and Deutsch. Every letter quoted on the Mozart pages was read in the English translation; letters are cited by their Bauer–Deutsch number and date.",
+      fr: "La correspondance de la famille, en transcription allemande et traduction anglaise, avec le commentaire de Bauer et Deutsch. Toutes les lettres citées dans les fiches Mozart ont été lues dans la traduction anglaise ; elles sont citées par leur numéro Bauer–Deutsch et leur date.",
+      it: "Il carteggio di famiglia, in trascrizione tedesca e traduzione inglese, con il commento di Bauer e Deutsch. Ogni lettera citata nelle voci su Mozart è stata letta nella traduzione inglese; le lettere sono citate con il numero Bauer–Deutsch e la data."
+    }
+  },
+  giegling323: {
+    kind: "secondary",
+    author: "Franz Giegling",
+    title: "Vorwort / Introduction",
+    inBook: "W. A. Mozart, Die Werke für Flöte und Orchester KV 313 (285c), 314 (285d), 315 (285e), Urtext of the New Mozart Edition",
+    edition: "TP 323", place: "Kassel", publisher: "Bärenreiter",
+    url: "https://www.barenreiter.co.uk/prefaces/9790006204717_Innenansicht.pdf",
+    note: {
+      en: "The preface of the Neue Mozart-Ausgabe study score of the three works for flute and orchestra: the Dejean commission, the payment, the lost autograph of K. 313 and the oboe origin of K. 314. Roman page numbers checked on the publisher's free preview.",
+      fr: "La préface de la partition d'étude de la Neue Mozart-Ausgabe des trois œuvres pour flûte et orchestre : la commande de Dejean, le paiement, l'autographe perdu du K. 313 et l'origine hautboïste du K. 314. Pages en chiffres romains vérifiées sur l'aperçu gratuit de l'éditeur.",
+      it: "La prefazione della partitura di studio della Neue Mozart-Ausgabe delle tre opere per flauto e orchestra: la commissione di Dejean, il pagamento, l'autografo perduto del K. 313 e l'origine oboistica del K. 314. Pagine in numeri romani verificate sull'anteprima gratuita dell'editore."
+    }
+  },
+  pohanka150: {
+    kind: "secondary",
+    author: "Jaroslav Pohanka",
+    title: "Vorwort / Preface, with the Nachtrag on Dejean's identity",
+    inBook: "W. A. Mozart, Quartette für Flöte, Violine, Viola und Violoncello KV 285, 285a, Anh. 171 (285b), 298, Urtext of the New Mozart Edition",
+    edition: "TP 150", place: "Kassel", publisher: "Bärenreiter",
+    url: "https://www.barenreiter.co.uk/prefaces/9790006201280_Innenansicht.pdf",
+    note: {
+      en: "The fullest printed account of the four flute quartets and their sources, with a later addendum that summarises Frank Lequin's research on Dejean. Roman page numbers checked on the publisher's free preview.",
+      fr: "L'exposé imprimé le plus complet sur les quatre quatuors avec flûte et leurs sources, avec un addendum tardif qui résume la recherche de Frank Lequin sur Dejean. Pages en chiffres romains vérifiées sur l'aperçu gratuit de l'éditeur.",
+      it: "L'esposizione a stampa più completa sui quattro quartetti con flauto e sulle loro fonti, con un'aggiunta successiva che riassume la ricerca di Frank Lequin su Dejean. Pagine in numeri romani verificate sull'anteprima gratuita dell'editore."
+    }
+  },
+  henle635: {
+    kind: "secondary",
+    author: "Henrik Wiese",
+    title: "Vorwort / Preface",
+    inBook: "W. A. Mozart, Flötenquartette KV 285, 285a, 285b, 298, Urtext edition",
+    edition: "HN 635", place: "Munich", publisher: "G. Henle Verlag", year: "1998",
+    url: "https://www.henle.de/media/c0/a5/13/1690899701/9635-1690899701-sync.pdf",
+    note: {
+      en: "A short preface that follows the newer dating of the quartets (paper and handwriting of the autograph material).",
+      fr: "Une courte préface qui suit la datation plus récente des quatuors (papier et écriture du matériel autographe).",
+      it: "Una breve prefazione che segue la datazione più recente dei quartetti (carta e scrittura del materiale autografo)."
+    }
+  },
+  wiese2009: {
+    kind: "secondary",
+    author: "Henrik Wiese",
+    title: "Vorwort / Preface",
+    inBook: "W. A. Mozart, Konzert in D für Flöte und Orchester KV 314 (285d), Urtext edition",
+    edition: "Edition Breitkopf 8711", place: "Wiesbaden", publisher: "Breitkopf & Härtel", year: "2009",
+    url: "https://www.breitkopf.com/assets/pdf/8711_PDF_PB5308_Vw.pdf",
+    note: {
+      en: "A careful account of the letters about the oboe concerto and of the open questions about the Dejean commission and about who made the flute version. Read on the publisher's free preview; cited by section.",
+      fr: "Un exposé minutieux des lettres sur le concerto pour hautbois et des questions ouvertes sur la commande de Dejean et sur l'auteur de la version pour flûte. Lue sur l'aperçu gratuit de l'éditeur ; citée par section.",
+      it: "Un resoconto accurato delle lettere sul concerto per oboe e delle questioni aperte sulla commissione di Dejean e su chi abbia fatto la versione per flauto. Letta sull'anteprima gratuita dell'editore; citata per sezione."
+    }
+  },
+  goritzki2001: {
+    kind: "secondary",
+    author: "Ingo Goritzki",
+    title: "Vorwort / Preface",
+    inBook: "W. A. Mozart, Konzert für Oboe und Orchester C-Dur KV 314 (285d), Urtext edition",
+    edition: "HN 695", place: "Munich", publisher: "G. Henle Verlag", year: "2001",
+    url: "https://www.henle.de/media/dc/31/1d/1690886062/0695-1690886062-sync.pdf",
+    note: {
+      en: "An oboist's view of the same work, with a different opinion on the oboe part and on who made the flute version. Roman page numbers checked on the publisher's free preview.",
+      fr: "Le point de vue d'un hautboïste sur la même œuvre, avec un avis différent sur la partie de hautbois et sur l'auteur de la version pour flûte. Pages en chiffres romains vérifiées sur l'aperçu gratuit de l'éditeur.",
+      it: "Il punto di vista di un oboista sulla stessa opera, con un'opinione diversa sulla parte d'oboe e su chi abbia fatto la versione per flauto. Pagine in numeri romani verificate sull'anteprima gratuita dell'editore."
+    }
+  },
+  adorjan2014: {
+    kind: "secondary",
+    author: "András Adorján",
+    title: "Zu dieser Ausgabe / About this edition",
+    inBook: "W. A. Mozart, Konzert für Flöte und Harfe C-Dur KV 299 (297c), Urtext edition",
+    edition: "PB 15134", place: "Wiesbaden", publisher: "Breitkopf & Härtel", year: "2014",
+    url: "https://www.breitkopf.com/assets/pdf/9278_PDF_PB15134_Vw.pdf",
+    note: {
+      en: "On the Flute and Harp Concerto and its autograph, with a reading of Mozart's remark about the flute. Read on the publisher's free preview.",
+      fr: "Sur le Concerto pour flûte et harpe et son autographe, avec une lecture de la remarque de Mozart sur la flûte. Lue sur l'aperçu gratuit de l'éditeur.",
+      it: "Sul Concerto per flauto e arpa e il suo autografo, con una lettura dell'osservazione di Mozart sul flauto. Letta sull'anteprima gratuita dell'editore."
+    }
+  },
+  ba4855a: {
+    kind: "secondary",
+    author: "Franz Giegling (preface); Rachel Brown and Konrad Hünteler (cadenzas)",
+    title: "Preface and editorial note",
+    inBook: "W. A. Mozart, Konzert in D für Flöte und Orchester KV 314 (285d), Urtext edition with cadenzas and 'Eingänge', piano reduction by Martin Schelhaas",
+    edition: "BA 4855a", place: "Kassel", publisher: "Bärenreiter", year: "2005",
+    url: "https://www.barenreiter.co.uk/prefaces/9790006506736_Innenansicht.pdf",
+    note: {
+      en: "The preface repeats Giegling's text; the editorial note describes the reference score that compares the flute and oboe parts, and the cadenzas and lead-ins by Rachel Brown and Konrad Hünteler.",
+      fr: "La préface reprend le texte de Giegling ; la note éditoriale décrit la partition de référence qui compare les parties de flûte et de hautbois, et les cadences et Eingänge de Rachel Brown et Konrad Hünteler.",
+      it: "La prefazione riprende il testo di Giegling; la nota editoriale descrive la partitura di riferimento che confronta le parti di flauto e oboe, e le cadenze e gli Eingänge di Rachel Brown e Konrad Hünteler."
+    }
+  },
+  eb8644: {
+    kind: "secondary",
+    author: "Henrik Wiese (ed.)",
+    title: "W. A. Mozart, Konzert G-dur für Flöte und Orchester KV 313 (285c), flute part with cadenzas and lead-ins by the editor",
+    edition: "Edition Breitkopf 8644", place: "Wiesbaden", publisher: "Breitkopf & Härtel", year: "2006",
+    note: {
+      en: "Used for the movement headings and for what the edition contains. Only the solo part was read, not the preface.",
+      fr: "Utilisée pour les indications de mouvement et pour le contenu de l'édition. Seule la partie soliste a été lue, pas la préface.",
+      it: "Usata per le indicazioni di movimento e per il contenuto dell'edizione. È stata letta solo la parte solista, non la prefazione."
+    }
+  },
+  ba5770: {
+    kind: "secondary",
+    author: "Bärenreiter (editor's preface)",
+    title: "Vorwort",
+    inBook: "W. A. Mozart, Sinfonia concertante in Es, KV Anh. I, 9 (297b; KV⁶ C 14.01), piano reduction by Martin Schelhaas",
+    edition: "BA 5770a", place: "Kassel", publisher: "Bärenreiter",
+    url: "https://www.barenreiter.co.uk/prefaces/9790006526819_Innenansicht.pdf",
+    note: {
+      en: "The history of the Paris Sinfonia concertante of 1778, lost, and of the surviving version for oboe, clarinet, horn and bassoon, whose authenticity is disputed. The preface does not name its author in the free preview.",
+      fr: "L'histoire de la Symphonie concertante parisienne de 1778, perdue, et de la version conservée pour hautbois, clarinette, cor et basson, dont l'authenticité est discutée. L'aperçu gratuit ne nomme pas l'auteur de la préface.",
+      it: "La storia della Sinfonia concertante parigina del 1778, perduta, e della versione conservata per oboe, clarinetto, corno e fagotto, la cui autenticità è discussa. L'anteprima gratuita non indica l'autore della prefazione."
+    }
+  },
+  brown2006: {
+    kind: "secondary",
+    author: "Rachel Brown",
+    title: "Mozart's flute: Magic, mediocre or maligned?",
+    journal: "Pan (British Flute Society)", volume: "September", year: "2006", pages: "pp. 17–25",
+    url: "https://static1.squarespace.com/static/5c855f1c65a70789cd2b4ed7/t/5e5111ee5b06bd56a97282fc/1582371321532/bfs-2006-09-journal.pdf",
+    note: {
+      en: "By the author of The Early Flute: what Mozart wrote for the flute, what the letters say and do not say, and which flutes the players of Mannheim probably used.",
+      fr: "Par l'auteure de The Early Flute : ce que Mozart a écrit pour la flûte, ce que disent et ne disent pas les lettres, et quelles flûtes les musiciens de Mannheim utilisaient probablement.",
+      it: "Dell'autrice di The Early Flute: che cosa Mozart ha scritto per il flauto, che cosa dicono e non dicono le lettere, e quali flauti usavano probabilmente i musicisti di Mannheim."
+    }
+  },
+  spohr2006: {
+    kind: "secondary",
+    author: "Peter Spohr",
+    title: "The flutes of Mozart's day",
+    journal: "Pan (British Flute Society)", volume: "September", year: "2006", pages: "pp. 27–33",
+    url: "https://static1.squarespace.com/static/5c855f1c65a70789cd2b4ed7/t/5e5111ee5b06bd56a97282fc/1582371321532/bfs-2006-09-journal.pdf",
+    note: {
+      en: "By a collector who plays the instruments he describes: the makers active where Mozart lived and worked, and what Lot, Grenser, Kirst and English flutes of the 1760s–80s are like to play.",
+      fr: "Par un collectionneur qui joue les instruments qu'il décrit : les facteurs actifs là où Mozart a vécu et travaillé, et ce que sont les flûtes de Lot, Grenser, Kirst et les flûtes anglaises des années 1760–80 à jouer.",
+      it: "Di un collezionista che suona gli strumenti che descrive: i costruttori attivi dove Mozart visse e lavorò, e com'è suonare i flauti di Lot, Grenser, Kirst e quelli inglesi degli anni 1760–80."
+    }
+  },
+  bleker2013: {
+    kind: "secondary",
+    author: "Otto Bleker and Frank Lequin",
+    title: "Ferdinand Dejean 1731–1797: VOC-chirurgijn, wereldburger en opdrachtgever van Mozart",
+    place: "Wormerveer", publisher: "Stichting Uitgeverij Noord-Holland", year: "2013",
+    verify: true,
+    note: {
+      en: "The Dutch biography of Dejean, the basis of nearly everything written about his life. Not read for this site: its content is known only through the chronology on Falk Steins's website and the articles of Stephen Martin, which cite it.",
+      fr: "La biographie néerlandaise de Dejean, à la base de presque tout ce qui s'écrit sur sa vie. Non lue pour ce site : son contenu n'est connu que par la chronologie du site de Falk Steins et les articles de Stephen Martin, qui la citent.",
+      it: "La biografia olandese di Dejean, alla base di quasi tutto ciò che si scrive sulla sua vita. Non letta per questo sito: il suo contenuto è noto solo attraverso la cronologia del sito di Falk Steins e gli articoli di Stephen Martin, che la citano."
+    }
+  },
+  lequin1981: {
+    kind: "secondary",
+    author: "Frank Lequin",
+    title: "Mozarts '… rarer Mann'",
+    journal: "Mitteilungen der Internationalen Stiftung Mozarteum", volume: "29, nos. 1–2", year: "1981", pages: "pp. 3–16",
+    verify: true,
+    note: {
+      en: "The first thorough study of who Dejean was. Not read: its findings are known only through the addendum in Pohanka's edition of the flute quartets.",
+      fr: "La première étude approfondie sur l'identité de Dejean. Non lue : ses résultats ne sont connus que par l'addendum de l'édition des quatuors avec flûte de Pohanka.",
+      it: "Il primo studio approfondito su chi fosse Dejean. Non letto: i suoi risultati sono noti solo attraverso l'aggiunta nell'edizione dei quartetti con flauto di Pohanka."
+    }
+  },
+  steins: {
+    kind: "online",
+    author: "Falk Steins (ed.)",
+    title: "Ferdinand Dejean (1731–1797): chronology, sources and open questions",
+    url: "https://ferdinanddejean.jimdofree.com/english/cv/",
+    note: {
+      en: "A research website with a dated chronology of Dejean's life and a bibliography; it builds on Bleker and Lequin. Used for the dates of his life, always together with a printed source or marked as its own account.",
+      fr: "Un site de recherche avec une chronologie datée de la vie de Dejean et une bibliographie ; il s'appuie sur Bleker et Lequin. Utilisé pour les dates de sa vie, toujours avec une source imprimée ou signalé comme son propre récit.",
+      it: "Un sito di ricerca con una cronologia datata della vita di Dejean e una bibliografia; si basa su Bleker e Lequin. Usato per le date della sua vita, sempre insieme a una fonte a stampa o segnalato come suo racconto."
+    }
+  },
+  martin2018: {
+    kind: "online",
+    author: "Stephen Martin",
+    title: "The symbolic portrait of Mozart's patron Dr Ferdinand Dejean",
+    journal: "Hektoen International", volume: "Spring", year: "2018",
+    url: "https://hekint.org/2018/04/12/symbolic-portrait-mozarts-patron-dr-ferdinand-dejean/",
+    note: {
+      en: "Proposes that a painting by Jacobus Buys shows Dejean. The identification and the readings of the objects in the picture are the author's own and are reported here as his.",
+      fr: "Propose qu'un tableau de Jacobus Buys représente Dejean. L'identification et la lecture des objets du tableau sont celles de l'auteur et sont rapportées ici comme telles.",
+      it: "Propone che un dipinto di Jacobus Buys raffiguri Dejean. L'identificazione e la lettura degli oggetti del quadro sono dell'autore e sono qui riportate come sue."
+    }
+  },
+  martin2021: {
+    kind: "online",
+    author: "Stephen Martin",
+    title: "The patronage and playability of Mozart's flute works",
+    journal: "Hektoen International", volume: "Fall", year: "2021",
+    url: "https://hekint.org/2021/10/21/the-patronage-and-playability-of-mozarts-flute-works/",
+    note: {
+      en: "Argues that Dejean was a capable player and that he received three or four quartets. A flutist-physician's view, not peer-reviewed; reported here as his argument.",
+      fr: "Soutient que Dejean était un joueur capable et qu'il a reçu trois ou quatre quatuors. Le point de vue d'un flûtiste-médecin, sans relecture par les pairs ; rapporté ici comme son argument.",
+      it: "Sostiene che Dejean fosse un suonatore capace e che abbia ricevuto tre o quattro quartetti. Il punto di vista di un flautista-medico, non sottoposto a revisione paritaria; riportato qui come sua tesi."
+    }
+  },
+  martin2023: {
+    kind: "secondary",
+    author: "Stephen Martin",
+    title: "Was the VOC funding Mozart? The diaries of Wilhelm Buschman on Kharg Island",
+    journal: "Journal of the Royal Asiatic Society", volume: "33, no. 2", year: "2023", pages: "pp. 489–511",
+    url: "https://doi.org/10.1017/S135618632200030X",
+    verify: true,
+    note: {
+      en: "Traces the source of the wealth that Dejean acquired by marrying Buschman's widow. Only the abstract was read; it is cited for the author's proposal and not as settled fact.",
+      fr: "Retrace l'origine de la fortune que Dejean a acquise en épousant la veuve de Buschman. Seul le résumé a été lu ; il est cité pour la proposition de l'auteur et non comme un fait établi.",
+      it: "Ricostruisce l'origine della ricchezza che Dejean ottenne sposando la vedova di Buschman. È stato letto solo l'abstract; è citato per la proposta dell'autore e non come fatto accertato."
+    }
+  },
+  gunson: {
+    kind: "online",
+    author: "Emily Gunson",
+    title: "Johann Baptist Wendling (1723–1797): biography",
+    url: "https://www.emilygunson.com/wendling/biography",
+    note: {
+      en: "A biography by the author of the standard doctoral thesis on Wendling (University of Western Australia, 1999), on her own website. The thesis itself was not read.",
+      fr: "Une biographie par l'auteure de la thèse de doctorat de référence sur Wendling (Université d'Australie-Occidentale, 1999), sur son propre site. La thèse elle-même n'a pas été lue.",
+      it: "Una biografia dell'autrice della tesi di dottorato di riferimento su Wendling (University of Western Australia, 1999), sul suo sito. La tesi stessa non è stata letta."
+    }
   }
 };

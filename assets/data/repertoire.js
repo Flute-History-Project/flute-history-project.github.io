@@ -136,22 +136,189 @@ HFP.repertoire = [
     curio: "Quantz's notebook of studies, the Solfeggi, shows how he articulated passages from C. P. E. Bach's music, a rare glimpse of real 18th-century performance. {{brown2002, p. 61}}",
     links: []
   },
+  /* ---------- Mozart: the Dejean commission and the other flute works ----------
+     An overview, then one entry per work (they were written at different times, for different people, and each has its
+     own sources and questions of date or authorship). All fold on the Flute Map under the overview. */
+  {
+    id: "mozart-flute-works",
+    composer: "Wolfgang Amadeus Mozart",
+    name: "Mozart's Flute Works and the Dejean Commission: an overview",
+    short: "Mozart, Flute Works",
+    start: 1777, dates: "1777–1787",
+    place: "Mannheim; Paris; Vienna",
+    kind: "collection",
+    scoring: "Flute and orchestra; flute and strings; flute and harp",
+    flutes: ["classical-keyed-flute"],
+    description:
+      "Mozart wrote surprisingly little for the flute, and most of it belongs to a single winter. The pieces that matter are the Concertos in G ([[mozart-k313|K. 313]]) and D ([[mozart-k314|K. 314]], an arrangement of an oboe concerto), the Andante in C ([[mozart-k315|K. 315]]), the Flute and Harp Concerto ([[mozart-k299|K. 299]]) and four quartets for flute and strings ([[mozart-k285|K. 285]], [[mozart-k285a|285a]], [[mozart-k285b|285b]] and [[mozart-k298|298]]); a Paris Sinfonia concertante for flute, oboe, horn and bassoon ([[mozart-k297b|K. 297b]]) is lost. The Breitkopf editor of K. 299 counts that concerto, the D major Quartet K. 285, the Andante K. 315 and the late Quintet K. 617 for glass harmonica among Mozart's few unquestionably genuine compositions for the flute. K. 313 is not doubted either, but its autograph is lost; K. 314 is an arrangement; and three of the four quartets raise questions of date or authorship. {{adorjan2014; pohanka150, pp. III–VI}}\n\n" +
+      "Mozart was twenty-one when the story begins. In August 1777 he had asked to leave the Salzburg archbishop's service; he and his father were both dismissed, though Leopold was later reinstated, and on 22 September Wolfgang set out with his mother to look for a post elsewhere. {{brown2006, p. 18; giegling323, pp. III–VI; mozartletters, no. 430 (25–26 Feb 1778)}} Munich and Augsburg offered nothing. Mannheim, whose court orchestra was renowned for its standard and its discipline, promised more: he arrived on 30 October and stayed until 14 March 1778, giving lessons, eating at Wendling's table and at the Cannabichs', and writing music for friends. {{pohanka150, p. III; brown2006, pp. 18–20}} On 8 December he learned that the Elector had no place for him. {{brown2006, p. 19}} By then he had fallen in love with the sixteen-year-old singer Aloisia Weber and wanted to take her to Italy, and he put off the journey to Paris, while Leopold, in Salzburg and ever angrier, repeated that the point of the trip was to find a post or to earn money. {{brown2002, p. 141; brown2006, p. 19}} From Mannheim he travelled on to Paris, where he arrived on 23 March; his mother died there on 3 July. {{mozartletters, nos. 477 (Leopold to Padre Martini, 21 Aug 1778) and 459 (3 Jul 1778)}}\n\n" +
+      "The commission came through the flutist Johann Baptist [[wendling|Wendling]], first flute of the Mannheim orchestra and one of Mozart's closest friends there. On 10 December 1777 Mozart told his father what Wendling had said over lunch: 'our Indian' (that is, a Dutchman who lives on his own means, a lover of all the sciences and a great admirer of Mozart) was 'a rare man', and would give 200 florins for '3 kleine, leichte, und kurze Concertln und ein Paar quattro auf die flötte': three small, easy and short little concertos and a couple of quartets for the flute. {{mozartletters, no. 388 (10 Dec 1777); goritzki2001, p. III}} The 'Indian' was [[dejean|Ferdinand Dejean]], a doctor back from the service of the Dutch East India Company, who was in Mannheim from November 1777 to February 1778. {{pohanka150, Nachtrag; steins}}\n\n" +
+      "The money was welcome: it could pay for a longer stay, as Leopold himself had suggested. Mozart began at once. On 18 December he wrote that 'a quartet for the Indian Dutchman, for the true friend of mankind' was nearly ready, and the autograph of the D major Quartet [[mozart-k285|K. 285]] is dated Mannheim, 25 December 1777. {{pohanka150, pp. III–IV; mozartletters, no. 393 (18 Dec 1777)}} Then the work stalled. On 31 January 1778, in a letter in verse to his mother, he joked that Wendling would be cross because no pieces had come from him, that he would soon write 'the 4 quartetti', and that the concertos would have to wait for Paris. On 4 February he told his father that he would finish 'all the music for de Jean' at his leisure, since that was what the 200 florins were for, and on 12 February Leopold answered that he was astonished that nothing had yet been delivered. {{mozartletters, nos. 412, 416 and 422}} On 14 February, the day before Dejean left for Paris, Mozart reported that Dejean had paid him only 96 florins (half of 200, he explained, with a miscalculation of 4) because he had finished no more than '2 concerti' and '3 quartetti'; Dejean must still pay in full, he wrote, as agreed with Wendling, and the rest would follow. He added that he had no peace in Mannheim, could only write at night, and that, 'as you know', he lost patience whenever he had to write 'for an instrument that I cannot stand'. {{mozartletters, no. 423 (13–14 Feb 1778)}} Leopold's reply of 23 February is a single long reproach: 96 florins instead of 200, and why had Mozart not served the paying patron first? {{mozartletters, no. 429 (23 Feb 1778)}}\n\n" +
+      "What exactly Dejean received is uncertain. On 14 February Mozart counted two concertos and three quartets; on 3 October 1778, writing from Nancy, he mentioned only 'the 3 quartets and the flute concerto', which Dejean, when he left for Paris, had put 'in the wrong trunk', so that they had stayed behind in Mannheim: Dejean had promised to send them on, and Mozart would ask Wendling. {{mozartletters, no. 494 (3 Oct 1778); pohanka150, p. IV}} Only the quartet K. 285 can be tied securely to the commission, since its autograph carries the date. The Andante K. 315 is on paper and in handwriting of 1778 and so probably belongs to it. The concertos K. 313 and K. 314 and the quartet K. 285a are possible but cannot be proved, and the quartets K. 285b and K. 298 turn out, according to the newer research, to be Viennese works. On balance, writes Wiese, a Mannheim quartet is missing, the two Viennese quartets are never mentioned in the letters, and there is an Andante that nobody ordered. {{wiese2009, §1.2; henle635, pp. V–VI}} Martin argues, on the contrary, that Dejean received definitely two, probably three and possibly four quartets, and considers the watermark evidence for the later dating unreliable. {{martin2021}}\n\n" +
+      "Which flute did Dejean play, and how well? Nothing in the letters or in the documents we have says. Rachel Brown supposes that, like Wendling, he still used a one-keyed flute, as most players on the Continent did: flutes with several keys became common there only about the time of Mozart's death. {{brown2002, p. 142; brown2006, p. 23; spohr2006, p. 27}} As for makers, Salzburg had none of reputation, Spohr notes; he names Michael Eisenmenger in Mannheim, Thomas Lot in Paris (Wendling was one of his clients) and the internationally known Grenser in Dresden, Kirst in Potsdam and Tromlitz in Leipzig, and thinks Grenser's flutes were probably the most used by professionals on the Continent in Mozart's lifetime. {{spohr2006, pp. 28, 33}} No document links Dejean with any of them. As for his level, the only direct evidence is that he asked, through Wendling, for easy pieces. Giegling reads K. 313 as written for the limited technical means of its patron, while Martin, himself a flutist, finds the music well within reach of a determined amateur with Wendling's guidance. {{mozartletters, no. 388 (10 Dec 1777); giegling323, pp. III–VI; martin2021}} What little is known about the man and his instrument is collected under [[dejean|Dejean]].\n\n" +
+      "The remark of 14 February has been quoted so often that it has become the standard explanation of why Mozart wrote so little for the flute. Brown calls it an off-the-cuff remark by a young man in love, frustrated and badgered by his father, and Adorján points out that Mozart wrote the Flute and Harp Concerto only weeks later in Paris. {{brown2006, pp. 17, 23; adorjan2014}} Brown adds a practical reason: the flute of 1777 was at an awkward point in its history, with one-keyed instruments still dominant among amateurs and asked to play dramatic music for which their forked fingerings were ill suited. {{brown2002, p. 141}} She also notes that, for all his friendship with Wendling, there is no record of Mozart ever praising his playing, and she sees the contact with the Mannheim wind players as a turning point for his writing for winds, as *Idomeneo* (1781) shows. {{brown2006, pp. 24–25}}",
+    tips: "Use an Urtext edition and read its preface: the Neue Mozart-Ausgabe scores from Bärenreiter (TP 323 for K. 313–315, TP 150 for the quartets), Breitkopf's K. 313 (Wiese, 2006) and K. 314 (Wiese, 2009) and Henle's quartets (Wiese, 1998) all differ on dates and sources, and these prefaces are free to read on the publishers' sites. Bärenreiter's K. 314 comes with cadenzas and lead-ins by Rachel Brown and Konrad Hünteler, Breitkopf's K. 313 with cadenzas and lead-ins by Wiese. {{giegling323; wiese2009; henle635; ba4855a; eb8644}}\n\n" +
+      "All of Mozart's flute music can be played on a one-keyed flute if its f‴ is good, and his chromatic lines thrive on the contrast of strong and veiled notes. Others prefer a six- or eight-keyed flute for evenness. Only K. 299 needs a flute that goes down to c′. {{brown2002, p. 22}} Leopold Mozart's [[mozart-violinschule|Violinschule]] is the best guide to articulation and vibrato in this style. {{brown2002, p. 11}}",
+    curio: "Mozart gave Dejean the autograph scores, against the family habit of keeping them, and, as Mozart told his father, Dejean put them in the wrong trunk. The autographs of the concertos have never been found, but that of the D major Quartet survives, in Kraków. {{giegling323, pp. III–VI; pohanka150, Nachtrag}}",
+    image: { src: "assets/img/hfp/r-mannheim-1779.jpg", caption: "The parade ground and promenade at Mannheim, engraved by J. F. Riedel in 1779. The title names the Pfälzischer Hof, the inn where Mozart and his mother lodged on arrival", credit: "Generallandesarchiv Karlsruhe, J-B Mannheim 8 · CC BY 4.0", url: "https://commons.wikimedia.org/wiki/File:Prospect_des_Parade_und_des_Promenade_Plazes_zu_Manheim,_nebst_des_Mauth-,_Post-_und_Wirthshauses,_genannt_der_Pf%C3%A4lzische_Hof._-_Vue_de_la_Place_d%27Arm_-_LABW_-_Generallandesarchiv_Karlsruhe_J-B_Mannheim_8.jpeg" },
+    sources: [
+      { label: "Digital Mozart Edition: Mozart's letter of 10 December 1777 (no. 388), German transcription and English translation", url: "https://dme.mozarteum.at/DME/briefe/letter.php?mid=952" },
+      { label: "Digital Mozart Edition: Mozart's letter of 13–14 February 1778 (no. 423)", url: "https://dme.mozarteum.at/DME/briefe/letter.php?mid=987" },
+      { label: "Digital Mozart Edition: Leopold Mozart's reply of 23 February 1778 (no. 429)", url: "https://dme.mozarteum.at/DME/briefe/letter.php?mid=993" },
+      { label: "Digital Mozart Edition: Mozart's letter of 3 October 1778 (no. 494)", url: "https://dme.mozarteum.at/DME/briefe/letter.php?mid=1058" },
+      { label: "Falk Steins: Ferdinand Dejean (1731–1797), chronology, sources and open questions", url: "https://ferdinanddejean.jimdofree.com/english/cv/" }
+    ],
+    links: ["dejean", "wendling", "mozart-k313", "mozart-k314", "mozart-k315", "mozart-k285", "mozart-k285a", "mozart-k285b", "mozart-k298", "mozart-k297b", "mozart-k299", "mozart-violinschule", "tromlitz-unterricht"]
+  },
   {
     id: "mozart-k313",
+    group: "mozart-flute-works",
     composer: "Wolfgang Amadeus Mozart",
-    name: "Flute Concerto No. 1 in G major, K. 313",
+    name: "Flute Concerto No. 1 in G major, K. 313 (285c)",
     short: "Mozart, Concerto K. 313",
+    start: 1777, dates: "1777–78",
+    place: "Salzburg or Mannheim",
+    kind: "piece",
+    scoring: "Flute and orchestra",
+    flutes: ["classical-keyed-flute"],
+    description:
+      "The first of Mozart's flute concertos is usually placed in Mannheim in the winter of 1777–78 and identified with the 'flute concerto for Mr. de Jean' that Mozart mentioned on 3 October 1778. It has three movements: an Allegro maestoso, an Adagio ma non troppo and a Rondo in the tempo of a minuet. {{mozartletters, no. 494 (3 Oct 1778); eb8644}} But Mozart may have written it before leaving Salzburg. Wiese notes that a performance of a Mozart flute concerto in Salzburg in July 1777 is documented and that, judging by its instrumentation, it was most probably K. 313; as he did with his oboe concerto, Mozart could then have re-dedicated it to [[dejean|Dejean]] in Mannheim. Goritzki, in the Henle edition of the oboe concerto, likewise calls it 'possibly already composed in Salzburg'. {{wiese2009, §1.2; goritzki2001, p. IV}}\n\n" +
+      "The Mozarts' habit was to give the patron a copyist's manuscript and keep the autograph score. What happened here is unknown: perhaps Mozart had no time to have a copy made and gave Dejean the autograph, and Dejean is said to have packed it in the wrong trunk before leaving for Paris, so that it stayed in Mannheim. Mozart asked his friend [[wendling|Wendling]] to send it to him, but we do not know whether he ever received it. The autograph is lost, and the first edition (Breitkopf & Härtel, Leipzig, 1803) has no known manuscript model. {{giegling323, pp. III–VI; mozartletters, no. 494 (3 Oct 1778)}}\n\n" +
+      "Giegling finds in the concerto, as in all of Mozart's works written to order for amateurs, the right texture for the limited technical skills of its patron and a fresh, easy-going tone. He thinks the Andante [[mozart-k315|K. 315]] may have been written as an alternative to the more demanding slow movement of K. 313. {{giegling323, pp. III–VII}} Whether Dejean's skills were really limited is another question, discussed under [[mozart-flute-works|the overview]].",
+    tips: "Dejean probably played a one-keyed flute, so a one-keyed classical flute is the natural choice. Six- or eight-keyed copies after Heinrich Grenser at a′ = 430 are the standard classical flute today, and a flute with a few keys is also possible. {{brown2002, pp. 36, 142}} Mozart's concertos can be played on a one-keyed flute as long as its f‴ is good; others prefer six or eight keys for evenness. {{brown2002, p. 22}}\n\n" +
+      "Mozart left no cadenzas for the flute concertos, so you will have to write your own in period style, or use those of a modern editor (Wiese's Breitkopf edition includes cadenzas and lead-ins). In the Rondo Mozart himself varies the refrain four times; Brown suggests using these variants as models for ornamenting a plainer refrain, such as that of the D major Concerto. {{brown2002, p. 101}}",
+    imslp: "Flute Concerto in G major K.313",
+    listen: "Mozart flute concerto G major K 313 traverso",
+    image: { src: "assets/img/hfp/p-mozart-1777.jpg", caption: "Mozart at twenty-one: the so-called 'Bologna Mozart', copied in Salzburg in 1777 by an unknown painter for Padre Martini (Museo internazionale e biblioteca della musica, Bologna)", credit: "public domain", url: "https://commons.wikimedia.org/wiki/File:Martini_bologna_mozart_1777.jpg" },
+    links: ["mozart-flute-works", "tromlitz-unterricht", "dejean"]
+  },
+  {
+    id: "mozart-k314",
+    group: "mozart-flute-works",
+    composer: "Wolfgang Amadeus Mozart",
+    name: "Flute Concerto No. 2 in D major, K. 314 (285d), after the Oboe Concerto in C",
+    short: "Mozart, Concerto K. 314",
+    start: 1777, dates: "oboe version 1777; flute version 1777–78",
+    place: "Salzburg → Mannheim",
+    kind: "piece",
+    scoring: "Flute and orchestra (2 oboes, 2 horns, strings)",
+    flutes: ["classical-keyed-flute"],
+    description:
+      "This concerto is the Oboe Concerto in C, a tone lower, and the oboe version came first. Mozart probably wrote it in Salzburg in the spring or summer of 1777 for the oboist Giuseppe Ferlendis, who had joined the court orchestra on 1 April. In Mannheim he made a present of it to the oboist Friedrich Ramm, who played it there repeatedly: on 14 February 1778 Mozart wrote that Ramm had played it for the fifth time, that it was making a great stir, and that it had become his *cheval de bataille*. {{giegling323, pp. III–VI; wiese2009, §1.1; mozartletters, no. 423 (13–14 Feb 1778)}}\n\n" +
+      "The oboe version was long thought lost. In 1920 Bernhard Paumgartner found a set of parts in the Mozarteum in Salzburg and recognised that the flute concerto, which Köchel had assumed to be one of Dejean's concertos, was its transposition; a nine-bar autograph sketch in C that surfaced in 1971 confirms that the oboe version is the original. Since 1937 the usual explanation, proposed by Alfred Einstein, has been that Mozart, short of time, simply transposed the oboe concerto for Dejean. {{wiese2009, §1.1–1.2; giegling323, pp. III–VI}} Wiese's careful account leaves open who made the arrangement, since nowhere does it show the hand of Mozart: perhaps he only ordered it, and the sale to Dejean would then authorise it indirectly. The oldest source of the flute version is a set of Viennese parts of the early 1790s. {{wiese2009, §1.2}} Goritzki, himself an oboist, believes that the arrangement was copied almost literally, perhaps by Fridolin Weber or by Wendling, that it was meant as one of the 'small, easy and short' concertos, and that the Salzburg oboe part is a later, simplified revision by another hand. {{goritzki2001, pp. III–IV}}",
+    tips: "Brown notes the many gruppetti (turns) that Mozart writes at the start of phrases in the slow movement. {{brown2002, p. 98}} The refrain of the Rondo is plain, and the varied refrains of the Rondo of [[mozart-k313|K. 313]] give ideas for ornamenting it. {{brown2002, p. 101}}\n\n" +
+      "The Breitkopf edition (Wiese, 2009) follows the Viennese flute parts closely and recommends leaving out the doubtful slides (*Schleifer*) in the slow movement, especially the one in bar 2; Bärenreiter's edition includes a reference score that sets the flute part above the oboe part, and cadenzas and lead-ins by Rachel Brown and Konrad Hünteler. {{wiese2009, §3; ba4855a, p. V}}",
+    curio: "On 15 February 1783, in Vienna, Mozart asked his father to send him the book with 'Ramm's oboe concerto, or rather Ferlendis's': the oboist of Prince Esterházy would give him three ducats for it, and six for a new one. It is the last mention of the score. {{wiese2009, §1.1; giegling323, pp. III–VI}}",
+    imslp: "Flute Concerto in D major K.314",
+    listen: "Mozart flute concerto D major K 314 traverso",
+    links: ["mozart-flute-works", "mozart-k313", "wendling", "dejean"]
+  },
+  {
+    id: "mozart-k315",
+    group: "mozart-flute-works",
+    composer: "Wolfgang Amadeus Mozart",
+    name: "Andante in C major for flute and orchestra, K. 315 (285e)",
+    short: "Mozart, Andante K. 315",
     start: 1778, dates: "1778",
     place: "Mannheim",
     kind: "piece",
     scoring: "Flute and orchestra",
     flutes: ["classical-keyed-flute"],
     description:
-      "Commissioned in Mannheim in the winter of 1777–78 by Ferdinand Dejean, a wealthy amateur flutist and surgeon working for the Dutch East India Company, who asked for 'three small, easy and short concertos and several quartets'. Mozart, a close friend of the Mannheim flutist Johann Baptist Wendling, never completed the commission and was paid 96 florins instead of 200. In a letter of the time he wrote that he lost interest whenever he had to write for an instrument he disliked, yet the concerto became one of the cornerstones of the repertoire. {{brown2002, pp. 141–142}}",
-    tips: "Dejean probably played a one-keyed flute, so a one-keyed classical flute (Grenser type, a′ ≈ 430) is the natural choice; a flute with a few extra keys is also possible. {{brown2002, pp. 36, 142}} Write your own cadenzas in period style.\n\n" +
-      "Mozart's concertos can be played on a one-keyed flute as long as its f‴ is good: the contrast of strong and veiled notes suits his chromatic lines. Others prefer a six- or eight-keyed flute for evenness. Leopold Mozart's [[mozart-violinschule|Violinschule]] is the best guide to articulation and vibrato in this style. {{brown2002, pp. 11, 22, 46}}",
-    imslp: "Flute Concerto in G major K.313",
-        links: ["tromlitz-unterricht"]
+      "A single, serenade-like slow movement. The autograph survives (Brown places it in the Bibliothèque nationale in Paris), and its paper and handwriting date it to 1778, so it probably has something to do with Dejean's commission, although Mozart never mentions it in his letters. {{wiese2009, §1.2; brown2002, p. 142}} What it was for is not known. Giegling suggests it was written as an alternative to the more demanding slow movement of [[mozart-k313|K. 313]], which would suit the modest technique of the patron; Brown thinks it more likely to be part of an unfinished third concerto, the third of the 'three small, easy and short' concertos that were ordered. {{giegling323, pp. V, VII; brown2002, p. 141}} Mozart gave the autographs of these works to Dejean, perhaps in haste, because he had not even completed the commission. {{brown2002, p. 142}}",
+    tips: "Brown's case study of this piece is full of practical advice. Mozart made no written distinction between long and short grace notes, notating them all as quaver acciaccaturas, but many 'long' appoggiaturas are in fact written out in full (the first notes of bars 4, 10, 12, 15, 16, 28 and 30). For the others, she suggests that the one in bar 20 could be half-length, on the beat, that in bar 8 a little shorter, and those in bars 30 and 84 short, on or just before the beat. Special delicate fingerings are possible after the arresting augmented fourth in bar 12, and normal fingerings with a stronger sound at the recapitulation in bar 66. {{brown2002, p. 142}}\n\n" +
+      "She suggests embellishing the recapitulation from bar 59 with new rhythms, new figuration over the same harmony, new articulations and above all chromatic passing notes. Any cadenza should be short: Mozart's shortest piano cadenza is four bars, and Tromlitz gives one of similar length. {{brown2002, p. 143}}",
+    imslp: "Andante in C major K.315",
+    listen: "Mozart andante C major K 315 flute",
+    links: ["mozart-flute-works", "mozart-k313", "tromlitz-unterricht", "dejean"]
+  },
+  {
+    id: "mozart-k285",
+    group: "mozart-flute-works",
+    composer: "Wolfgang Amadeus Mozart",
+    name: "Flute Quartet in D major, K. 285",
+    short: "Mozart, Quartet K. 285",
+    start: 1777, dates: "Mannheim, 25 December 1777",
+    place: "Mannheim",
+    kind: "piece",
+    scoring: "Flute, violin, viola and cello",
+    flutes: ["classical-keyed-flute"],
+    description:
+      "The only flute quartet whose date is certain, and the one that can be tied to Dejean's commission with confidence. The autograph, which was lost for a time after the Second World War and has been accessible again since 1979–80 in the Biblioteka Jagiellońska in Kraków, bears the note 'Mannheim il 25 decre 1777'. Mozart wrote 'a quartet for the Indian Dutchman' that month. {{pohanka150, pp. III, V, Nachtrag; mozartletters, no. 393 (18 Dec 1777)}} It has three movements, with a slow movement that ends on a pause before the Rondo: it is not a proper close, and the flute may be expected to bridge the gap with a short *Eingang* (lead-in). The cello part is headed simply 'Basso'. {{pohanka150, pp. V, VII, Nachtrag}}\n\n" +
+      "Before 1882 all the printed editions combined its first movement with two other movements that the first two editions of Köchel's catalogue did not list; in 1936 Georges de Saint-Foix identified them with the second quartet for Dejean ([[mozart-k285a|K. 285a]]). The first complete edition faithful to the autograph came out in 1882 in the old Mozart complete edition. {{pohanka150, pp. V–VI}}",
+    tips: "Mozart's quartets with a wind instrument have very few dynamic marks, probably not through carelessness but because he counts on the natural dynamic means of the wind instrument and on the strings' chamber-music instinct to step back or play out as needed: add little, if anything. {{pohanka150, p. VII}}",
+    imslp: "Flute Quartet in D major K.285",
+    listen: "Mozart flute quartet D major K 285 traverso",
+    links: ["mozart-flute-works", "mozart-k285a", "mozart-k285b", "mozart-k298", "dejean"]
+  },
+  {
+    id: "mozart-k285a",
+    group: "mozart-flute-works",
+    composer: "Wolfgang Amadeus Mozart (authorship not proved)",
+    name: "Flute Quartet in G major, K. 285a",
+    short: "Mozart, Quartet K. 285a",
+    start: 1778, dates: "probably Mannheim, early 1778",
+    place: "Mannheim?",
+    kind: "piece",
+    scoring: "Flute, violin, viola and cello",
+    flutes: ["classical-keyed-flute"],
+    description:
+      "A quartet in two movements, an Andante and a Tempo di Menuetto, which Wiese sees as a way of making a virtue of necessity: a short quartet in the Mannheim taste, written while Mozart had no peace in which to work. {{henle635, pp. V–VI}} There is no autograph. The movements were for a long time printed after the first movement of [[mozart-k285|K. 285]], and Saint-Foix identified them in 1936 as the lost second quartet for Dejean; Einstein accepted this in the third edition of the Köchel catalogue (1937) and gave the work the number 285a. It is an attractive hypothesis, say the editors of the New Mozart Edition, but no proof for or against is possible, and even the authenticity of the two movements cannot strictly be proved, since the early prints (the first, by Artaria in Vienna in 1792) are the only sources. {{pohanka150, pp. V–VI, VII}}",
+    tips: "Only the early prints survive, and Wiese calls them careless to a degree that is hard to surpass: compare editions, and see the Henle and Bärenreiter prefaces for what each editor decided. {{henle635, p. V; pohanka150, p. VI}}",
+    imslp: "Flute Quartet in G major K.285a",
+    links: ["mozart-flute-works", "mozart-k285", "mozart-k285b", "dejean"]
+  },
+  {
+    id: "mozart-k285b",
+    group: "mozart-flute-works",
+    composer: "Wolfgang Amadeus Mozart (authorship disputed)",
+    name: "Flute Quartet in C major, K. Anh. 171 (285b)",
+    short: "Mozart, Quartet K. 285b",
+    start: 1778, dates: "1778 or 1781",
+    place: "Mannheim or Vienna",
+    kind: "piece",
+    scoring: "Flute, violin, viola and cello",
+    flutes: ["classical-keyed-flute"],
+    description:
+      "A quartet in two movements whose date and authorship are both debated. Einstein put it in Mannheim in January or February 1778, assuming that it was the third quartet for [[dejean|Dejean]]. {{pohanka150, pp. V–VI}} But an autograph sketch for a few bars of the first movement, on a loose sheet that also carries sketches for *Die Entführung*, points to Vienna in 1781, and Wiese suggests that Mozart wrote it then for Wendling, who had just played the solo flute in the Munich first performance of *Idomeneo* (Mozart wrote the Oboe Quartet K. 370 for Ramm, who also took part, at the same time). {{henle635, pp. V–VI; pohanka150, p. VI}}\n\n" +
+      "The slow movement, a theme with variations, is almost note for note the sixth movement of the Serenade in B♭, K. 361 (the 'Gran Partita', 1781), and scholars disagree about which came first: some see the quartet as the original, others as an anonymous arrangement, with the first movement 'more or less' a forgery. The earliest print is a set of parts by Heinrich Philipp Bossler in Speyer (op. XIV, 1788). {{pohanka150, pp. V–VI; henle635, pp. V–VI}}",
+    tips: "The sources are corrupt, and the transmitted text has two odd places in the variations. In one the violin doubles the viola in the accompaniment, which the Bärenreiter editors corrected as a probable engraver's misunderstanding. In the other, a bar with a pause between the fourth and fifth variations, the flute rests while the strings play a fortissimo C in unison: the editors left it as printed, but think that a plain C major chord, or a dominant chord over which the flute improvises a short cadenza, is more likely, and they leave sensible changes to the performer. {{pohanka150, pp. VI–VII}}",
+    imslp: "Flute Quartet in C major K.Anh.171",
+    links: ["mozart-flute-works", "mozart-k285", "mozart-k285a", "wendling", "dejean"]
+  },
+  {
+    id: "mozart-k298",
+    group: "mozart-flute-works",
+    composer: "Wolfgang Amadeus Mozart",
+    name: "Flute Quartet in A major, K. 298",
+    short: "Mozart, Quartet K. 298",
+    start: 1786, dates: "Vienna, probably late 1786 (long dated 1778)",
+    place: "Vienna",
+    kind: "piece",
+    scoring: "Flute, violin, viola and cello",
+    flutes: ["classical-keyed-flute"],
+    description:
+      "Otto Jahn and, after him, every edition of the Köchel catalogue placed this quartet in Paris in 1778, on the strength of a note in ink on the autograph (now in the Austrian National Library, Vienna): 'Quatuor original composé par W. A. Mozart. à Paris. 1778. Manuscrit du Compositeur, reçu du Baron de Jacquin', probably in the hand of Ignaz von Mosel. The note is confirmed by nothing, and in 1939 Georges de Saint-Foix argued for Vienna in 1786; the handwriting of the autograph shows all the marks of the mature Viennese years, and paper and handwriting, Wiese adds, prove that the work is not from Mannheim. {{pohanka150, pp. IV–V; henle635, pp. V–VI}}\n\n" +
+      "It belongs to a fashionable genre, the *quatuor d'airs dialogués*, built on other people's tunes. The theme of the opening variations resembles Hoffmeister's song *An die Natur*; the trio of the minuet is an old French rondeau, 'Il a des bottes, des bottes Bastien'; and the theme of the finale comes from Paisiello's opera *Le gare generose*, first performed in Naples in spring 1786 and in Vienna on 1 September 1786, which gives the earliest possible date. The baron who owned the manuscript was probably Mozart's Viennese friend Gottfried von Jacquin, and the quartet may have been written for his circle. {{pohanka150, pp. IV–V; henle635, pp. V–VI}} The opening variations seem unfinished: the movement has only 64 bars, with no minor variation, no adagio variation and no coda. {{pohanka150, p. VIII}}",
+    tips: "A light, witty piece for friends: play the borrowed tunes with the character of their sources rather than as a showpiece. {{pohanka150, pp. IV–V}}",
+    imslp: "Flute Quartet in A major K.298",
+    links: ["mozart-flute-works", "mozart-k285b"]
+  },
+  {
+    id: "mozart-k297b",
+    group: "mozart-flute-works",
+    composer: "Wolfgang Amadeus Mozart (lost)",
+    name: "Sinfonia concertante for flute, oboe, horn and bassoon, K. Anh. I, 9 (297B): lost",
+    short: "Mozart, Paris Sinfonia concertante",
+    start: 1778, dates: "Paris, April 1778",
+    place: "Paris",
+    kind: "piece",
+    scoring: "Flute, oboe, horn, bassoon and orchestra",
+    flutes: ["classical-keyed-flute"],
+    description:
+      "In Paris in the spring of 1778 four outstanding wind players were in town at the same time as Mozart: [[wendling|Wendling]] (flute), Friedrich Ramm (oboe), Georg Wenzel Ritter (bassoon), all members of the Mannheim court orchestra, and the horn player Giovanni Punto. Mozart saw the chance and on 5 April announced that he would write a sinfonia concertante for them, for the Concert spirituel directed by Joseph Le Gros. {{ba5770, pp. III–V; mozartletters, no. 440 (5 Apr 1778)}} The four soloists were delighted with it, but on 1 May Mozart reported that Le Gros had had it for four days for copying and that it always lay in the same place; he found it hidden among the music, and Le Gros said he had forgotten to give it to the copyist. On the days it should have been played, Ramm and Punto came to Mozart, angry, to ask why it was not being performed, and Ramm denounced Le Gros in the music room. {{mozartletters, no. 447 (1 May 1778)}} On 3 October Mozart wrote that Le Gros had bought the work, together with two overtures, and thought that he alone had it; Mozart still had it in his head and would write it out again. {{mozartletters, no. 494 (3 Oct 1778)}}\n\n" +
+      "The score has never turned up. A copy of a Sinfonia concertante in E♭ for oboe, clarinet, horn and bassoon, found in the estate of Mozart's biographer Otto Jahn, was long taken to be that work in revised form. The editors now agree that it is not Mozart's piece as it stands, and above all that its orchestral writing is not his; the Bärenreiter preface holds it to be a deeply dubious work. The original, for flute, oboe, horn and bassoon, remains lost. {{ba5770, pp. III–V}}",
+    links: ["mozart-flute-works", "wendling"]
   },
   {
     id: "beethoven-op25",
@@ -673,21 +840,23 @@ HFP.repertoire = [
   },
   {
     id: "mozart-k299",
+    group: "mozart-flute-works",
     composer: "Wolfgang Amadeus Mozart",
-    name: "Concerto for Flute and Harp in C major, K. 299",
+    name: "Concerto for Flute and Harp in C major, K. 299 (297c)",
     short: "Mozart, Flute and Harp Concerto K. 299",
     start: 1778,
-    dates: "1778",
+    dates: "Paris, April–May 1778",
     place: "Paris",
     kind: "piece",
     scoring: "Flute, harp and orchestra",
     flutes: ["classical-keyed-flute"],
-    description: "Mozart wrote this concerto in Paris for the Comte de Guines, an amateur flutist, and his harpist daughter. The flute part goes down to c′, below the normal range of a one-keyed flute: the count had been a French envoy in London and very probably owned an English flute with a long foot joint. {{brown2002, p. 22}}",
+    description: "Mozart wrote this concerto in Paris for the Duc de Guines (Adrien-Louis Bonnières de Sodastre, formerly Comte de Guines), an amateur flutist, and his daughter, a harpist and Mozart's composition pupil. On 14 May 1778 Mozart wrote that the Duke played the flute 'incomparably well' and his daughter the harp 'magnifique'; by 31 July he was still waiting for the Duke to pay for the concerto, four months after he had delivered it. {{adorjan2014; mozartletters, nos. 449 (14 May 1778) and 471 (31 Jul 1778)}} According to Gunson, [[wendling|Wendling]], who had taught Guines, introduced Mozart to him. {{gunson}}\n\n" +
+      "The flute part goes down to c′ in all three movements, below the normal range of a one-keyed flute: Guines had been French ambassador in London until 1776 and very probably owned an English flute with a foot joint down to c′. Spohr thinks it was most probably a six-keyed English flute, and Brown notes that such a flute would have had at least five other keys, for B♭, G♯, F, E♭ and c♯′. {{brown2002, pp. 22, 175; spohr2006, pp. 27, 29}} Both solo parts are easy to play and are distinguished less by bravura than by esprit, elegance and the colour of the two instruments together. The autograph, titled 'Concertante a La Harpe, e Flauto. Paris 1778', is in the Biblioteka Jagiellońska in Kraków. {{adorjan2014}}",
     tips: "Choose a classical flute with a c′ foot, ideally of English type. The many chromatic passages sound beautifully varied on a flute with few keys. {{brown2002, p. 22}}",
     imslp: "Concerto for Flute and Harp K.299",
     listen: "Mozart flute harp concerto K 299 period instruments",
         image: { src: "assets/img/hfp/r-k299.jpg", caption: "Mozart's autograph of the Andantino of K. 299", credit: "Photo Gloue · CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Concerto_for_Flute,_Harp_and_Orchestra,_Andantino,_K299,_Holograph_manuscript.png" },
-    links: ["mozart-k313"]
+    links: ["mozart-flute-works", "mozart-k313", "wendling"]
   },
   {
     id: "brahms-symphony-4",
