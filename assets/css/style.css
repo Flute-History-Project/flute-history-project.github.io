@@ -148,7 +148,7 @@ p { margin: 0 0 1em; }
 .entry-meta { font-family: var(--sans); font-size: .8rem; color: var(--muted); grid-column: 1; display: flex; flex-wrap: wrap; gap: 4px 12px; }
 .entry-tagline { grid-column: 1; color: var(--muted); font-size: .95rem; }
 .chev { grid-row: 1 / span 3; grid-column: 2; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; transition: transform .2s; color: var(--muted); }
-.entry[open] .chev { transform: rotate(180deg); }
+.entry[open] > summary .chev { transform: rotate(180deg); }
 
 .entry-body { padding: 4px 16px 18px; border-top: 1px solid var(--line); }
 .entry-grid { display: grid; grid-template-columns: 240px 1fr; gap: 24px; margin-top: 16px; }
@@ -187,6 +187,16 @@ p { margin: 0 0 1em; }
 .chip.t-repertoire { --chip-color: var(--c-repertoire); }
 
 .entry-actions { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--line); font-family: var(--sans); font-size: .85rem; }
+
+/* works folded inside a head entry (e.g. the Bach flute works inside their overview): compact drop-downs, only seen once the head is open */
+.subentries { margin: 20px 0 6px; padding-left: 14px; border-left: 3px solid color-mix(in srgb, var(--type-color, var(--accent)) 45%, transparent); display: grid; gap: 8px; }
+.subentries > h4 { margin: 0 0 2px; font-family: var(--sans); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.subentries .entry { margin: 0; box-shadow: none; background: var(--paper); border-radius: 8px; }
+.subentries .entry > summary { padding: 9px 12px; }
+.subentries .entry-title { font-size: 1.1rem; }
+.subentries .entry-tagline { display: none; }
+.subentries .entry-body { padding: 2px 12px 14px; }
+.subentries .entry-grid { grid-template-columns: 1fr; gap: 10px; }
 
 /* inline cross-references, coloured by target type */
 a.xref { text-decoration-style: dotted; }

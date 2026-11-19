@@ -5,7 +5,7 @@
  *         This is the ONLY source of "Playable on" / "Possible repertoire".
  * tips: practical advice for performers
  * imslp: search string for the score on IMSLP (omit for works still under copyright)
- * mapGroup: id of another entry under which this one is folded on the Flute Map (opens when that entry is clicked)
+ * group: id of another entry that holds this one: it is nested as a drop-down inside that entry on this page and folded under it on the Flute Map
  */
 window.HFP = window.HFP || {};
 HFP.repertoire = [
@@ -46,7 +46,7 @@ HFP.repertoire = [
   },
   {
     id: "bach-bwv1013",
-    mapGroup: "bach-flute-sonatas",
+    group: "bach-flute-sonatas",
     composer: "Johann Sebastian Bach",
     name: "Partita in A minor for solo flute, BWV 1013",
     short: "Bach, Partita BWV 1013",
@@ -356,7 +356,7 @@ HFP.repertoire = [
   },
   {
     id: "bach-bwv1020",
-    mapGroup: "bach-flute-sonatas",
+    group: "bach-flute-sonatas",
     composer: "J. S. Bach or C. P. E. Bach (attributed)",
     name: "Sonata in G minor for flute (or violin) and harpsichord, BWV 1020",
     short: "Bach (attr.), Sonata BWV 1020",
@@ -404,7 +404,7 @@ HFP.repertoire = [
   },
   {
     id: "bach-bwv1034",
-    mapGroup: "bach-flute-sonatas",
+    group: "bach-flute-sonatas",
     composer: "Johann Sebastian Bach",
     name: "Sonata in E minor for flute and basso continuo, BWV 1034",
     short: "Bach, Sonata BWV 1034",
@@ -431,7 +431,7 @@ HFP.repertoire = [
   },
   {
     id: "bach-bwv1039",
-    mapGroup: "bach-flute-sonatas",
+    group: "bach-flute-sonatas",
     composer: "Johann Sebastian Bach",
     name: "Trio Sonata in G major for two flutes and basso continuo, BWV 1039",
     short: "Bach, Trio Sonata BWV 1039",
@@ -459,7 +459,7 @@ HFP.repertoire = [
   },
   {
     id: "bach-bwv1033",
-    mapGroup: "bach-flute-sonatas",
+    group: "bach-flute-sonatas",
     composer: "J. S. Bach (attributed)",
     name: "Sonata in C major for flute and basso continuo, BWV 1033",
     short: "Bach (attr.), Sonata BWV 1033",
@@ -483,7 +483,7 @@ HFP.repertoire = [
   },
   {
     id: "bach-bwv1038",
-    mapGroup: "bach-flute-sonatas",
+    group: "bach-flute-sonatas",
     composer: "J. S. Bach (transmitted anonymously)",
     name: "Trio Sonata in G major for flute, violin and basso continuo, BWV 1038",
     short: "Bach, Trio Sonata BWV 1038",
@@ -509,7 +509,7 @@ HFP.repertoire = [
   },
   {
     id: "bach-bwv1030",
-    mapGroup: "bach-flute-sonatas",
+    group: "bach-flute-sonatas",
     composer: "Johann Sebastian Bach",
     name: "Sonata in B minor for flute and obbligato harpsichord, BWV 1030",
     short: "Bach, Sonata BWV 1030",
@@ -542,7 +542,7 @@ HFP.repertoire = [
   },
   {
     id: "bach-bwv1032",
-    mapGroup: "bach-flute-sonatas",
+    group: "bach-flute-sonatas",
     composer: "Johann Sebastian Bach",
     name: "Sonata in A major for flute and obbligato harpsichord, BWV 1032",
     short: "Bach, Sonata BWV 1032",
@@ -569,7 +569,7 @@ HFP.repertoire = [
   },
   {
     id: "bach-bwv1031",
-    mapGroup: "bach-flute-sonatas",
+    group: "bach-flute-sonatas",
     composer: "J. S. Bach (attributed)",
     name: "Sonata in E-flat major for flute and obbligato harpsichord, BWV 1031",
     short: "Bach (attr.), Sonata BWV 1031",
@@ -594,7 +594,7 @@ HFP.repertoire = [
   },
   {
     id: "bach-bwv1035",
-    mapGroup: "bach-flute-sonatas",
+    group: "bach-flute-sonatas",
     composer: "Johann Sebastian Bach",
     name: "Sonata in E major for flute and basso continuo, BWV 1035",
     short: "Bach, Sonata BWV 1035",
@@ -619,7 +619,7 @@ HFP.repertoire = [
   },
   {
     id: "bach-bwv1079",
-    mapGroup: "bach-flute-sonatas",
+    group: "bach-flute-sonatas",
     composer: "Johann Sebastian Bach",
     name: "Trio Sonata in C minor from the Musical Offering, BWV 1079",
     short: "Bach, Trio Sonata BWV 1079",
@@ -645,7 +645,7 @@ HFP.repertoire = [
   },
   {
     id: "bach-bwv1067",
-    mapGroup: "bach-flute-sonatas",
+    group: "bach-flute-sonatas",
     composer: "Johann Sebastian Bach",
     name: "Orchestral Suite No. 2 in B minor, BWV 1067",
     short: "Bach, Suite BWV 1067",

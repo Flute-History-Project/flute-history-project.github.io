@@ -10,11 +10,11 @@ HFP.renderMap = function (app, api) {
   const AXIS_H = 42, ROW_H = 26, LANE_PAD = 10, PAD_L = 16, PAD_R = 40;
   const state = { ppy: window.innerWidth < 600 ? 2.6 : 3.4, lanes: new Set(TYPES), sel: null, open: new Set() };
 
-  // Collapsible groups: an entry with `mapGroup: "<head id>"` is hidden on the map until the head entry is opened
+  // Collapsible groups: an entry with `group: "<head id>"` is hidden on the map until the head entry is opened
   // (e.g. the many Bach works hang under "Bach, Flute Sonatas"). groups[headId] = ids of the members.
   const groups = {};
   Object.keys(index).forEach((id) => {
-    const g = index[id].e.mapGroup;
+    const g = index[id].e.group;
     if (g && index[g]) (groups[g] = groups[g] || []).push(id);
   });
 
@@ -25,7 +25,7 @@ HFP.renderMap = function (app, api) {
     if (e.start < Y0) return; // prehistoric and ancient entries sit before the map's range: they live on the Flutes page
     lanesOf(id).forEach((lane) => {
       const span = e.end !== undefined;
-      items.push({ id, lane, start: e.start, end: span ? (e.end === null ? Y1 : Math.min(e.end, Y1)) : null, group: groups[e.mapGroup] ? e.mapGroup : null, head: groups[id] ? groups[id].length : 0, label: e.mapLabel || (e.roles ? e.name.replace(/\s*\(.*\)/, "").replace(/ family$/, "").split(" ").pop() : nameOf(id)) });
+      items.push({ id, lane, start: e.start, end: span ? (e.end === null ? Y1 : Math.min(e.end, Y1)) : null, group: groups[e.group] ? e.group : null, head: groups[id] ? groups[id].length : 0, label: e.mapLabel || (e.roles ? e.name.replace(/\s*\(.*\)/, "").replace(/ family$/, "").split(" ").pop() : nameOf(id)) });
     });
   });
   const isHidden = (it) => it.group && !state.open.has(it.group);
@@ -34,7 +34,7 @@ HFP.renderMap = function (app, api) {
   function toggleGroup(id) { if (state.open.has(id)) state.open.delete(id); else state.open.add(id); draw(); }
   // opens the group a (possibly hidden) entry belongs to; true when the map has to be redrawn
   function revealGroupOf(id) {
-    const g = index[id] && index[id].e.mapGroup;
+    const g = index[id] && index[id].e.group;
     if (g && groups[g] && !state.open.has(g)) { state.open.add(g); return true; }
     return false;
   }

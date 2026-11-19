@@ -39,6 +39,11 @@
   H.people.forEach((e) => (index[e.id] = { e, type: personType(e) }));
   H.treatises.forEach((e) => (index[e.id] = { e, type: "treatises" }));
   H.repertoire.forEach((e) => (index[e.id] = { e, type: "repertoire" }));
+  // An entry with `group: "<head id>"` is nested inside its head entry on the list page and folded under it on the
+  // Flute Map (e.g. the Bach flute works inside "Bach Flute Sonatas"). groups[headId] = member entries, in id order.
+  const groups = {};
+  H.repertoire.forEach((e) => { if (e.group && index[e.group]) (groups[e.group] = groups[e.group] || []).push(e); });
+  Object.values(groups).forEach((g) => g.sort((a, b) => a.id.localeCompare(b.id)));
 
   const lanesOf = (id) => {
     const { e, type } = index[id];
@@ -241,6 +246,7 @@
     let figure = "", aside = "", main = "";
     const skip = new Set();
     const notes = newNotes(e.id);
+    const kids = (type === "repertoire" && groups[e.id]) || []; // works folded inside this entry
 
     if (type === "flutes") {
       // prehistoric finds have no schematic drawing (drawing: null): the photograph stands alone
@@ -266,9 +272,11 @@
         `<ul class="features">${(e.contents || []).map((c) => `<li>${inline(loc(c))}</li>`).join("")}</ul>`;
     } else if (type === "repertoire") {
       (e.flutes || []).forEach((f) => skip.add(f));
+      kids.forEach((k) => skip.add(k.id)); // the folded works appear as drop-downs, not as chips
       aside = photo(e.image) + facts([["composer", esc(e.composer)], ["date", esc(e.dates)], ["place", esc(e.place)], ["scoring", esc(e.scoring)], ["kind", esc(tr("kind_" + e.kind))]]) +
         `<div class="related"><div><h4>${esc(tr("playable_on"))}</h4><div class="chips">${(e.flutes || []).map(chip).join("")}</div></div></div>`;
-      main = paras(loc(e.description), notes);
+      main = paras(loc(e.description), notes) +
+        (kids.length ? `<div class="subentries"><h4>${esc(tr("group_works").replace("{n}", kids.length))}</h4>${kids.map((k) => entryHTML(k, "repertoire")).join("")}</div>` : "");
     }
 
     if (e.tips) main += `<div class="box box-tips"><h4>${esc(tr("tips"))}</h4>${paras(loc(e.tips), notes)}</div>`;
@@ -289,9 +297,11 @@
 
     const title = esc(e.name);
     const meta = metaOf(e, type).filter(Boolean).map((m, i) => (i === 0 && type === "repertoire" ? `<strong>${esc(m)}</strong>` : esc(m))).join("<span aria-hidden='true'>·</span>");
-    const search = [e.name, e.short, e.composer, e.place, e.origin, e.authorName, loc(e.tagline)].filter(Boolean).join(" ").toLowerCase();
+    const searchOf = (x) => [x.name, x.short, x.composer, x.place, x.origin, x.authorName, loc(x.tagline)].filter(Boolean).join(" ").toLowerCase();
+    // a head entry is found by its own text (data-own) or by that of the works folded inside it
+    const search = searchOf(e) + kids.map((k) => " " + searchOf(k)).join("");
 
-    return `<details class="entry" id="${e.id}" data-type="${type}" data-search="${esc(search)}">
+    return `<details class="entry" id="${e.id}" data-type="${type}" data-search="${esc(search)}"${kids.length ? ` data-own="${esc(searchOf(e))}"` : ""}>
       <summary>
         <span class="entry-title">${title}</span>
         <span class="chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
@@ -306,7 +316,7 @@
   }
 
   function renderList(type, app) {
-    const list = entriesOf(type);
+    const list = entriesOf(type).filter((e) => !(e.group && groups[e.group])); // folded works live inside their head entry
     let html = "", lastEra = null;
     list.forEach((e) => {
       const era = eraOf(e.start);
@@ -333,6 +343,17 @@
           el.hidden = !ok; any = any || ok;
         }
       });
+      // folded groups: show the works that match (all of them when the head entry itself matches);
+      // a match inside a group opens it
+      app.querySelectorAll("#list > .entry[data-own]").forEach((head) => {
+        const ownHit = !q || head.dataset.own.includes(q);
+        let hit = false;
+        head.querySelectorAll(".subentries > .entry").forEach((s) => {
+          const ok = ownHit || s.dataset.search.includes(q);
+          s.hidden = !ok; hit = hit || ok;
+        });
+        if (q && !ownHit && hit) head.open = true;
+      });
       // hide era headings with no visible entries
       app.querySelectorAll(".era").forEach((h) => {
         let n = h.nextElementSibling, vis = false;
@@ -354,11 +375,15 @@
     const el = document.getElementById(id);
     if (!el) return;
     if (el.tagName === "DETAILS") {
+      // a work folded inside another entry: open the outer entries first, so the work's own toggle sets the address
+      const outer = [];
+      for (let p = el.parentElement && el.parentElement.closest("details"); p; p = p.parentElement && p.parentElement.closest("details")) outer.unshift(p);
+      outer.forEach((p) => (p.open = true));
       el.open = true;
       el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
     } else {
       // e.g. a reference note (#entry-ref-2) inside a closed entry
-      const d = el.closest("details"); if (d) d.open = true;
+      for (let d = el.closest("details"); d; d = d.parentElement && d.parentElement.closest("details")) d.open = true;
       el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
     }
     setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 30);
