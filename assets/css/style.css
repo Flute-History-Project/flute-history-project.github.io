@@ -17,6 +17,7 @@
   --c-flutists: #2f6168;
   --c-treatises: #5b4a7a;
   --c-repertoire: #3f6b2f;
+  --c-recordings: #8a2f55;
 
   --serif-display: "Cormorant Garamond", Georgia, serif;
   --serif: "Source Serif 4", Georgia, serif;
@@ -43,6 +44,7 @@
     --c-flutists: #6fb3ba;
     --c-treatises: #a993d1;
     --c-repertoire: #8fbf72;
+    --c-recordings: #e08aa9;
     --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
     color-scheme: dark;
   }
@@ -136,6 +138,7 @@ p { margin: 0 0 1em; }
 .entry[data-type="flutists"] { --type-color: var(--c-flutists); }
 .entry[data-type="treatises"] { --type-color: var(--c-treatises); }
 .entry[data-type="repertoire"] { --type-color: var(--c-repertoire); }
+.entry[data-type="recordings"] { --type-color: var(--c-recordings); }
 .entry.flash { animation: flash 1.6s ease-out; }
 @keyframes flash { 0% { box-shadow: 0 0 0 4px var(--type-color); } 100% { box-shadow: var(--shadow); } }
 
@@ -185,6 +188,7 @@ p { margin: 0 0 1em; }
 .chip.t-flutists { --chip-color: var(--c-flutists); }
 .chip.t-treatises { --chip-color: var(--c-treatises); }
 .chip.t-repertoire { --chip-color: var(--c-repertoire); }
+.chip.t-recordings { --chip-color: var(--c-recordings); }
 
 .entry-actions { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--line); font-family: var(--sans); font-size: .85rem; }
 
@@ -205,6 +209,7 @@ a.xref.t-makers { color: var(--c-makers); }
 a.xref.t-flutists { color: var(--c-flutists); }
 a.xref.t-treatises { color: var(--c-treatises); }
 a.xref.t-repertoire { color: var(--c-repertoire); }
+a.xref.t-recordings { color: var(--c-recordings); }
 
 /* ---------- Home ---------- */
 .hero { padding: 56px 0 28px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: center; }
@@ -319,3 +324,20 @@ sup.cite .cite-needed { color: #a0522d; font-weight: 600; }
 .refs li:target, .refs li.flash { background: color-mix(in srgb, var(--line) 60%, transparent); }
 .biblio { max-width: 760px; padding-left: 1.1em; }
 .sources-page h4 { margin: 20px 0 6px; }
+
+/* ---------- Historical recordings ---------- */
+.entry[data-type="recordings"] .entry-grid { grid-template-columns: 200px 1fr; }
+@media (max-width: 680px) { .entry[data-type="recordings"] .entry-grid { grid-template-columns: 1fr; } }
+.tracks { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 10px; }
+.track { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+.track-title { font-weight: 600; line-height: 1.3; }
+.track-by { font-size: .92rem; color: var(--muted); }
+.track-meta { font-family: var(--sans); font-size: .76rem; letter-spacing: .02em; color: var(--muted); margin: 2px 0 8px; }
+.track audio { width: 100%; height: 36px; display: block; }
+.track-foot { font-family: var(--sans); font-size: .72rem; color: var(--muted); margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+.track-disc summary { cursor: pointer; list-style: none; text-decoration: underline dotted; text-underline-offset: 2px; }
+.track-disc summary::-webkit-details-marker { display: none; }
+.track-disc[open] { flex-basis: 100%; }
+.track-disc > div { margin-top: 4px; line-height: 1.5; }
+.track-badge { border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; white-space: nowrap; }
+.track-badge.on-site { color: var(--c-recordings); border-color: var(--c-recordings); }

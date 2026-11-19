@@ -413,7 +413,7 @@ HFP.people = [
       "His [[reform-flute|Reform flute]] won the praise of Brahms after the Leipzig performance of the Fourth Symphony in 1886. Schwedler also wrote movingly about vibrato as the most personal expression of feeling, to be used with restraint, made not by finger or lips but by a light tension in the throat. His cadenza for Handel's A minor Sonata in the Peters edition shows how romantic his early-music editions were. {{brown2002, pp. 3, 30, 113}}",
     sources: [{ label: "flutehistory.com: Maximilian Schwedler", url: FH + "Players/Maximilian_Schwedler/index.php3" }],
     image: { src: "assets/img/hfp/p-schwedler.jpg", caption: "Maximilian Schwedler with his flute, c. 1900", credit: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Maximilian_Schwedler.jpg" },
-    links: ["reinecke-undine", "reform-flute", "handel-op1-4"]
+    links: ["reinecke-undine", "reinecke-flute-concerto", "reform-flute", "handel-op1-4"]
   },
   {
     id: "haynes",

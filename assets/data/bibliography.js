@@ -89,6 +89,45 @@ HFP.bib = {
     place: "Portland, Oregon", publisher: "Amadeus Press", year: "1994",
     verify: true
   },
+  nelson2006: {
+    kind: "secondary",
+    author: "Susan Nelson",
+    title: "The Flute on Record: The 78 rpm Era. A Discography",
+    place: "Lanham, Maryland", publisher: "Scarecrow Press", year: "2006",
+    isbn: "978-0-8108-5293-8",
+    note: {
+      en: "The standard discography: commercial, private and unpublished cylinders and 78 rpm discs by more than two hundred flutists, 1889–1954. Not yet read by the site; recommended by flute historians and listed here as the book to consult.",
+      fr: "La discographie de référence : cylindres et disques 78 tours commerciaux, privés et inédits de plus de deux cents flûtistes, 1889–1954. Pas encore consultée par le site ; indiquée ici comme l'ouvrage à consulter.",
+      it: "La discografia di riferimento: cilindri e dischi a 78 giri commerciali, privati e inediti di oltre duecento flautisti, 1889–1954. Non ancora consultata dal sito; indicata qui come il libro da consultare."
+    },
+    verify: true
+  },
+  andrieux: {
+    kind: "secondary",
+    author: "Vincent Andrieux",
+    title: "L'univers sonore d'Henri Chaussier. Perspectives sur le jeu des instruments à vent en France au début de l'ère de l'enregistrement (circa 1898–1938)",
+    inBook: "Romantic Brass Symposium 2, Hochschule der Künste Bern, series volume 6",
+    place: "Schliengen", publisher: "Argus",
+    pages: "258–302",
+    note: {
+      en: "A study of French wind playing on the first records, with a section on the flute (Hennebains, Fontbonne, Lafleurance, Gaubert, Barrère). Read in the author's PDF from the Hochschule der Künste Bern, with the printed page numbers; the volume's editors and year are still to be confirmed.",
+      fr: "Une étude du jeu des vents en France sur les premiers disques, avec une partie sur la flûte (Hennebains, Fontbonne, Lafleurance, Gaubert, Barrère). Lue dans le PDF de l'auteur publié par la Hochschule der Künste Bern, avec la pagination imprimée ; éditeurs et année du volume restent à confirmer.",
+      it: "Uno studio sul modo di suonare i fiati in Francia nei primi dischi, con una parte sul flauto (Hennebains, Fontbonne, Lafleurance, Gaubert, Barrère). Letto nel PDF dell'autore della Hochschule der Künste Bern, con la paginazione a stampa; curatori e anno del volume sono ancora da confermare."
+    },
+    verify: true
+  },
+  reinecke283: {
+    kind: "secondary",
+    author: "Henrik Wiese",
+    title: "Afterword to Carl Reinecke, Konzert für Flöte und Orchester D-dur op. 283 (score PB 5393, piano reduction EB 8735), dated Munich, autumn 2003",
+    place: "Wiesbaden", publisher: "Breitkopf & Härtel",
+    url: "https://www.breitkopf.com/assets/pdf/PB_5529-_NW_en.pdf",
+    note: {
+      en: "The editor's afterword to the new Breitkopf edition: Reinecke and the Leipzig flutists, Schwedler and his flute, the dedication, the piano reduction, the first performances (Leipzig, 15 March 1909, with piano; London, 4 September 1909, with orchestra) and the sources. Read in the publisher's PDF (three pages); the year of the edition is still to be confirmed.",
+      fr: "La postface de l'éditeur à la nouvelle édition Breitkopf : Reinecke et les flûtistes de Leipzig, Schwedler et sa flûte, la dédicace, la réduction pour piano, les premières exécutions (Leipzig, 15 mars 1909, avec piano ; Londres, 4 septembre 1909, avec orchestre) et les sources. Lue dans le PDF de l'éditeur (trois pages) ; l'année de l'édition reste à confirmer.",
+      it: "La postfazione del curatore alla nuova edizione Breitkopf: Reinecke e i flautisti di Lipsia, Schwedler e il suo flauto, la dedica, la riduzione per pianoforte, le prime esecuzioni (Lipsia, 15 marzo 1909, con pianoforte; Londra, 4 settembre 1909, con orchestra) e le fonti. Letta nel PDF dell'editore (tre pagine); l'anno dell'edizione è ancora da confermare."
+    }
+  },
   boehm1994: {
     kind: "secondary",
     author: "Ludwig Böhm",
@@ -462,6 +501,39 @@ HFP.bib = {
       en: "The largest flute collection in the world, with photographs and documents.",
       fr: "La plus grande collection de flûtes au monde, avec photographies et documents.",
       it: "La più grande collezione di flauti al mondo, con fotografie e documenti."
+    }
+  },
+  locjukebox: {
+    kind: "online",
+    author: "Library of Congress",
+    title: "National Jukebox",
+    url: "https://www.loc.gov/collections/national-jukebox/",
+    note: {
+      en: "Victor and Columbia discs digitised by the Library of Congress. Used on the Historical Recordings page for the catalogue data of each disc (matrix number, date, performers); the disc itself is the evidence.",
+      fr: "Disques Victor et Columbia numérisés par la Library of Congress. Utilisé sur la page Enregistrements historiques pour les données de catalogue de chaque disque (matrice, date, interprètes) ; c'est le disque lui-même qui fait foi.",
+      it: "Dischi Victor e Columbia digitalizzati dalla Library of Congress. Usato nella pagina Registrazioni storiche per i dati di catalogo di ogni disco (matrice, data, interpreti); è il disco stesso a fare fede."
+    }
+  },
+  phonobase: {
+    kind: "online",
+    author: "L'Archéophone",
+    title: "Phonobase: cylindres et disques anciens en ligne",
+    url: "https://www.phonobase.org/",
+    note: {
+      en: "A French online database of early cylinders and discs, with the catalogue data of each record (label, number, matrix, date). Its audio is played from its own server, not copied here; the site states no reuse terms.",
+      fr: "Une base de données française en ligne de cylindres et disques anciens, avec les données de catalogue de chaque enregistrement (label, numéro, matrice, date). Son audio est lu depuis son propre serveur, non copié ici ; le site n'indique pas de conditions de réutilisation.",
+      it: "Una banca dati francese online di cilindri e dischi antichi, con i dati di catalogo di ogni registrazione (etichetta, numero, matrice, data). Il suo audio è riprodotto dal suo server, non copiato qui; il sito non indica condizioni di riutilizzo."
+    }
+  },
+  ia78: {
+    kind: "online",
+    author: "Internet Archive",
+    title: "78 rpm collections",
+    url: "https://archive.org/details/78rpm",
+    note: {
+      en: "Collections used: Satyr-78rpm, CHARM, The Shellackophile's Vintage Recordings and the Great 78 Project. Transfers of 78 rpm discs, with the discographic notes of the people who made them. Each track on the Historical Recordings page names the collection it comes from.",
+      fr: "Collections utilisées : Satyr-78rpm, CHARM, The Shellackophile's Vintage Recordings et Great 78 Project. Transferts de disques 78 tours, avec les notes discographiques de ceux qui les ont réalisés. Chaque piste de la page Enregistrements historiques nomme la collection dont elle provient.",
+      it: "Raccolte usate: Satyr-78rpm, CHARM, The Shellackophile's Vintage Recordings e Great 78 Project. Trasferimenti di dischi a 78 giri, con le note discografiche di chi li ha realizzati. Ogni brano della pagina Registrazioni storiche indica la raccolta da cui proviene."
     }
   },
 

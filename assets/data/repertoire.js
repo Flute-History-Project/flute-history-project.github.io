@@ -404,7 +404,30 @@ HFP.repertoire = [
     tips: "Try it on a Meyer-type flute: the darker, more veiled sound and the blend with the piano change the character of the piece completely.",
     imslp: "Undine Sonata Op.167 Reinecke",
         image: { src: "assets/img/hfp/r-undine.jpg", caption: "The opening theme of the Undine Sonata", credit: "public domain", url: "https://commons.wikimedia.org/wiki/File:Undine_theme.gif" },
-    links: []
+    links: ["reinecke-flute-concerto"]
+  },
+  {
+    id: "reinecke-flute-concerto",
+    composer: "Carl Reinecke",
+    name: "Flute Concerto in D major, Op. 283",
+    short: "Reinecke, Flute Concerto",
+    start: 1908, dates: "1908",
+    place: "Leipzig",
+    kind: "piece",
+    scoring: "Flute and orchestra (or piano)",
+    flutes: ["reform-flute", "boehm-1847"],
+    description:
+      "Reinecke's last concerto, finished presumably in October and at the latest by November 1908, is dedicated to [[schwedler|Maximilian Schwedler]], principal flutist of the Leipzig Gewandhaus Orchestra. {{reinecke283, p. 2}} It was the second work Reinecke wrote for a Gewandhaus flutist: the [[reinecke-undine|Undine sonata]] of 1882 is dedicated to Schwedler's colleague Wilhelm Barge. Whether Schwedler or Reinecke was the driving force behind the concerto remains a matter of speculation. {{reinecke283, pp. 1–2}}\n\n" +
+      "Schwedler played a conical-bore flute: he rejected the cylindrical Boehm flute, built the Schwedler-Kruspe model with the Erfurt maker Wilhelm Kruspe in 1885 and introduced the German [[reform-flute|Reform flute]] in 1898. {{reinecke283, p. 1}} Breitkopf & Härtel printed only the piano reduction, in January 1909, made, no doubt, by the composer himself, because the publishers were wary of the cost of the score and parts; orchestral material was offered on hire in manuscript. {{reinecke283, p. 2}}\n\n" +
+      "The world premiere took place in Leipzig on 15 March 1909, in the large festival hall of the Zoological Garden, at a spring concert of the men's chorale Konkordia. Schwedler played it with Oswin Keller at the piano, not with an orchestra, and a reviewer praised his broad tone in the cantilena and the virtuoso polish of his figurations. {{reinecke283, p. 2}} The first performance with orchestra was in London on 4 September 1909, at the Queen's Hall Promenade Concerts, with Henry Wood conducting and Albert Fransella as soloist. {{reinecke283, p. 2}}\n\n" +
+      "Reinecke's tempo markings are full of small differences between states (animato, tranquillo) and developments (accelerando, ritardando), often softened by *un poco*. The original orchestration has a small string section but four horns, and the finale has a stretta that is shorter in the original version. {{reinecke283, pp. 2–3}}",
+    tips: "Start from the piano version: it is the form in which the work was first heard and printed. The Breitkopf edition by Henrik Wiese prints three authorized readings of the solo part (after the orchestral autograph, after the first piano edition for chamber performance, and the line above the piano staff), so you can compare them and decide for yourself. {{reinecke283, p. 2}}",
+    curio: "The world premiere of this concerto was given in a zoo's festival hall at a men's choir concert, with a piano, and the first performance with orchestra took place not in Leipzig but in London. {{reinecke283, p. 2}}",
+    imslp: "Flute Concerto Op.283 Reinecke",
+    wiki: "Flute Concerto (Reinecke)",
+    sources: [{ label: "Breitkopf & Härtel: afterword to the new edition (PDF)", url: "https://www.breitkopf.com/assets/pdf/PB_5529-_NW_en.pdf" }],
+    recordings: ["rec-fransella", "rec-schwedler"],
+    links: ["schwedler", "reinecke-undine", "reform-flute", "schwedler-1897"]
   },
   {
     id: "faure-fantaisie",

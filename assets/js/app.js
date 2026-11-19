@@ -9,7 +9,7 @@
   const PAGES = [
     ["home", "index.html"], ["history", "history.html"], ["playing", "playing.html"], ["flutes", "flutes.html"],
     ["makers", "makers.html"], ["treatises", "treatises.html"], ["flutists", "flutists.html"],
-    ["repertoire", "repertoire.html"], ["map", "map.html"], ["sources", "sources.html"], ["contact", "contact.html"], ["credits", "credits.html"]
+    ["repertoire", "repertoire.html"], ["recordings", "recordings.html"], ["map", "map.html"], ["sources", "sources.html"], ["contact", "contact.html"], ["credits", "credits.html"]
   ];
   const PAGE_FILE = Object.fromEntries(PAGES);
   const TYPES = ["flutes", "makers", "flutists", "treatises", "repertoire"];
@@ -49,8 +49,8 @@
     const { e, type } = index[id];
     return e.roles ? e.roles.map((r) => (r === "maker" ? "makers" : "flutists")) : [type];
   };
-  const href = (id) => (index[id] ? PAGE_FILE[index[id].type] + "#" + id : "#");
-  const nameOf = (id) => { const e = index[id].e; return e.short || e.name; };
+  const href = (id) => (index[id] ? PAGE_FILE[index[id].type] + "#" + id : recs[id] ? "recordings.html#" + id : "#");
+  const nameOf = (id) => { if (!index[id] && recs[id]) return recs[id].name; const e = index[id].e; return e.short || e.name; };
 
   const REF = /\[\[([a-z0-9-]+)(?:\|([^\]]+))?\]\]/g;
   function refsIn(v) {
@@ -129,11 +129,15 @@
       `<li id="${notes.prefix}-ref-${i + 1}">${fullCite(it.key, it.loc)}</li>`).join("")}</ol></div>`;
   }
 
+  // Historical Recordings are a separate page, not nodes of the Flute Map: [[rec-…]] links resolve here.
+  const recs = Object.fromEntries((H.recordings || []).map((r) => [r.id, r]));
+
   function inline(s, notes) {
     return esc(s)
       .replace(CITE, (m, body) => citeMark(body, notes))
       .replace(REF, (m, id, label) => {
         const it = index[id];
+        if (!it && recs[id]) return `<a class="xref t-recordings" href="recordings.html#${id}">${label || esc(recs[id].name)}</a>`;
         if (!it) return label || id;
         return `<a class="xref t-${it.type}" href="${href(id)}">${label || esc(nameOf(id))}</a>`;
       })
@@ -283,12 +287,17 @@
     if (e.curio) main += `<div class="box box-curio"><h4>${esc(tr("did_you_know"))}</h4>${paras(loc(e.curio), notes)}</div>`;
     main += refsHTML(notes);
     main += relatedHTML(e, type, skip);
+    // recordings on the Historical Recordings page that bear on this piece (ids of recordings.js entries)
+    const recIds = (e.recordings || []).filter((id) => recs[id]);
+    if (recIds.length) main += `<div class="related"><div><h4>${esc(tr("rec_hear"))}</h4><div class="chips">${recIds.map(recChip).join("")}</div></div></div>`;
 
     const links = [];
     (e.sources || []).forEach((s) => links.push(ext(s.url, s.label)));
     if (e.wiki) links.push(ext(wikiUrl(e.wiki), tr("wiki")));
     if (e.imslp) links.push(ext(imslpUrl(e.imslp), type === "treatises" ? tr("imslp_t") : type === "repertoire" ? tr("imslp") : "IMSLP"));
     if (e.listen) links.push(ext(listenUrl(e.listen), tr("listen")));
+    const recEntry = type === "flutists" && (H.recordings || []).find((r) => r.person === e.id);
+    if (recEntry) links.unshift(`<a href="recordings.html#${recEntry.id}">♪ ${esc(tr("rec_hear"))}</a>`);
     if (links.length) main += `<div class="related"><div><h4>${esc(tr("further"))}</h4><div class="small sans" style="display:flex;flex-wrap:wrap;gap:6px 16px">${links.join("")}</div></div></div>`;
 
     const actions = `<div class="entry-actions">
@@ -332,7 +341,11 @@
       <div id="list">${html}</div>
       <p class="muted" id="noresults" hidden>${esc(tr("no_results"))}</p>
     </div>`;
+    wireList(app);
+  }
 
+  // Search box, era headings and open-from-link behaviour shared by every list page.
+  function wireList(app) {
     const input = app.querySelector("input[type=search]");
     input.addEventListener("input", () => {
       const q = input.value.trim().toLowerCase();
@@ -389,12 +402,94 @@
     setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 30);
   }
 
+  /* ---------------- Historical recordings ---------------- */
+  // Tracks stored on this site have `file`; the others play from the archive that holds them (`ia: [item, file]` or `src`).
+  const trackSrc = (tk) => tk.file || tk.src || `https://archive.org/download/${tk.ia[0]}/${encodeURIComponent(tk.ia[1])}`;
+  const recChip = (id) => index[id] ? chip(id)
+    : `<a class="chip t-recordings" href="recordings.html#${id}">${esc(recs[id].name)}</a>`;
+  const recYears = (r) => {
+    const ys = r.tracks.flatMap((tk) => (String(tk.when).match(/\b1[89]\d\d\b/g) || []).map(Number));
+    if (!ys.length) return "";   // undated discs
+    const [a, b] = [Math.min(...ys), Math.max(...ys)];
+    return a === b ? String(a) : `${a}–${b}`;
+  };
+
+  function trackHTML(tk) {
+    const hosted = !!tk.file;
+    // edition details (label, number, matrix, side) stay out of sight until asked for
+    const detail = [tk.label, tk.matrix ? `${tr("rec_matrix")} ${tk.matrix}` : "", tk.disc].filter(Boolean).map(esc).join(" · ");
+    const links = (tk.links || []).map(([label, url]) => ext(url, label)).join(" · ");
+    const badge = hosted ? tr("rec_on_site") : `${tr("rec_streams")} ${tk.host || "Internet Archive"}`;
+    return `<li class="track">
+      <div class="track-title">${esc(tk.title)}</div>
+      ${tk.by ? `<div class="track-by">${esc(tk.by)}</div>` : ""}
+      <div class="track-meta">${esc(tk.when || "")}</div>
+      <audio controls preload="none"><source src="${trackSrc(tk)}" type="${hosted ? "audio/mp4" : "audio/mpeg"}"></audio>
+      <div class="track-foot"><span class="track-badge ${hosted ? "on-site" : "stream"}">${esc(badge)}</span>
+        <details class="track-disc"><summary>${esc(tr("rec_disc"))}</summary>
+          <div>${detail ? esc(detail) + "<br>" : ""}${esc(tk.from || "")}${links ? " · " + links : ""}</div></details></div>
+    </li>`;
+  }
+
+  function recordingHTML(r) {
+    const notes = newNotes(r.id);
+    const aside = facts([["life", esc(r.dates)], ["place", esc(r.place)], ["rec_recorded", esc(recYears(r))]]) +
+      (r.person && index[r.person] ? `<div class="related"><div><h4>${esc(tr("nav_flutists"))}</h4><div class="chips">${chip(r.person)}</div></div></div>` : "");
+    let main = paras(loc(r.bio), notes);
+    if (r.listen) main += `<div class="box box-tips"><h4>${esc(tr("rec_listen_for"))}</h4>${paras(loc(r.listen), notes)}</div>`;
+    main += `<h4 class="sans small muted" style="margin:18px 0 6px;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem">${esc(tr("rec_tracks"))} (${r.tracks.length})</h4>
+      <ol class="tracks">${r.tracks.map(trackHTML).join("")}</ol>`;
+    main += refsHTML(notes);
+    if ((r.links || []).length) main += `<div class="related"><div><h4>${esc(tr("related"))}</h4><div class="chips">${r.links.filter((id) => index[id] || recs[id]).map(recChip).join("")}</div></div></div>`;
+
+    const meta = [r.dates, r.place, recYears(r) ? "♪ " + recYears(r) : ""].filter(Boolean).map(esc).join("<span aria-hidden='true'>·</span>");
+    const search = [r.name, r.place, loc(r.tagline), ...r.tracks.map((tk) => tk.title + " " + (tk.by || ""))].join(" ").toLowerCase();
+    return `<details class="entry" id="${r.id}" data-type="recordings" data-search="${esc(search)}">
+      <summary>
+        <span class="entry-title">${esc(r.name)}</span>
+        <span class="chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+        <span class="entry-meta">${meta}</span>
+        <span class="entry-tagline">${inline(loc(r.tagline))}</span>
+      </summary>
+      <div class="entry-body">
+        <div class="entry-grid"><aside>${aside}</aside><div>${main}</div></div>
+        <div class="entry-actions"><a href="contact.html?entry=${r.id}">✎ ${esc(tr("suggest_edit"))}</a></div>
+      </div>
+    </details>`;
+  }
+
+  function renderRecordings(app) {
+    const X = H.recordingsExtra || {};
+    let html = "", last = null;
+    H.recordings.slice().sort((a, b) => a.start - b.start).forEach((r) => {
+      const era = r.start < 1925 ? "acoustic" : "electric";
+      if (era !== last) { html += `<div class="era"><h2>${esc(tr("rec_era_" + era))}</h2></div>`; last = era; }
+      html += recordingHTML(r);
+    });
+    const notes = newNotes("rec-extra");
+    // pieces worth hearing that this page does not play: text plus a link to where they can be heard
+    const wanted = (X.unavailable || []).map((o) => `<li>${inline(loc(o.text), notes)} ${(o.links || []).map(([label, url]) => ext(url, label)).join(" · ")}</li>`).join("");
+    app.innerHTML = `<div class="wrap">
+      ${pageHead(null, tr("nav_recordings"), tr("intro_recordings"))}
+      <section class="box box-curio" style="max-width:760px"><h4>${esc(tr("rec_note_title"))}</h4><p>${esc(tr("rec_note"))}</p></section>
+      <div class="toolbar"><input type="search" placeholder="${esc(tr("search"))}" aria-label="${esc(tr("search"))}"></div>
+      <div id="list">${html}</div>
+      <p class="muted" id="noresults" hidden>${esc(tr("no_results"))}</p>
+      <section id="unavailable" style="max-width:760px;margin-top:36px">
+        ${wanted ? `<h2>${esc(tr("rec_unavailable"))}</h2><ul>${wanted}</ul>${refsHTML(notes)}` : ""}
+        <h4 class="sans small muted" style="margin:24px 0 6px;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem">${esc(tr("rec_further"))}</h4>
+        <ul class="biblio small">${(X.further || []).map((k) => `<li>${fullCite(k)}</li>`).join("")}</ul>
+      </section>
+    </div>`;
+    wireList(app);
+  }
+
   /* ---------------- Home ---------------- */
   function renderHome(app) {
     const stack = [["renaissance-flute", "1500"], ["hotteterre-flute", "1680"], ["classical-keyed-flute", "1790"], ["boehm-1847", "1847"]];
     const art = stack.map(([id, y]) => `<a href="${href(id)}" style="display:grid;grid-template-columns:44px 1fr;align-items:center;gap:6px;text-decoration:none;color:var(--muted)" title="${esc(index[id].e.name)}"><span class="sans small">${y}</span>${H.illus.flute(index[id].e.drawing, { label: index[id].e.name })}</a>`).join("");
 
-    const cards = [["history", null, H.history.length], ["playing", null, H.playing.length]].concat(TYPES.map((t) => [t, t, entriesOf(t).length])).concat([["map", null, null]]);
+    const cards = [["history", null, H.history.length], ["playing", null, H.playing.length]].concat(TYPES.map((t) => [t, t, entriesOf(t).length])).concat([["recordings", "recordings", (H.recordings || []).length], ["map", null, null]]);
     const curios = Object.values(index).filter(({ e }) => e.curio);
 
     app.innerHTML = `<div class="wrap">
@@ -455,6 +550,8 @@
     const options = TYPES.map((t) => `<optgroup label="${esc(tr("nav_" + t))}">${entriesOf(t)
       .filter((e) => index[e.id].type === t)
       .map((e) => `<option value="${e.id}"${e.id === pre ? " selected" : ""}>${esc(nameOf(e.id))}</option>`).join("")}</optgroup>`).join("");
+    const recOptions = `<optgroup label="${esc(tr("nav_recordings"))}">${(H.recordings || [])
+      .map((r) => `<option value="${r.id}"${r.id === pre ? " selected" : ""}>${esc(r.name)}</option>`).join("")}</optgroup>`;
 
     app.innerHTML = `<div class="wrap">
       ${pageHead(null, tr("nav_contact"), tr("intro_contact"))}
@@ -472,7 +569,7 @@
               <option value="other">${esc(tr("t_other"))}</option>
             </select></label>
           <label><span>${esc(tr("f_entry"))}</span>
-            <select name="entry"><option value="">${esc(tr("f_entry_none"))}</option>${options}</select></label>
+            <select name="entry"><option value="">${esc(tr("f_entry_none"))}</option>${options}${recOptions}</select></label>
         </div>
         <label><span>${esc(tr("f_message"))}</span><textarea name="message" required placeholder="${esc(tr("f_message_ph"))}"></textarea></label>
         <div><button class="btn" type="submit">${esc(tr("f_send"))}</button></div>
@@ -540,6 +637,12 @@
     [["history", H.history], ["playing", H.playing]].forEach(([key, list]) => (list || []).forEach((c) => units.push({
       id: c.id, start: 0, chip: `<a class="chip" href="${key}.html#${c.id}">${esc(loc(c.title))}</a>`, texts: [loc(c.body)]
     })));
+    (H.recordings || []).forEach((r) => units.push({
+      id: r.id, start: r.start, chip: `<a class="chip t-recordings" href="recordings.html#${r.id}">${esc(r.name)}</a>`, texts: [loc(r.bio), loc(r.listen)].filter(Boolean)
+    }));
+    if (H.recordingsExtra && (H.recordingsExtra.unavailable || []).length) units.push({
+      id: "rec-extra", start: 9999, chip: `<a class="chip t-recordings" href="recordings.html#unavailable">${esc(tr("rec_unavailable"))}</a>`, texts: (H.recordingsExtra.unavailable || []).map((o) => loc(o.text))
+    });
     return units;
   }
 
@@ -606,6 +709,7 @@
   else if (page === "map") H.renderMap(app, { index, graph, href, nameOf, tr, loc, esc, lanesOf, TYPES, pageHead, yearSpan, imslpUrl, eraLabel: (er) => er.label[lang] || er.label.en });
   else if (page === "sources") renderSources(app);
   else if (page === "contact") renderContact(app);
+  else if (page === "recordings") renderRecordings(app);
   else if (page === "credits") { renderCredits(app); openFromHash(); }
 
   if (usedFallback && lang !== "en") {
