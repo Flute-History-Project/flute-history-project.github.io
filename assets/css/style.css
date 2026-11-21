@@ -18,6 +18,7 @@
   --c-treatises: #5b4a7a;
   --c-repertoire: #3f6b2f;
   --c-recordings: #8a2f55;
+  --c-fingerings: #2d5d8c;
 
   --serif-display: "Cormorant Garamond", Georgia, serif;
   --serif: "Source Serif 4", Georgia, serif;
@@ -45,6 +46,7 @@
     --c-treatises: #a993d1;
     --c-repertoire: #8fbf72;
     --c-recordings: #e08aa9;
+    --c-fingerings: #7fb2e5;
     --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
     color-scheme: dark;
   }
@@ -139,6 +141,7 @@ p { margin: 0 0 1em; }
 .entry[data-type="treatises"] { --type-color: var(--c-treatises); }
 .entry[data-type="repertoire"] { --type-color: var(--c-repertoire); }
 .entry[data-type="recordings"] { --type-color: var(--c-recordings); }
+.entry[data-type="fingerings"] { --type-color: var(--c-fingerings); }
 .entry.flash { animation: flash 1.6s ease-out; }
 @keyframes flash { 0% { box-shadow: 0 0 0 4px var(--type-color); } 100% { box-shadow: var(--shadow); } }
 
@@ -189,6 +192,7 @@ p { margin: 0 0 1em; }
 .chip.t-treatises { --chip-color: var(--c-treatises); }
 .chip.t-repertoire { --chip-color: var(--c-repertoire); }
 .chip.t-recordings { --chip-color: var(--c-recordings); }
+.chip.t-fingerings { --chip-color: var(--c-fingerings); }
 
 .entry-actions { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--line); font-family: var(--sans); font-size: .85rem; }
 
@@ -210,6 +214,7 @@ a.xref.t-flutists { color: var(--c-flutists); }
 a.xref.t-treatises { color: var(--c-treatises); }
 a.xref.t-repertoire { color: var(--c-repertoire); }
 a.xref.t-recordings { color: var(--c-recordings); }
+a.xref.t-fingerings { color: var(--c-fingerings); }
 
 /* ---------- Home ---------- */
 .hero { padding: 56px 0 28px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: center; }
@@ -341,3 +346,13 @@ sup.cite .cite-needed { color: #a0522d; font-weight: 600; }
 .track-disc > div { margin-top: 4px; line-height: 1.5; }
 .track-badge { border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; white-space: nowrap; }
 .track-badge.on-site { color: var(--c-recordings); border-color: var(--c-recordings); }
+
+/* Fingering charts: the scanned plates sit above the text, in a grid that lets landscape plates span the full width */
+.fc-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; margin-top: 16px; }
+.fc-gallery.one { grid-template-columns: minmax(0, 1fr); }
+.fc-gallery.one .fc-fig:not(.wide) { max-width: 620px; }
+.fc-fig { margin: 0; background: var(--paper-2); border: 1px solid var(--line); border-radius: 8px; padding: 8px; }
+.fc-fig.wide { grid-column: 1 / -1; }
+.fc-fig img { width: 100%; height: auto; display: block; border-radius: 4px; background: #fff; }
+.fc-fig figcaption { font-family: var(--sans); font-size: .76rem; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+.fc-fig .credit { display: block; opacity: .85; font-size: .68rem; margin-top: 2px; }

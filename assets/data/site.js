@@ -112,6 +112,14 @@ HFP.i18n = {
     rec_open: "Open the record",
     rec_hosted_note: "Public domain",
 
+    nav_fingerings: "Fingering Charts",
+    intro_fingerings: "How fingerings were written down, from the numerals of 1529 to the tablatures of the Boehm flute: one chart from each treatise on this site that has one and for which a free scan could be found. Click an image to open the scan it comes from.",
+    fc_howto_title: "How to read the charts",
+    fc_howto: "The charts do not all follow the same conventions. Many of those from the 18th and early 19th centuries are grids: each horizontal line stands for a hole of the flute, and a black or white circle says whether that hole is closed or open, as the author explains beside the chart. Quantz and Tromlitz write numerals instead: a numeral is a hole to close, a dash a hole left open. Agricola (1529) gives groups of numerals beside each note. Many also draw the flute beside the grid, with its keys. The author's own explanation of the signs is in the text or beside the chart: read it together with the chart.",
+    fc_treatise: "Treatise", fc_edition: "Edition shown", fc_scan: "Scan", fc_see: "Fingering chart", fc_open: "Open the scan",
+    fc_missing_h: "Not shown yet",
+    fc_missing_t: "Treatises on this site whose chart is not shown here yet, because no free digital copy has been found from which it could be taken. Leads are welcome:",
+
     support_link: "Support this project",
     support_title: "Support the project",
     support_text: "This site is free, has no advertising and is written and checked by hand. If you find it useful, a small contribution helps cover the hosting, the books and the time spent on research, and keeps the site growing.",
@@ -210,6 +218,14 @@ HFP.i18n = {
     rec_open: "Ouvrir le disque",
     rec_hosted_note: "Domaine public",
 
+    nav_fingerings: "Tableaux de doigtés",
+    intro_fingerings: "Comment on notait les doigtés, des chiffres de 1529 aux tablatures de la flûte Boehm : un tableau de chaque traité du site qui en contient un et dont une numérisation libre a pu être trouvée. Cliquez sur une image pour ouvrir la numérisation d'où elle provient.",
+    fc_howto_title: "Comment lire les tableaux",
+    fc_howto: "Les tableaux n'obéissent pas tous aux mêmes conventions. Beaucoup de ceux du XVIIIᵉ et du début du XIXᵉ siècle sont des grilles : chaque ligne horizontale représente un trou de la flûte, et un rond noir ou blanc indique si ce trou est bouché ou ouvert, comme l'auteur l'explique à côté du tableau. Quantz et Tromlitz écrivent des chiffres : un chiffre désigne un trou à boucher, un tiret un trou laissé ouvert. Agricola (1529) donne des groupes de chiffres à côté de chaque note. Beaucoup dessinent aussi la flûte à côté de la grille, avec ses clés. L'explication des signes par l'auteur se trouve dans le texte ou à côté du tableau : à lire avec lui.",
+    fc_treatise: "Traité", fc_edition: "Édition montrée", fc_scan: "Numérisation", fc_see: "Tableau de doigtés", fc_open: "Ouvrir la numérisation",
+    fc_missing_h: "Pas encore présentés",
+    fc_missing_t: "Traités du site dont le tableau n'est pas encore présenté ici, faute d'avoir trouvé une copie numérique libre d'où le tirer. Les pistes sont les bienvenues :",
+
     support_link: "Soutenir le projet",
     support_title: "Soutenir le projet",
     support_text: "Ce site est gratuit, sans publicité, rédigé et vérifié à la main. S'il vous est utile, une petite contribution aide à couvrir l'hébergement, les livres et le temps de recherche, et permet au site de grandir.",
@@ -307,6 +323,14 @@ HFP.i18n = {
     rec_further: "Per approfondire le prime registrazioni di flauto",
     rec_open: "Apri il disco",
     rec_hosted_note: "Pubblico dominio",
+
+    nav_fingerings: "Tavole di diteggiatura",
+    intro_fingerings: "Come si scrivevano le diteggiature, dai numeri del 1529 alle tablature del flauto Boehm: una tavola per ogni trattato del sito che ne contiene una e di cui si è trovata una scansione libera. Clicca su un'immagine per aprire la scansione da cui proviene.",
+    fc_howto_title: "Come leggere le tavole",
+    fc_howto: "Le tavole non seguono tutte le stesse convenzioni. Molte di quelle del Settecento e del primo Ottocento sono griglie: ogni linea orizzontale rappresenta un foro del flauto, e un cerchio nero o bianco dice se quel foro è chiuso o aperto, come spiega l'autore accanto alla tavola. Quantz e Tromlitz scrivono invece numeri: un numero indica un foro da chiudere, un trattino un foro lasciato aperto. Agricola (1529) dà gruppi di numeri accanto a ogni nota. Molte disegnano anche il flauto accanto alla griglia, con le sue chiavi. La spiegazione dei segni data dall'autore sta nel testo o accanto alla tavola: da leggere insieme a essa.",
+    fc_treatise: "Trattato", fc_edition: "Edizione mostrata", fc_scan: "Scansione", fc_see: "Tavola di diteggiatura", fc_open: "Apri la scansione",
+    fc_missing_h: "Non ancora presentati",
+    fc_missing_t: "Trattati del sito la cui tavola non è ancora presentata qui, perché non si è trovata una copia digitale libera da cui ricavarla. Segnalazioni benvenute:",
 
     support_link: "Sostieni il progetto",
     support_title: "Sostieni il progetto",

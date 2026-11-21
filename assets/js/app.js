@@ -8,7 +8,7 @@
   const LANGS = ["en", "fr", "it"];
   const PAGES = [
     ["home", "index.html"], ["history", "history.html"], ["playing", "playing.html"], ["flutes", "flutes.html"],
-    ["makers", "makers.html"], ["treatises", "treatises.html"], ["flutists", "flutists.html"],
+    ["makers", "makers.html"], ["treatises", "treatises.html"], ["fingerings", "fingerings.html"], ["flutists", "flutists.html"],
     ["repertoire", "repertoire.html"], ["recordings", "recordings.html"], ["map", "map.html"], ["sources", "sources.html"], ["contact", "contact.html"], ["credits", "credits.html"]
   ];
   const PAGE_FILE = Object.fromEntries(PAGES);
@@ -49,8 +49,12 @@
     const { e, type } = index[id];
     return e.roles ? e.roles.map((r) => (r === "maker" ? "makers" : "flutists")) : [type];
   };
-  const href = (id) => (index[id] ? PAGE_FILE[index[id].type] + "#" + id : recs[id] ? "recordings.html#" + id : "#");
-  const nameOf = (id) => { if (!index[id] && recs[id]) return recs[id].name; const e = index[id].e; return e.short || e.name; };
+  const href = (id) => (index[id] ? PAGE_FILE[index[id].type] + "#" + id : recs[id] ? "recordings.html#" + id : fcById[id] ? "fingerings.html#" + id : "#");
+  const nameOf = (id) => {
+    if (!index[id] && recs[id]) return recs[id].name;
+    if (!index[id] && fcById[id]) return `${nameOf(fcById[id].treatise)} · ${tr("fc_see")}`;
+    const e = index[id].e; return e.short || e.name;
+  };
 
   const REF = /\[\[([a-z0-9-]+)(?:\|([^\]]+))?\]\]/g;
   function refsIn(v) {
@@ -131,6 +135,10 @@
 
   // Historical Recordings are a separate page, not nodes of the Flute Map: [[rec-…]] links resolve here.
   const recs = Object.fromEntries((H.recordings || []).map((r) => [r.id, r]));
+  // Fingering charts are a separate page too: one entry per treatise (fingerings.js), found by its own id or by the treatise's id.
+  const fcs = H.fingerings || [];
+  const fcById = Object.fromEntries(fcs.map((f) => [f.id, f]));
+  const fcByTreatise = Object.fromEntries(fcs.map((f) => [f.treatise, f]));
 
   function inline(s, notes) {
     return esc(s)
@@ -298,6 +306,7 @@
     if (e.listen) links.push(ext(listenUrl(e.listen), tr("listen")));
     const recEntry = type === "flutists" && (H.recordings || []).find((r) => r.person === e.id);
     if (recEntry) links.unshift(`<a href="recordings.html#${recEntry.id}">♪ ${esc(tr("rec_hear"))}</a>`);
+    if (type === "treatises" && fcByTreatise[e.id]) links.unshift(`<a href="fingerings.html#${fcByTreatise[e.id].id}">▦ ${esc(tr("fc_see"))}</a>`);
     if (links.length) main += `<div class="related"><div><h4>${esc(tr("further"))}</h4><div class="small sans" style="display:flex;flex-wrap:wrap;gap:6px 16px">${links.join("")}</div></div></div>`;
 
     const actions = `<div class="entry-actions">
@@ -484,12 +493,69 @@
     wireList(app);
   }
 
+  /* ---------------- Fingering charts ---------------- */
+  // One entry per treatise (fingerings.js): the chart images are cut from free scans and credited to them.
+  const capOf = (c) => (typeof c === "string" ? c : loc(c));   // printed titles are plain strings, the rest { en, fr, it }
+
+  function fingeringHTML(f) {
+    const t = index[f.treatise].e;
+    const authorName = t.authorName || (t.author && index[t.author] ? index[t.author].e.name : "");
+    const authorLink = t.author && index[t.author] ? `<a class="xref t-${index[t.author].type}" href="${href(t.author)}">${esc(authorName)}</a>` : esc(authorName);
+    const notes = newNotes(f.id);
+    const gallery = `<div class="fc-gallery${f.images.length === 1 ? " one" : ""}">${f.images.map((im) => {
+      const cap = capOf(im.caption);
+      return `<figure class="fc-fig${im.w / im.h > 1.25 ? " wide" : ""}">
+        <a href="${im.url}" target="_blank" rel="noopener" title="${esc(tr("fc_open"))}"><img src="assets/img/fingerings/${im.file}.jpg" width="${im.w}" height="${im.h}" alt="${esc(cap)}" loading="lazy"></a>
+        <figcaption>${esc(cap)} <span class="credit">${esc(f.credit)} · <a href="${im.url}" target="_blank" rel="noopener">${esc(tr("fc_open"))} ↗</a></span></figcaption></figure>`;
+    }).join("")}</div>`;
+    const aside = facts([["fc_treatise", `<a class="xref t-treatises" href="${href(t.id)}">${esc(t.short || t.name)}</a>`], ["author", authorLink],
+      ["year", esc(t.start)], ["fc_edition", esc(f.edition)], ["fc_scan", esc(f.credit)]]);
+    const main = paras(loc(f.note), notes) + refsHTML(notes) +
+      `<div class="related"><div><h4>${esc(tr("related"))}</h4><div class="chips">${chip(t.id)}${t.author && index[t.author] ? chip(t.author) : ""}</div></div></div>`;
+    const meta = metaOf(t, "treatises").filter(Boolean).map(esc).join("<span aria-hidden='true'>·</span>");
+    const search = [t.name, t.short, authorName, t.place, loc(f.tagline), ...f.images.map((im) => capOf(im.caption))].filter(Boolean).join(" ").toLowerCase();
+    return `<details class="entry" id="${f.id}" data-type="fingerings" data-search="${esc(search)}">
+      <summary>
+        <span class="entry-title">${esc(t.short || t.name)}</span>
+        <span class="chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+        <span class="entry-meta">${meta}</span>
+        <span class="entry-tagline">${inline(loc(f.tagline))}</span>
+      </summary>
+      <div class="entry-body">
+        ${gallery}
+        <div class="entry-grid"><aside>${aside}</aside><div>${main}</div></div>
+        <div class="entry-actions"><a href="contact.html?entry=${f.id}">✎ ${esc(tr("suggest_edit"))}</a></div>
+      </div>
+    </details>`;
+  }
+
+  function renderFingerings(app) {
+    let html = "", last = null;
+    fcs.slice().sort((a, b) => index[a.treatise].e.start - index[b.treatise].e.start).forEach((f) => {
+      const era = eraOf(index[f.treatise].e.start);
+      if (era !== last) { html += `<div class="era" data-era="${era.id}"><h2>${esc(era.label[lang] || era.label.en)}</h2></div>`; last = era; }
+      html += fingeringHTML(f);
+    });
+    const missing = ((H.fingeringsExtra || {}).missing || []).filter((id) => index[id]).sort(byStart);
+    app.innerHTML = `<div class="wrap">
+      ${pageHead(null, tr("nav_fingerings"), tr("intro_fingerings"))}
+      <section class="box box-curio" style="max-width:760px"><h4>${esc(tr("fc_howto_title"))}</h4><p>${esc(tr("fc_howto"))}</p></section>
+      <div class="toolbar"><input type="search" placeholder="${esc(tr("search"))}" aria-label="${esc(tr("search"))}"></div>
+      <div id="list">${html}</div>
+      <p class="muted" id="noresults" hidden>${esc(tr("no_results"))}</p>
+      ${missing.length ? `<section id="missing" style="max-width:760px;margin-top:36px"><h2>${esc(tr("fc_missing_h"))}</h2>
+        <p class="muted">${esc(tr("fc_missing_t"))} <a href="contact.html">${esc(tr("nav_contact"))}</a></p>
+        <div class="chips">${missing.map(chip).join("")}</div></section>` : ""}
+    </div>`;
+    wireList(app);
+  }
+
   /* ---------------- Home ---------------- */
   function renderHome(app) {
     const stack = [["renaissance-flute", "1500"], ["hotteterre-flute", "1680"], ["classical-keyed-flute", "1790"], ["boehm-1847", "1847"]];
     const art = stack.map(([id, y]) => `<a href="${href(id)}" style="display:grid;grid-template-columns:44px 1fr;align-items:center;gap:6px;text-decoration:none;color:var(--muted)" title="${esc(index[id].e.name)}"><span class="sans small">${y}</span>${H.illus.flute(index[id].e.drawing, { label: index[id].e.name })}</a>`).join("");
 
-    const cards = [["history", null, H.history.length], ["playing", null, H.playing.length]].concat(TYPES.map((t) => [t, t, entriesOf(t).length])).concat([["recordings", "recordings", (H.recordings || []).length], ["map", null, null]]);
+    const cards = [["history", null, H.history.length], ["playing", null, H.playing.length]].concat(TYPES.map((t) => [t, t, entriesOf(t).length])).concat([["fingerings", "fingerings", fcs.length], ["recordings", "recordings", (H.recordings || []).length], ["map", null, null]]);
     const curios = Object.values(index).filter(({ e }) => e.curio);
 
     app.innerHTML = `<div class="wrap">
@@ -551,7 +617,9 @@
       .filter((e) => index[e.id].type === t)
       .map((e) => `<option value="${e.id}"${e.id === pre ? " selected" : ""}>${esc(nameOf(e.id))}</option>`).join("")}</optgroup>`).join("");
     const recOptions = `<optgroup label="${esc(tr("nav_recordings"))}">${(H.recordings || [])
-      .map((r) => `<option value="${r.id}"${r.id === pre ? " selected" : ""}>${esc(r.name)}</option>`).join("")}</optgroup>`;
+      .map((r) => `<option value="${r.id}"${r.id === pre ? " selected" : ""}>${esc(r.name)}</option>`).join("")}</optgroup>` +
+      `<optgroup label="${esc(tr("nav_fingerings"))}">${fcs
+      .map((f) => `<option value="${f.id}"${f.id === pre ? " selected" : ""}>${esc(nameOf(f.id))}</option>`).join("")}</optgroup>`;
 
     app.innerHTML = `<div class="wrap">
       ${pageHead(null, tr("nav_contact"), tr("intro_contact"))}
@@ -640,6 +708,9 @@
     (H.recordings || []).forEach((r) => units.push({
       id: r.id, start: r.start, chip: `<a class="chip t-recordings" href="recordings.html#${r.id}">${esc(r.name)}</a>`, texts: [loc(r.bio), loc(r.listen)].filter(Boolean)
     }));
+    fcs.forEach((f) => units.push({
+      id: f.id, start: index[f.treatise].e.start, chip: `<a class="chip t-fingerings" href="fingerings.html#${f.id}">${esc(nameOf(f.treatise))}</a>`, texts: [loc(f.note)]
+    }));
     if (H.recordingsExtra && (H.recordingsExtra.unavailable || []).length) units.push({
       id: "rec-extra", start: 9999, chip: `<a class="chip t-recordings" href="recordings.html#unavailable">${esc(tr("rec_unavailable"))}</a>`, texts: (H.recordingsExtra.unavailable || []).map((o) => loc(o.text))
     });
@@ -710,6 +781,7 @@
   else if (page === "sources") renderSources(app);
   else if (page === "contact") renderContact(app);
   else if (page === "recordings") renderRecordings(app);
+  else if (page === "fingerings") renderFingerings(app);
   else if (page === "credits") { renderCredits(app); openFromHash(); }
 
   if (usedFallback && lang !== "en") {
