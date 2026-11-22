@@ -173,20 +173,37 @@
   /* ---------------- Header / footer ---------------- */
   const LOGO = `<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><g transform="rotate(-35 15 15)"><rect x="1" y="12.5" width="28" height="5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="15" r="1.2" fill="currentColor"/><circle cx="14" cy="15" r=".9" fill="currentColor"/><circle cx="17.5" cy="15" r=".9" fill="currentColor"/><circle cx="21" cy="15" r=".9" fill="currentColor"/></g></svg>`;
 
+  // Main menu: the 14 pages grouped under five headings; each heading opens a wide panel (a plain list on phones).
+  const NAV = [
+    { key: "learn", pages: ["history", "playing"] },
+    { key: "people", pages: ["flutes", "makers", "flutists"] },
+    { key: "library", pages: ["treatises", "fingerings", "repertoire", "recordings"] },
+    { page: "map" },
+    { key: "about", pages: ["sources", "contact", "credits"] }
+  ];
+
   function renderChrome(page) {
     const head = document.getElementById("site-header");
     head.className = "site-header";
+    const item = (k) => `<a class="nav-item" href="${PAGE_FILE[k]}"${k === page ? ' aria-current="page"' : ""} style="--dot:var(--c-${k}, var(--accent))">
+        <span class="nav-title"><span class="nav-dot" aria-hidden="true"></span>${esc(tr("nav_" + k))}</span><span class="nav-desc">${esc(tr("navd_" + k))}</span></a>`;
+    const group = (g) => g.page
+      ? `<a class="nav-top" href="${PAGE_FILE[g.page]}"${g.page === page ? ' aria-current="page"' : ""}>${esc(tr("nav_" + g.page))}</a>`
+      : `<div class="nav-group${g.pages.includes(page) ? " has-current" : ""}" style="--cols:${g.pages.length === 4 ? 2 : g.pages.length}">
+          <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-${g.key}">${esc(tr("navg_" + g.key))}</button>
+          <div class="nav-panel" id="nav-${g.key}">${g.pages.map(item).join("")}</div></div>`;
     head.innerHTML = `
       <div class="header-row">
         <a class="brand" href="index.html">${LOGO}<span class="brand-name">${esc(H.config.siteName)}<small>${esc(tr("tagline"))}</small></span></a>
+        <nav class="site-nav" aria-label="Main">
+          <a class="nav-top nav-home" href="index.html"${page === "home" ? ' aria-current="page"' : ""}>${esc(tr("nav_home"))}</a>
+          ${NAV.map(group).join("")}
+        </nav>
         <div class="lang-switch" role="group" aria-label="Language">
           ${LANGS.map((l) => `<button type="button" data-lang="${l}" aria-pressed="${l === lang}">${l.toUpperCase()}</button>`).join("")}
         </div>
         <button class="menu-btn" type="button" aria-expanded="false">${esc(tr("menu"))}</button>
-      </div>
-      <nav class="site-nav" aria-label="Main">
-        ${PAGES.map(([k, f]) => `<a href="${f}"${k === page ? ' aria-current="page"' : ""}>${esc(tr("nav_" + k))}</a>`).join("")}
-      </nav>`;
+      </div>`;
     head.querySelectorAll("[data-lang]").forEach((b) =>
       b.addEventListener("click", () => {
         try { localStorage.setItem("hfp-lang", b.dataset.lang); } catch (e) { /* ignore */ }
@@ -196,6 +213,34 @@
       }));
     const nav = head.querySelector(".site-nav"), mb = head.querySelector(".menu-btn");
     mb.addEventListener("click", () => { nav.classList.toggle("open"); mb.setAttribute("aria-expanded", nav.classList.contains("open")); });
+
+    // Panels open on click (and on hover with a mouse), close on Escape, on a click elsewhere and when focus leaves them.
+    const groupEls = [...head.querySelectorAll(".nav-group")];
+    const canHover = matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const setOpen = (g, on) => {
+      g.classList.toggle("open", on);
+      g.querySelector(".nav-top").setAttribute("aria-expanded", on);
+      const panel = g.querySelector(".nav-panel");
+      panel.style.translate = "";
+      if (on) {   // keep the panel inside the window
+        const row = head.querySelector(".header-row");
+        const limit = Math.min(innerWidth - 16, row.getBoundingClientRect().right - parseFloat(getComputedStyle(row).paddingRight));
+        const over = panel.getBoundingClientRect().right - limit;
+        if (over > 0) panel.style.translate = `${-over}px 0`;
+      }
+    };
+    const closeAll = (except) => groupEls.forEach((g) => { if (g !== except && g.classList.contains("open")) setOpen(g, false); });
+    groupEls.forEach((g) => {
+      let timer;
+      g.querySelector(".nav-top").addEventListener("click", () => { closeAll(g); setOpen(g, canHover ? true : !g.classList.contains("open")); });
+      if (canHover) {
+        g.addEventListener("mouseenter", () => { clearTimeout(timer); closeAll(g); setOpen(g, true); });
+        g.addEventListener("mouseleave", () => { timer = setTimeout(() => setOpen(g, false), 180); });
+      }
+      g.addEventListener("focusout", (ev) => { if (!g.contains(ev.relatedTarget)) setOpen(g, false); });
+    });
+    document.addEventListener("click", (ev) => { if (!head.contains(ev.target)) closeAll(); });
+    document.addEventListener("keydown", (ev) => { if (ev.key === "Escape") { closeAll(); nav.classList.remove("open"); mb.setAttribute("aria-expanded", "false"); } });
 
     const foot = document.getElementById("site-footer");
     foot.className = "site-footer";
@@ -255,15 +300,16 @@
 
   function entryHTML(e, type) {
     const color = `var(--c-${type})`;
-    let figure = "", aside = "", main = "";
+    let figure = "", aside = "", main = "", subs = "";
     const skip = new Set();
     const notes = newNotes(e.id);
     const kids = (type === "repertoire" && groups[e.id]) || []; // works folded inside this entry
 
     if (type === "flutes") {
       // prehistoric finds have no schematic drawing (drawing: null): the photograph stands alone
-      figure = (e.image ? photo(e.image, "figure-wide") : "") +
-        (e.drawing ? `<figure class="entry-figure figure-wide">${H.illus.flute(e.drawing, { label: e.name })}<figcaption>${esc(tr("drawing_note"))}</figcaption></figure>` : "");
+      const pic = e.image ? photo(e.image, "figure-wide") : "";
+      const drw = e.drawing ? `<figure class="entry-figure figure-wide">${H.illus.flute(e.drawing, { label: e.name })}<figcaption>${esc(tr("drawing_note"))}</figcaption></figure>` : "";
+      figure = pic || drw ? `<div class="figure-row${pic && drw ? " two" : ""}">${pic}${drw}</div>` : "";
       aside = facts([["period", esc(yearSpan(e))], ["origin", esc(e.origin)]]) +
         `<h4 class="sans small muted" style="margin:0 0 4px;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem">${esc(tr("features"))}</h4>` +
         `<ul class="features">${(e.features || []).map((f) => `<li>${inline(loc(f))}</li>`).join("")}</ul>`;
@@ -287,17 +333,18 @@
       kids.forEach((k) => skip.add(k.id)); // the folded works appear as drop-downs, not as chips
       aside = photo(e.image) + facts([["composer", esc(e.composer)], ["date", esc(e.dates)], ["place", esc(e.place)], ["scoring", esc(e.scoring)], ["kind", esc(tr("kind_" + e.kind))]]) +
         `<div class="related"><div><h4>${esc(tr("playable_on"))}</h4><div class="chips">${(e.flutes || []).map(chip).join("")}</div></div></div>`;
-      main = paras(loc(e.description), notes) +
-        (kids.length ? `<div class="subentries"><h4>${esc(tr("group_works").replace("{n}", kids.length))}</h4>${kids.map((k) => entryHTML(k, "repertoire")).join("")}</div>` : "");
+      main = paras(loc(e.description), notes);
+      // the folded works get the full width of the entry, under the text
+      if (kids.length) subs = `<div class="subentries"><h4>${esc(tr("group_works").replace("{n}", kids.length))}</h4>${kids.map((k) => entryHTML(k, "repertoire")).join("")}</div>`;
     }
 
     if (e.tips) main += `<div class="box box-tips"><h4>${esc(tr("tips"))}</h4>${paras(loc(e.tips), notes)}</div>`;
     if (e.curio) main += `<div class="box box-curio"><h4>${esc(tr("did_you_know"))}</h4>${paras(loc(e.curio), notes)}</div>`;
-    main += refsHTML(notes);
-    main += relatedHTML(e, type, skip);
+    // references, connections and further reading go in a side column next to the text (below it on narrower screens)
+    let rail = refsHTML(notes) + relatedHTML(e, type, skip);
     // recordings on the Historical Recordings page that bear on this piece (ids of recordings.js entries)
     const recIds = (e.recordings || []).filter((id) => recs[id]);
-    if (recIds.length) main += `<div class="related"><div><h4>${esc(tr("rec_hear"))}</h4><div class="chips">${recIds.map(recChip).join("")}</div></div></div>`;
+    if (recIds.length) rail += `<div class="related"><div><h4>${esc(tr("rec_hear"))}</h4><div class="chips">${recIds.map(recChip).join("")}</div></div></div>`;
 
     const links = [];
     (e.sources || []).forEach((s) => links.push(ext(s.url, s.label)));
@@ -307,7 +354,7 @@
     const recEntry = type === "flutists" && (H.recordings || []).find((r) => r.person === e.id);
     if (recEntry) links.unshift(`<a href="recordings.html#${recEntry.id}">♪ ${esc(tr("rec_hear"))}</a>`);
     if (type === "treatises" && fcByTreatise[e.id]) links.unshift(`<a href="fingerings.html#${fcByTreatise[e.id].id}">▦ ${esc(tr("fc_see"))}</a>`);
-    if (links.length) main += `<div class="related"><div><h4>${esc(tr("further"))}</h4><div class="small sans" style="display:flex;flex-wrap:wrap;gap:6px 16px">${links.join("")}</div></div></div>`;
+    if (links.length) rail += `<div class="related"><div><h4>${esc(tr("further"))}</h4><div class="small sans link-list">${links.join("")}</div></div></div>`;
 
     const actions = `<div class="entry-actions">
         <a href="map.html?focus=${e.id}">◎ ${esc(tr("show_on_map"))}</a>
@@ -327,7 +374,8 @@
         ${e.tagline ? `<span class="entry-tagline">${inline(loc(e.tagline))}</span>` : ""}
       </summary>
       <div class="entry-body">
-        <div class="entry-grid">${figure}<aside>${aside}</aside><div>${main}</div></div>
+        <div class="entry-grid${rail ? " has-rail" : ""}">${figure}<aside>${aside}</aside><div class="entry-main">${main}</div>${rail ? `<div class="entry-rail">${rail}</div>` : ""}</div>
+        ${subs}
         ${actions}
       </div>
     </details>`;
@@ -461,7 +509,7 @@
         <span class="entry-tagline">${inline(loc(r.tagline))}</span>
       </summary>
       <div class="entry-body">
-        <div class="entry-grid"><aside>${aside}</aside><div>${main}</div></div>
+        <div class="entry-grid"><aside>${aside}</aside><div class="entry-main">${main}</div></div>
         <div class="entry-actions"><a href="contact.html?entry=${r.id}">✎ ${esc(tr("suggest_edit"))}</a></div>
       </div>
     </details>`;
@@ -480,11 +528,11 @@
     const wanted = (X.unavailable || []).map((o) => `<li>${inline(loc(o.text), notes)} ${(o.links || []).map(([label, url]) => ext(url, label)).join(" · ")}</li>`).join("");
     app.innerHTML = `<div class="wrap">
       ${pageHead(null, tr("nav_recordings"), tr("intro_recordings"))}
-      <section class="box box-curio" style="max-width:760px"><h4>${esc(tr("rec_note_title"))}</h4><p>${esc(tr("rec_note"))}</p></section>
+      <section class="box box-curio measure"><h4>${esc(tr("rec_note_title"))}</h4><p>${esc(tr("rec_note"))}</p></section>
       <div class="toolbar"><input type="search" placeholder="${esc(tr("search"))}" aria-label="${esc(tr("search"))}"></div>
       <div id="list">${html}</div>
       <p class="muted" id="noresults" hidden>${esc(tr("no_results"))}</p>
-      <section id="unavailable" style="max-width:760px;margin-top:36px">
+      <section id="unavailable" class="measure" style="margin-top:36px">
         ${wanted ? `<h2>${esc(tr("rec_unavailable"))}</h2><ul>${wanted}</ul>${refsHTML(notes)}` : ""}
         <h4 class="sans small muted" style="margin:24px 0 6px;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem">${esc(tr("rec_further"))}</h4>
         <ul class="biblio small">${(X.further || []).map((k) => `<li>${fullCite(k)}</li>`).join("")}</ul>
@@ -523,7 +571,7 @@
       </summary>
       <div class="entry-body">
         ${gallery}
-        <div class="entry-grid"><aside>${aside}</aside><div>${main}</div></div>
+        <div class="entry-grid"><aside>${aside}</aside><div class="entry-main">${main}</div></div>
         <div class="entry-actions"><a href="contact.html?entry=${f.id}">✎ ${esc(tr("suggest_edit"))}</a></div>
       </div>
     </details>`;
@@ -539,11 +587,11 @@
     const missing = ((H.fingeringsExtra || {}).missing || []).filter((id) => index[id]).sort(byStart);
     app.innerHTML = `<div class="wrap">
       ${pageHead(null, tr("nav_fingerings"), tr("intro_fingerings"))}
-      <section class="box box-curio" style="max-width:760px"><h4>${esc(tr("fc_howto_title"))}</h4><p>${esc(tr("fc_howto"))}</p></section>
+      <section class="box box-curio measure"><h4>${esc(tr("fc_howto_title"))}</h4><p>${esc(tr("fc_howto"))}</p></section>
       <div class="toolbar"><input type="search" placeholder="${esc(tr("search"))}" aria-label="${esc(tr("search"))}"></div>
       <div id="list">${html}</div>
       <p class="muted" id="noresults" hidden>${esc(tr("no_results"))}</p>
-      ${missing.length ? `<section id="missing" style="max-width:760px;margin-top:36px"><h2>${esc(tr("fc_missing_h"))}</h2>
+      ${missing.length ? `<section id="missing" class="measure" style="margin-top:36px"><h2>${esc(tr("fc_missing_h"))}</h2>
         <p class="muted">${esc(tr("fc_missing_t"))} <a href="contact.html">${esc(tr("nav_contact"))}</a></p>
         <div class="chips">${missing.map(chip).join("")}</div></section>` : ""}
     </div>`;
@@ -573,7 +621,7 @@
         <a class="card" href="${PAGE_FILE[k]}" style="${t ? `--type-color:var(--c-${t})` : ""}">
           <h3>${esc(tr("nav_" + k))}</h3><p>${esc(tr("intro_" + k))}</p></a>`).join("")}
       </div>
-      <section class="box box-curio" id="curio" style="max-width:720px"></section>
+      <section class="box box-curio measure" id="curio"></section>
     </div>`;
 
     const box = app.querySelector("#curio");
@@ -592,7 +640,9 @@
     list = list || H.history; key = key || "history";
     app.innerHTML = `<div class="wrap">
       ${pageHead(null, tr("nav_" + key), tr("intro_" + key))}
-      <nav class="history-toc">${list.map((c) => `<a href="#${c.id}">${esc(loc(c.title))}</a>`).join("")}</nav>
+      <div class="history-layout">
+      <nav class="history-toc" aria-label="${esc(tr("nav_" + key))}">${list.map((c) => `<a href="#${c.id}">${esc(loc(c.title))}</a>`).join("")}</nav>
+      <div class="history-chapters">
       ${list.map((c) => {
         const ids = [...new Set(refsIn(c.body))].filter((id) => index[id]).sort(byStart);
         const notes = newNotes(c.id);
@@ -605,6 +655,7 @@
           <div class="chips">${ids.map(chip).join("")}</div>
         </section>`;
       }).join("")}
+      </div></div>
     </div>`;
     openFromHash();
   }
@@ -754,14 +805,14 @@
 
     app.innerHTML = `<div class="wrap sources-page">
       ${pageHead(null, tr("nav_sources"), tr("intro_sources"))}
-      <section class="box box-curio" style="max-width:760px"><h4>${esc(tr("src_method"))}</h4>${paras(tr("src_method_text"))}</section>
+      <section class="box box-curio measure"><h4>${esc(tr("src_method"))}</h4>${paras(tr("src_method_text"))}</section>
       ${h2(tr("src_secondary"), "secondary")}<ul class="biblio">${bibList("secondary")}</ul>
-      ${h2(tr("src_primary"), "primary")}<p class="muted" style="max-width:760px">${esc(tr("src_primary_note"))}</p>
-      <ul class="biblio">${bibList("primary")}</ul><ul style="max-width:760px">${treatises}</ul>
-      ${h2(tr("src_online"), "online")}<p class="muted" style="max-width:760px">${esc(tr("src_online_note"))}</p>
+      ${h2(tr("src_primary"), "primary")}<p class="muted measure">${esc(tr("src_primary_note"))}</p>
+      <ul class="biblio">${bibList("primary")}</ul><ul class="measure">${treatises}</ul>
+      ${h2(tr("src_online"), "online")}<p class="muted measure">${esc(tr("src_online_note"))}</p>
       <ul class="biblio">${bibList("online")}</ul>
-      <details style="max-width:760px"><summary class="sans small">${esc(tr("src_pages"))}</summary><ul class="small">${pages}</ul></details>
-      ${h2(tr("src_verify"), "verify")}<p class="muted" style="max-width:760px">${esc(tr("src_verify_note"))}</p>
+      <details class="measure"><summary class="sans small">${esc(tr("src_pages"))}</summary><ul class="small">${pages}</ul></details>
+      ${h2(tr("src_verify"), "verify")}<p class="muted measure">${esc(tr("src_verify_note"))}</p>
       ${needs.length ? `<h4>${esc(tr("src_needs"))}</h4><div class="chips">${needs.map((u) => u.chip).join("")}</div>` : ""}
       ${uncited.length ? `<h4>${esc(tr("src_uncited"))}</h4><div class="chips">${uncited.map((u) => u.chip).join("")}</div>` : ""}
       ${toCheck ? `<h4>${esc(tr("src_pages_pending"))}</h4><ul class="small">${toCheck}</ul>` : ""}

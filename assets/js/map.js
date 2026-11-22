@@ -39,7 +39,7 @@ HFP.renderMap = function (app, api) {
     return false;
   }
 
-  app.innerHTML = `<div class="wrap" style="max-width:1200px">
+  app.innerHTML = `<div class="wrap">
     ${pageHead(null, tr("nav_map"), tr("intro_map"))}
     <div class="map-controls">
       <span class="muted">${esc(tr("map_lanes"))}:</span>
