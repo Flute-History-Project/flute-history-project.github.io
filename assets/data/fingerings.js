@@ -220,38 +220,6 @@ HFP.fingerings = [
     ]
   },
   {
-    "id": "fc-vanderhagen-1790",
-    "treatise": "vanderhagen-1790",
-    "tagline": {
-      "en": "Two tablatures before the text: the natural tones, and the sharpened and flattened ones.",
-      "fr": "Deux tablatures avant le texte : les tons naturels, puis les tons diésés et bémolisés.",
-      "it": "Due tablature prima del testo: i suoni naturali, poi quelli diesizzati e bemollizzati."
-    },
-    "note": {
-      "en": "Two tablatures open the book, before the text: the ‘Gamme des tons naturels’, with its explanation (the seven lines answer to the seven holes of the flute, and a black zero marks a hole stopped by the finger), and the scales of the sharpened and flattened tones. Pages of trills (‘cadences’) in the same format follow. {{vanderhagen1790, pp. 2–3}}",
-      "fr": "Deux tablatures ouvrent le livre, avant le texte : la « Gamme des tons naturels », avec son explication (les sept lignes correspondent aux sept trous de la flûte, et un zéro noir marque un trou bouché par le doigt), et les gammes des tons diésés et bémolisés. Des pages de cadences (trilles) dans le même format suivent. {{vanderhagen1790, pp. 2–3}}",
-      "it": "Due tablature aprono il libro, prima del testo: la «Gamme des tons naturels», con la sua spiegazione (le sette linee corrispondono ai sette fori del flauto, e uno zero nero indica un foro chiuso dal dito), e le gamme dei suoni diesizzati e bemollizzati. Seguono pagine di cadenze (trilli) nello stesso formato. {{vanderhagen1790, pp. 2–3}}"
-    },
-    "edition": "Paris, c. 1790",
-    "credit": "Bibliothèque nationale de France (Gallica), via Wikimedia Commons · public domain",
-    "images": [
-      {
-        "file": "vanderhagen-1790-1",
-        "w": 1227,
-        "h": 1700,
-        "caption": "Gamme des tons naturels",
-        "url": "https://commons.wikimedia.org/wiki/File:Nouvelle_m%C3%A9thode_de_fl%C3%BBte_divis%C3%A9e_en_deux_parties..._-_bpt6k96177197_(014_of_136).jpg"
-      },
-      {
-        "file": "vanderhagen-1790-2",
-        "w": 1240,
-        "h": 1700,
-        "caption": "Gammes des tons diézés et des tons bémolisés",
-        "url": "https://commons.wikimedia.org/wiki/File:Nouvelle_m%C3%A9thode_de_fl%C3%BBte_divis%C3%A9e_en_deux_parties..._-_bpt6k96177197_(015_of_136).jpg"
-      }
-    ]
-  },
-  {
     "id": "fc-tromlitz-unterricht",
     "treatise": "tromlitz-unterricht",
     "tagline": {
@@ -281,45 +249,6 @@ HFP.fingerings = [
     ]
   },
   {
-    "id": "fc-wragg-1792",
-    "treatise": "wragg-1792",
-    "tagline": {
-      "en": "Tables of figures for the eight-keyed flute, with a scale of alternative fingerings (Boston edition).",
-      "fr": "Tableaux de chiffres pour la flûte à huit clés, avec une échelle de doigtés alternatifs (édition de Boston).",
-      "it": "Tabelle di cifre per il flauto a otto chiavi, con una scala di diteggiature alternative (edizione di Boston)."
-    },
-    "note": {
-      "en": "The Boston edition shown here (Oliver Ditson, about 1855, printed ‘from the fortieth London edition’) is for the eight-keyed flute, so it is a much later form of the book than the first edition of 1792. Its tables set the notes above columns of figures: 1 to 6 for the fingers, 0 for an open hole, and circles for the keys (B♭, G♯, F, D♯ and C♯). Page 2 gives the first gamut to be studied, page 4 the notes that need the additional keys, and page 5 a ‘scale of the different ways of fingering many of the foregoing notes’, to be consulted when the pupil is far advanced. {{wragg1855, pp. 2, 4, 5}}",
-      "fr": "L'édition de Boston présentée ici (Oliver Ditson, vers 1855, imprimée « d'après la quarantième édition de Londres ») est destinée à la flûte à huit clés : c'est donc une forme bien plus tardive du livre que l'édition originale de 1792. Ses tableaux placent les notes au-dessus de colonnes de chiffres : 1 à 6 pour les doigts, 0 pour un trou ouvert, et des ronds pour les clés (si♭, sol♯, fa, ré♯ et do♯). La page 2 donne la première gamme à étudier, la page 4 les notes qui demandent les clés supplémentaires, et la page 5 une échelle des différentes manières de doigter plusieurs des notes précédentes, à consulter quand l'élève est très avancé. {{wragg1855, pp. 2, 4, 5}}",
-      "it": "L'edizione di Boston qui mostrata (Oliver Ditson, circa 1855, stampata «dalla quarantesima edizione di Londra») è per il flauto a otto chiavi: è dunque una forma molto più tarda del libro rispetto alla prima edizione del 1792. Le sue tabelle pongono le note sopra colonne di cifre: da 1 a 6 per le dita, 0 per un foro aperto, e cerchi per le chiavi (si♭, sol♯, fa, re♯ e do♯). La pagina 2 dà la prima gamma da studiare, la pagina 4 le note che richiedono le chiavi aggiuntive, e la pagina 5 una scala dei diversi modi di diteggiare molte delle note precedenti, da consultare quando l'allievo è molto avanzato. {{wragg1855, pp. 2, 4, 5}}"
-    },
-    "edition": "Boston: Oliver Ditson & Co., c. 1855 (‘from the fortieth London edition’)",
-    "credit": "Internet Archive (copy from the Boston Public Library) · public domain",
-    "images": [
-      {
-        "file": "wragg-1792-1",
-        "w": 1455,
-        "h": 1700,
-        "caption": "First gamut to be studied",
-        "url": "https://archive.org/details/wraggsfluteprece00wrag/page/n9/mode/1up"
-      },
-      {
-        "file": "wragg-1792-2",
-        "w": 1455,
-        "h": 1700,
-        "caption": "Scale of notes affected by the additional keys",
-        "url": "https://archive.org/details/wraggsfluteprece00wrag/page/n11/mode/1up"
-      },
-      {
-        "file": "wragg-1792-3",
-        "w": 1700,
-        "h": 1091,
-        "caption": "A scale of the different ways of fingering many of the foregoing notes",
-        "url": "https://archive.org/details/wraggsfluteprece00wrag/page/n12/mode/1up"
-      }
-    ]
-  },
-  {
     "id": "fc-devienne-methode",
     "treatise": "devienne-methode",
     "tagline": {
@@ -341,63 +270,6 @@ HFP.fingerings = [
         "h": 1700,
         "caption": "Gamme naturelle · Gamme diézée et bémolisée",
         "url": "https://commons.wikimedia.org/wiki/File:Nouvelle_m%C3%A9thode_th%C3%A9orique_et_pratique_pour_la_fl%C3%BBte..._suivie_de_20_petits_airs,_18_petits_duos_et_6_sonates_gradu%C3%A9es_-_btv1b10862515z_(07_of_83).jpg"
-      }
-    ]
-  },
-  {
-    "id": "fc-peraut-1800",
-    "treatise": "peraut-1800",
-    "tagline": {
-      "en": "A fingering for the natural scale and a chromatic scale by sharps, followed by flats and trills.",
-      "fr": "Un doigté pour la gamme naturelle et une gamme chromatique par les dièses, suivis des bémols et des trilles.",
-      "it": "Una diteggiatura per la scala naturale e una scala cromatica per diesis, seguite da bemolli e trilli."
-    },
-    "note": {
-      "en": "Peraut prints a ‘Doigté pour la gamme ou échelle naturelle sans aucun accidentel’ and a ‘Gamme ou échelle chromatique par le procédé des dièzes’; a third table does the same by flats (‘par le procédé des bémols’), and tables of trills follow. {{peraut1800, pp. 5–6}}",
-      "fr": "Peraut imprime un « Doigté pour la gamme ou échelle naturelle sans aucun accidentel » et une « Gamme ou échelle chromatique par le procédé des dièzes » ; un troisième tableau fait de même par les bémols (« par le procédé des bémols »), et des tableaux de trilles suivent. {{peraut1800, pp. 5–6}}",
-      "it": "Peraut stampa un «Doigté pour la gamme ou échelle naturelle sans aucun accidentel» e una «Gamme ou échelle chromatique par le procédé des dièzes»; una terza tabella fa lo stesso per bemolli («par le procédé des bémols»), e seguono tabelle di trilli. {{peraut1800, pp. 5–6}}"
-    },
-    "edition": "Paris, c. 1800",
-    "credit": "Bibliothèque nationale de France (Gallica), via Wikimedia Commons · public domain",
-    "images": [
-      {
-        "file": "peraut-1800-1",
-        "w": 1211,
-        "h": 1700,
-        "caption": "Doigté pour la gamme ou échelle naturelle sans aucun accidentel",
-        "url": "https://commons.wikimedia.org/wiki/File:M%C3%A9thode_pour_la_fl%C3%BBte_enrichie_de_plusieurs_exemples_d%C3%A9monstratifs.._de_12_avis_avec_accompagnement,_6_duos,_6_sonates..._termin%C3%A9e_par_6_grands_caprices_-_btv1b10070498n_(007_of_103).jpg"
-      },
-      {
-        "file": "peraut-1800-2",
-        "w": 1211,
-        "h": 1700,
-        "caption": "Gamme ou échelle chromatique par le procédé des dièzes",
-        "url": "https://commons.wikimedia.org/wiki/File:M%C3%A9thode_pour_la_fl%C3%BBte_enrichie_de_plusieurs_exemples_d%C3%A9monstratifs.._de_12_avis_avec_accompagnement,_6_duos,_6_sonates..._termin%C3%A9e_par_6_grands_caprices_-_btv1b10070498n_(008_of_103).jpg"
-      }
-    ]
-  },
-  {
-    "id": "fc-hugot-wunderlich-1804",
-    "treatise": "hugot-wunderlich-1804",
-    "tagline": {
-      "en": "‘Gamme naturelle pour la flûte ordinaire’, followed by a second tablature for sharps and flats.",
-      "fr": "« Gamme naturelle pour la flûte ordinaire », suivie d'une seconde tablature pour dièses et bémols.",
-      "it": "«Gamme naturelle pour la flûte ordinaire», seguita da una seconda tablatura per diesis e bemolli."
-    },
-    "note": {
-      "en": "At the front of the book, before the text, a ‘Gamme naturelle pour la flûte ordinaire’ is drawn with the flute at the left, followed by a second tablature for the sharpened and flattened notes. {{hugot1804, plate before the text}}",
-      "fr": "En tête du livre, avant le texte, une « Gamme naturelle pour la flûte ordinaire » est dessinée avec la flûte à gauche, suivie d'une seconde tablature pour les notes diésées et bémolisées. {{hugot1804, planche avant le texte}}",
-      "it": "All'inizio del libro, prima del testo, una «Gamme naturelle pour la flûte ordinaire» è disegnata con il flauto a sinistra, seguita da una seconda tablatura per le note diesizzate e bemollizzate. {{hugot1804, tavola prima del testo}}"
-    },
-    "edition": "Paris, 1804",
-    "credit": "Bibliothèque nationale de France (Gallica), via Wikimedia Commons · public domain",
-    "images": [
-      {
-        "file": "hugot-wunderlich-1804-1",
-        "w": 1213,
-        "h": 1700,
-        "caption": "Gamme naturelle pour la flûte ordinaire",
-        "url": "https://commons.wikimedia.org/wiki/File:M%C3%A9thode_de_fl%C3%BBte_du_Conservatoire_-_adopt%C3%A9e_pour_servir_%C3%A0_l'%C3%A9tude_dans_cet_%C3%A9tablisssement_-_par_MM._Hugot_et_Wunderlich_membres_du_Conservatoire_-_bpt6k11667841_(013_of_182).jpg"
       }
     ]
   },
@@ -654,12 +526,8 @@ HFP.fingeringsExtra = { missing: ["corrette-1735", "freillon-poncein-1700", "lor
     bordet1755: {"kind": "primary", "author": "Toussaint Bordet", "title": "Méthode raisonnée pour apprendre la musique… et à jouer de la flûte traversière", "place": "Paris", "year": "c. 1755", "url": "https://gallica.bnf.fr/ark:/12148/btv1b10868113m", "note": {"en": "Digitised copy used for the chart on the Fingering Charts page (Gallica, Bibliothèque nationale de France); plate and page numbers are read from the scan.", "fr": "Exemplaire numérisé utilisé pour le tableau de la page Tableaux de doigtés (Gallica, Bibliothèque nationale de France) ; planches et numéros de page lus sur la numérisation.", "it": "Esemplare digitalizzato usato per la tavola della pagina Tavole di diteggiatura (Gallica, Bibliothèque nationale de France); tavole e numeri di pagina letti sulla scansione."}},
     mahaut1759: {"kind": "primary", "author": "Antoine Mahaut", "title": "Nouvelle méthode pour apprendre en peu de tems à jouer de la flûte traversière", "place": "Paris", "publisher": "De La Chevardière", "year": "1759", "url": "https://archive.org/details/imslp-mthode-pour-jouer-la-flte-traversire-mahaut-antoine", "note": {"en": "Digitised copy used for the chart on the Fingering Charts page (Internet Archive, IMSLP mirror of a Russian State Library scan); plate and page numbers are read from the scan.", "fr": "Exemplaire numérisé utilisé pour le tableau de la page Tableaux de doigtés (Internet Archive, IMSLP mirror of a Russian State Library scan) ; planches et numéros de page lus sur la numérisation.", "it": "Esemplare digitalizzato usato per la tavola della pagina Tavole di diteggiatura (Internet Archive, IMSLP mirror of a Russian State Library scan); tavole e numeri di pagina letti sulla scansione."}},
     delusse1760: {"kind": "primary", "author": "Charles Delusse", "title": "L'Art de la flûte traversière", "place": "Paris", "year": "c. 1760", "url": "https://archive.org/details/delusse-lart-de-la-flute-traversiere", "note": {"en": "Digitised copy used for the chart on the Fingering Charts page (Internet Archive); plate and page numbers are read from the scan.", "fr": "Exemplaire numérisé utilisé pour le tableau de la page Tableaux de doigtés (Internet Archive) ; planches et numéros de page lus sur la numérisation.", "it": "Esemplare digitalizzato usato per la tavola della pagina Tavole di diteggiatura (Internet Archive); tavole e numeri di pagina letti sulla scansione."}},
-    vanderhagen1790: {"kind": "primary", "author": "Amand Vanderhagen", "title": "Nouvelle méthode de flûte divisée en deux parties", "place": "Paris", "year": "c. 1790", "url": "https://gallica.bnf.fr/ark:/12148/bpt6k96177197", "note": {"en": "Digitised copy used for the chart on the Fingering Charts page (Gallica, Bibliothèque nationale de France); plate and page numbers are read from the scan.", "fr": "Exemplaire numérisé utilisé pour le tableau de la page Tableaux de doigtés (Gallica, Bibliothèque nationale de France) ; planches et numéros de page lus sur la numérisation.", "it": "Esemplare digitalizzato usato per la tavola della pagina Tavole di diteggiatura (Gallica, Bibliothèque nationale de France); tavole e numeri di pagina letti sulla scansione."}},
     tromlitz1791: {"kind": "primary", "author": "Johann George Tromlitz", "title": "Ausführlicher und gründlicher Unterricht die Flöte zu spielen", "place": "Leipzig", "publisher": "Adam Friedrich Böhme", "year": "1791", "url": "https://archive.org/details/10527788bsb", "note": {"en": "Digitised copy used for the chart on the Fingering Charts page (Bayerische Staatsbibliothek, via the Internet Archive); plate and page numbers are read from the scan.", "fr": "Exemplaire numérisé utilisé pour le tableau de la page Tableaux de doigtés (Bayerische Staatsbibliothek, via the Internet Archive) ; planches et numéros de page lus sur la numérisation.", "it": "Esemplare digitalizzato usato per la tavola della pagina Tavole di diteggiatura (Bayerische Staatsbibliothek, via the Internet Archive); tavole e numeri di pagina letti sulla scansione."}},
-    wragg1855: {"kind": "primary", "author": "Jacob Wragg", "title": "Wragg's Flute Preceptor (Boston edition, from the fortieth London edition)", "place": "Boston", "publisher": "Oliver Ditson & Co.", "year": "c. 1855", "url": "https://archive.org/details/wraggsfluteprece00wrag", "note": {"en": "Digitised copy used for the chart on the Fingering Charts page (Internet Archive, copy from the Boston Public Library); plate and page numbers are read from the scan.", "fr": "Exemplaire numérisé utilisé pour le tableau de la page Tableaux de doigtés (Internet Archive, copy from the Boston Public Library) ; planches et numéros de page lus sur la numérisation.", "it": "Esemplare digitalizzato usato per la tavola della pagina Tavole di diteggiatura (Internet Archive, copy from the Boston Public Library); tavole e numeri di pagina letti sulla scansione."}},
     devienne1794: {"kind": "primary", "author": "François Devienne", "title": "Nouvelle méthode théorique et pratique pour la flûte", "place": "Paris", "year": "c. 1794", "url": "https://gallica.bnf.fr/ark:/12148/btv1b10862515z", "note": {"en": "Digitised copy used for the chart on the Fingering Charts page (Gallica, Bibliothèque nationale de France); plate and page numbers are read from the scan.", "fr": "Exemplaire numérisé utilisé pour le tableau de la page Tableaux de doigtés (Gallica, Bibliothèque nationale de France) ; planches et numéros de page lus sur la numérisation.", "it": "Esemplare digitalizzato usato per la tavola della pagina Tavole di diteggiatura (Gallica, Bibliothèque nationale de France); tavole e numeri di pagina letti sulla scansione."}},
-    peraut1800: {"kind": "primary", "author": "Mathieu Peraut", "title": "Méthode pour la flûte", "place": "Paris", "year": "c. 1800", "url": "https://gallica.bnf.fr/ark:/12148/btv1b10070498n", "note": {"en": "Digitised copy used for the chart on the Fingering Charts page (Gallica, Bibliothèque nationale de France); plate and page numbers are read from the scan.", "fr": "Exemplaire numérisé utilisé pour le tableau de la page Tableaux de doigtés (Gallica, Bibliothèque nationale de France) ; planches et numéros de page lus sur la numérisation.", "it": "Esemplare digitalizzato usato per la tavola della pagina Tavole di diteggiatura (Gallica, Bibliothèque nationale de France); tavole e numeri di pagina letti sulla scansione."}},
-    hugot1804: {"kind": "primary", "author": "Antoine Hugot and Johann Georg Wunderlich", "title": "Méthode de flûte du Conservatoire", "place": "Paris", "year": "1804", "url": "https://gallica.bnf.fr/ark:/12148/bpt6k11667841", "note": {"en": "Digitised copy used for the chart on the Fingering Charts page (Gallica, Bibliothèque nationale de France); plate and page numbers are read from the scan.", "fr": "Exemplaire numérisé utilisé pour le tableau de la page Tableaux de doigtés (Gallica, Bibliothèque nationale de France) ; planches et numéros de page lus sur la numérisation.", "it": "Esemplare digitalizzato usato per la tavola della pagina Tavole di diteggiatura (Gallica, Bibliothèque nationale de France); tavole e numeri di pagina letti sulla scansione."}},
     berbiguier1818: {"kind": "primary", "author": "Benoît Tranquille Berbiguier", "title": "Nouvelle méthode pour la flûte", "place": "Paris", "publisher": "Janet et Cotelle", "year": "c. 1818", "url": "https://archive.org/details/nouvellemthodepo00berb", "note": {"en": "Digitised copy used for the chart on the Fingering Charts page (Internet Archive, copy from the University of North Carolina at Chapel Hill); plate and page numbers are read from the scan.", "fr": "Exemplaire numérisé utilisé pour le tableau de la page Tableaux de doigtés (Internet Archive, copy from the University of North Carolina at Chapel Hill) ; planches et numéros de page lus sur la numérisation.", "it": "Esemplare digitalizzato usato per la tavola della pagina Tavole di diteggiatura (Internet Archive, copy from the University of North Carolina at Chapel Hill); tavole e numeri di pagina letti sulla scansione."}},
     drouet1827: {"kind": "primary", "author": "Louis Drouët", "title": "Méthode pour la flûte, ou Traité complet et raisonné pour apprendre à jouer de cet instrument (French–German edition)", "place": "Mainz", "publisher": "B. Schott's Söhne", "year": "c. 1827", "url": "https://archive.org/details/mthodepourlaflte00drou", "note": {"en": "Digitised copy used for the chart on the Fingering Charts page (Internet Archive, copy from the University of North Carolina at Chapel Hill); plate and page numbers are read from the scan.", "fr": "Exemplaire numérisé utilisé pour le tableau de la page Tableaux de doigtés (Internet Archive, copy from the University of North Carolina at Chapel Hill) ; planches et numéros de page lus sur la numérisation.", "it": "Esemplare digitalizzato usato per la tavola della pagina Tavole di diteggiatura (Internet Archive, copy from the University of North Carolina at Chapel Hill); tavole e numeri di pagina letti sulla scansione."}},
     dorus1845: {"kind": "primary", "author": "Louis Dorus", "title": "L'Étude de la nouvelle flûte, méthode progressive arrangée d'après Devienne", "place": "Paris", "publisher": "Schonenberger", "year": "1845", "url": "https://archive.org/details/letudedelanouvel0000doru", "note": {"en": "Digitised copy used for the chart on the Fingering Charts page (Internet Archive, copy from Oberlin College Library); plate and page numbers are read from the scan.", "fr": "Exemplaire numérisé utilisé pour le tableau de la page Tableaux de doigtés (Internet Archive, copy from Oberlin College Library) ; planches et numéros de page lus sur la numérisation.", "it": "Esemplare digitalizzato usato per la tavola della pagina Tavole di diteggiatura (Internet Archive, copy from Oberlin College Library); tavole e numeri di pagina letti sulla scansione."}},
