@@ -443,13 +443,43 @@ HFP.bib = {
   debussy1927: { kind: "primary", author: "Claude Debussy", title: "Syrinx, pour flûte seule", place: "Paris", publisher: "Jobert", year: "1927" },
   ibertscore: { kind: "primary", author: "Jacques Ibert", title: "Concerto pour flûte et orchestre (dedicated to Marcel Moyse)", place: "Paris", publisher: "Alphonse Leduc", verify: true },
   moyse1934: { kind: "primary", author: "Marcel Moyse", title: "De la sonorité: art et technique (Enseignement complet de la flûte)", place: "Paris", publisher: "Alphonse Leduc", year: "1934", verify: true },
+  funkkunath2018: {
+    kind: "secondary",
+    author: "Kristina Funk-Kunath",
+    title: "Spurensuche – Ein unbekanntes Porträt von Pierre Gabriel Buffardin",
+    journal: "Bach-Jahrbuch", volume: "104", year: "2018", pages: "pp. 225–233",
+    url: "https://journals.qucosa.de/bjb/article/download/2424/3693/6570",
+    note: {
+      en: "A short, open-access article on a drawing of Buffardin bought by the Bach-Archiv Leipzig in 2017. It also summarises, with references, what is known of his meetings with the Bach family. Read in full.",
+      fr: "Un court article en libre accès sur un dessin de Buffardin acheté par les Archives Bach de Leipzig en 2017. Il résume aussi, avec références, ce que l'on sait de ses rencontres avec la famille Bach. Lu en entier.",
+      it: "Un breve articolo ad accesso libero su un disegno di Buffardin acquistato dal Bach-Archiv di Lipsia nel 2017. Riassume anche, con riferimenti, ciò che si sa dei suoi incontri con la famiglia Bach. Letto per intero."
+    }
+  },
+  frisch2018: {
+    kind: "secondary",
+    author: "Jean-Christophe Frisch",
+    title: "Fragments de la vie d'un flûtiste, Pierre Gabriel Buffardin (Provence, ca. 1690 – Paris, 13 January 1768)",
+    journal: "Bulletin of the Transilvania University of Braşov, Series VIII: Performing Arts", volume: "11 (60), no. 2", year: "2018", pages: "pp. 89–102",
+    url: "https://webbut.unitbv.ro/index.php/Series_VIII/article/download/2678/2110/5011",
+    note: {
+      en: "A biography written for a lecture-concert by a flutist who says he gathers the work of others (Kollpacher-Haas, Stockigt, Augustsson); the facts are used with its page numbers, and the quotations of Quantz and others are as it gives them, not checked against the originals. Read in full.",
+      fr: "Une biographie écrite pour un concert-conférence par un flûtiste qui dit rassembler les travaux d'autres (Kollpacher-Haas, Stockigt, Augustsson) ; les faits sont repris avec ses numéros de page, et les citations de Quantz et d'autres sont celles qu'il donne, non vérifiées sur les originaux. Lu en entier.",
+      it: "Una biografia scritta per un concerto-conferenza da un flautista che dice di raccogliere il lavoro altrui (Kollpacher-Haas, Stockigt, Augustsson); i fatti sono ripresi con i suoi numeri di pagina, e le citazioni di Quantz e di altri sono quelle che riporta, non controllate sugli originali. Letto per intero."
+    }
+  },
   quantz1755: {
     kind: "primary",
     author: "Johann Joachim Quantz",
     title: "Herrn Johann Joachim Quantzens Lebenslauf, von ihm selbst entworfen",
     inBook: "Friedrich Wilhelm Marpurg, Historisch-kritische Beyträge zur Aufnahme der Musik, vol. 1",
     place: "Berlin", year: "1755", pages: "197–250",
-    verify: true
+    url: "https://imslp.org/wiki/Autobiography_(Quantz,_Johann_Joachim)",
+    verify: true,
+    note: {
+      en: "Quantz wrote it in 1754, at fifty-seven, as Frederick the Great's flute teacher and court composer. It was printed in 1755 in the third issue of the first volume of Friedrich Wilhelm Marpurg's periodical (Berlin), under the title 'Quantz's life, drafted by himself'. The link opens the free scan on IMSLP (54 pages, from the Bayerische Staatsbibliothek). The passage on Buffardin has not been read in the original: it is quoted from Frisch. We do not know who asked Quantz to write it or how Marpurg edited the text.",
+      fr: "Quantz l'a écrite en 1754, à cinquante-sept ans, comme professeur de flûte et compositeur de la cour de Frédéric le Grand. Elle a paru en 1755 dans le troisième cahier du premier volume du périodique de Friedrich Wilhelm Marpurg (Berlin), sous le titre « Vie de Quantz, esquissée par lui-même ». Le lien ouvre la numérisation libre sur IMSLP (54 pages, de la Bayerische Staatsbibliothek). Le passage sur Buffardin n'a pas été lu dans l'original : il est cité d'après Frisch. Nous ne savons pas qui a demandé à Quantz de l'écrire ni comment Marpurg a revu le texte.",
+      it: "Quantz la scrisse nel 1754, a cinquantasette anni, come maestro di flauto e compositore di corte di Federico il Grande. Fu stampata nel 1755 nel terzo fascicolo del primo volume della rivista di Friedrich Wilhelm Marpurg (Berlino), con il titolo «Vita di Quantz, tracciata da lui stesso». Il link apre la scansione libera su IMSLP (54 pagine, dalla Bayerische Staatsbibliothek). Il passo su Buffardin non è stato letto nell'originale: è citato da Frisch. Non sappiamo chi chiese a Quantz di scriverla né come Marpurg rivide il testo."
+    }
   },
   burney1773: {
     kind: "primary",
@@ -716,6 +746,56 @@ HFP.bib = {
       en: "The first thorough study of who Dejean was. Not read: its findings are known only through the addendum in Pohanka's edition of the flute quartets.",
       fr: "La première étude approfondie sur l'identité de Dejean. Non lue : ses résultats ne sont connus que par l'addendum de l'édition des quatuors avec flûte de Pohanka.",
       it: "Il primo studio approfondito su chi fosse Dejean. Non letto: i suoi risultati sono noti solo attraverso l'aggiunta nell'edizione dei quartetti con flauto di Pohanka."
+    }
+  },
+  bachcantatas: {
+    kind: "online",
+    author: "Bach Cantatas Website",
+    title: "Flute in Bach's Vocal Works, Part 1 and Part 2",
+    year: "page last updated 2018",
+    url: "https://www.bach-cantatas.com/Topics/Flute.htm",
+    online: "https://www.bach-cantatas.com/Topics/Flute-2.htm", onlineLabel: "part 2",
+    note: {
+      en: "Two pages that collect posts from the site's mailing list (2000–2006). The lists of vocal works with flute were compiled by one contributor, Thomas Braatz, in 2005, and have no sources of their own. Used here only to say what the lists contain, not as proof that a flute part exists.",
+      fr: "Deux pages qui réunissent des messages de la liste de diffusion du site (2000–2006). Les listes d'œuvres vocales avec flûte ont été établies par un seul contributeur, Thomas Braatz, en 2005, et n'ont pas de sources propres. Utilisées ici seulement pour dire ce que contiennent les listes, non comme preuve de l'existence d'une partie de flûte.",
+      it: "Due pagine che raccolgono messaggi della mailing list del sito (2000–2006). Gli elenchi di opere vocali con flauto sono stati compilati da un solo collaboratore, Thomas Braatz, nel 2005, e non hanno fonti proprie. Usate qui solo per dire cosa contengono gli elenchi, non come prova che esista una parte di flauto."
+    }
+  },
+  wenner2019: {
+    kind: "online",
+    author: "Martin Wenner",
+    title: "Thoughts on the 'Buffardin Le Fils' flute",
+    year: "2018, revised 2019",
+    url: "https://wennerfloeten.de/files/web/images/seiten/produkte/traversfloeten/buffardin/pdf/Wie_Buffardin_zum_Einhorn_kam_e.pdf",
+    online: "https://wennerfloeten.de/en/products/transverse-flutes/buffardin-le-fils/", onlineLabel: "the maker's page",
+    note: {
+      en: "An essay by the flute maker who built a copy of the flute and sells it. It describes the instrument and gives his own reading of the stamp; used only for that, always with its author named.",
+      fr: "Un essai du facteur qui a construit une copie de la flûte et la vend. Il décrit l'instrument et donne sa propre lecture de la marque ; utilisé seulement pour cela, toujours en nommant son auteur.",
+      it: "Un saggio del costruttore che ha realizzato una copia del flauto e la vende. Descrive lo strumento e dà la sua lettura del marchio; usato solo per questo, sempre con il nome dell'autore."
+    }
+  },
+  oldpostroad: {
+    kind: "online",
+    author: "Daniel Ryan and Suzanne Stumpf",
+    title: "Bach's Dresden Circle",
+    inBook: "programme notes, Musicians of the Old Post Road, concerts of 27 and 29 October 2017", year: "2017",
+    url: "https://www.oldpostroad.org/node/390",
+    note: {
+      en: "Concert programme notes. Used only to report that Robert Marshall's theory about Bach and Buffardin exists; Marshall's own article has not been read.",
+      fr: "Notes de programme d'un concert. Utilisées seulement pour signaler l'existence de la théorie de Robert Marshall sur Bach et Buffardin ; l'article de Marshall lui-même n'a pas été lu.",
+      it: "Note di sala di un concerto. Usate solo per riferire che esiste la teoria di Robert Marshall su Bach e Buffardin; l'articolo di Marshall non è stato letto."
+    }
+  },
+  bnf2026: {
+    kind: "online",
+    author: "Bibliothèque nationale de France",
+    title: "Discovery of an unpublished autograph manuscript by Mozart in the BnF Music Department",
+    inBook: "press release of 19 June", year: "2026",
+    url: "https://www.bnf.fr/sites/default/files/2026-06/cp_press_release_manuscript_Mozart.pdf",
+    note: {
+      en: "The library's own announcement of a Mozart notebook of 1778 found in February 2026. A press release, not a scholarly edition: used only to report what the BnF says it found; the notebook itself has not been seen.",
+      fr: "L'annonce par la bibliothèque elle-même d'un cahier de Mozart de 1778 trouvé en février 2026. Un communiqué de presse, non une édition savante : utilisé seulement pour rapporter ce que la BnF dit avoir trouvé ; le cahier lui-même n'a pas été vu.",
+      it: "L'annuncio della biblioteca stessa di un quaderno di Mozart del 1778 trovato nel febbraio 2026. Un comunicato stampa, non un'edizione scientifica: usato solo per riferire ciò che la BnF dice di aver trovato; il quaderno non è stato visto."
     }
   },
   steins: {

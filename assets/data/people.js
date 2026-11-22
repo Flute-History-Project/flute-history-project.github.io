@@ -97,6 +97,23 @@ HFP.people = [
     links: []
   },
   {
+    id: "buffardin",
+    name: "Pierre Gabriel Buffardin",
+    roles: ["flutist"],
+    start: 1690, end: 1768, dates: "c. 1690–1768",
+    place: "Provence → Constantinople → Dresden → Paris",
+    tagline: "Principal flutist of the Dresden court orchestra, and the teacher of Quantz.",
+    bio:
+      "Pierre Gabriel Buffardin was born in Provence around 1690. As a very young man he went to Constantinople in the household of the French ambassador, Charles de Ferriol, whose embassy ended in 1711. There he taught the flute to Johann Jacob Bach, the elder brother of Johann Sebastian, a Swedish army oboist; we know this from C. P. E. Bach's notes added to the Bach family genealogy. {{frisch2018, pp. 90–92; funkkunath2018, p. 225, n. 2}}\n\nFrom 1715 to 1749 he was a member of the court orchestra in Dresden. {{funkkunath2018, p. 225; frisch2018, p. 92}} [[quantz|Quantz]], who played in the same orchestra, tells in his autobiography that he took lessons from the famous Buffardin for about four months, around 1719, and that they played only fast pieces, which was where his teacher excelled. In 1728 Buffardin travelled with the court to Berlin, where the Prussian crown prince Frederick, the future Frederick the Great, heard him and Quantz, and received a *Buffardin'sche Flöte*, a flute made to Buffardin's specifications. {{quantz1755; frisch2018, pp. 93–94, 96}} A flute stamped with his name has come to light: see [[buffardin-flute|the Buffardin le fils flute]].\n\nAccording to C. P. E. Bach he met Johann Sebastian Bach, probably in 1717, when Bach went to Dresden for the planned contest with the harpsichordist Louis Marchand, and again during Bach's years in Leipzig. {{funkkunath2018, p. 225, n. 3}} In 1750 he retired to Paris with a pension from the king of Saxony and died there on 13 January 1768. Of his own music a flute concerto and a trio sonata survive. {{frisch2018, pp. 98–100}} What is said about Bach writing for him is told in [[bach-flute-sonatas|Bach and the flute]].",
+    curio: "For a long time nobody was sure which of two Berlin drawings by Johann Sebastian Bach the Younger, C. P. E. Bach's son, showed Buffardin. In 2017 the Bach-Archiv Leipzig bought an anonymous pencil drawing inscribed 'P. G. Buffardin'; it matches the sheet shown here, which settles the question. {{funkkunath2018, pp. 225–229}}",
+    sources: [
+      { label: "Kristina Funk-Kunath, Spurensuche – Ein unbekanntes Porträt von Pierre Gabriel Buffardin (Bach-Jahrbuch 2018, open access)", url: "https://journals.qucosa.de/bjb/article/download/2424/3693/6570" },
+      { label: "Jean-Christophe Frisch, Fragments de la vie d'un flûtiste, Pierre Gabriel Buffardin (2018)", url: "https://webbut.unitbv.ro/index.php/Series_VIII/article/download/2678/2110/5011" }
+    ],
+    image: { src: "assets/img/hfp/p-buffardin.jpg", caption: "Pierre Gabriel Buffardin, drawing by Johann Sebastian Bach the Younger (Berlin, Staatsbibliothek, Mus. P. Buffardin I,1)", credit: "public domain", url: "https://commons.wikimedia.org/wiki/File:Johann_Sebastian_Bach_(painter)_-_Pierre-Gabriel_Buffardin.jpg" },
+    links: ["buffardin-flute", "bach-flute-sonatas", "quantz"]
+  },
+  {
     id: "quantz",
     name: "Johann Joachim Quantz",
     roles: ["flutist", "maker"],
@@ -114,7 +131,7 @@ HFP.people = [
       { label: "Quantz's autobiography (in Marpurg, Historisch-kritische Beyträge, 1755)", url: "https://imslp.org/index.php?search=Marpurg+Historisch-kritische+Beytr%C3%A4ge" }
     ],
     image: { src: "assets/img/hfp/p-quantz-schleuen.jpg", caption: "Johann Joachim Quantz, engraving by Johann David Schleuen, 1767", credit: "public domain", url: "https://commons.wikimedia.org/wiki/File:Quantz_by_Schleuen.jpg" },
-    links: ["cpe-bach-wq132", "quantz-flute"]
+    links: ["cpe-bach-wq132", "quantz-flute", "buffardin"]
   },
   {
     id: "blavet",

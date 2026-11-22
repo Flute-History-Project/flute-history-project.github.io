@@ -240,7 +240,7 @@ HFP.flutes = [
       "Played by amateurs and by orchestral professionals"
     ],
     description:
-      "In early 19th-century Vienna, flutists favoured a conical keyed flute with a penetrating tone and, often, an extended foot reaching down to the violin's G. These instruments were played by amateurs and soloists alike and were heard in first performances of symphonies by Beethoven and others. {{powell2002, chs. 8, 10}}\n\n" +
+      "In early 19th-century Vienna this conical keyed flute was played by amateurs and soloists alike, and it was heard in the first performances of symphonies by Beethoven and others. {{powell2002, chs. 8, 10}}\n\n" +
       "Viennese workshops such as [[koch|Stephan Koch]] and [[ziegler|Johann Joseph Ziegler]] supplied bands and orchestras far beyond Austria. After about 1850 the model merged with northern German designs into the [[german-keyed-flute|Meyer-type flute]]. {{powell2002, chs. 8, 10; brown2002, p. 26}}",
     drawing: { joints: 4, keys: 8, bore: "conical", material: "boxwood", rings: true, length: 1.0, foot: "c" },
     sources: [{ label: "flutehistory.com: Nineteenth-century flutes", url: FH + "Instrument/19C.php3" }],
@@ -367,6 +367,21 @@ HFP.flutes = [
     drawing: { joints: 4, keys: 2, bore: "conical", material: "grenadilla", rings: true, length: 0.9 },
         image: { src: "assets/img/hfp/quantz-gerhard.jpg", caption: "Quantz with his flute, painting by Johann Friedrich Gerhard, 1735 (detail)", credit: "public domain", url: "https://commons.wikimedia.org/wiki/File:Flute_of_Quantz_(Painting_by_Gerhard)_cropped.jpg" },
     links: ["baroque-four-piece", "quantz-versuch"]
+  },
+  {
+    id: "buffardin-flute",
+    short: "Buffardin le fils flute",
+    name: "Flute stamped 'Buffardin le fils' (found 2015)",
+    start: 1725,
+    when: "c. 1725–1740 (date uncertain)",
+    origin: "France or Germany (not known)",
+    tagline: "A flute with a screw cork, found in 2015 and stamped with the name of the Dresden flutist, perhaps his own work.",
+    features: ["Four joints in boxwood, with ivory rings and one silver key", "BUFFARDIN LE FILS stamped on every joint", "Screw cork in the head, perhaps the oldest known", "Found in 2015 and now in a private collection in Germany"],
+    description:
+      "In 1759 Antoine Mahaut credited Buffardin with the invention of the screw cork and of the sliding foot. In 2015 a four-piece boxwood flute stamped BUFFARDIN LE FILS on every joint came to light in Germany, with ivory rings and a screw cork, perhaps the oldest known. {{frisch2018, pp. 96–97; wenner2019}}\n\nWhether it is the work of [[buffardin|Pierre Gabriel Buffardin]] is still debated. Frisch observes that Buffardin's first son was born only in 1748, so 'le fils' cannot be his son. The maker Martin Wenner, who has built a copy, suggests it means the son of Jean-Joseph Buffardin, an instrument maker, that is Pierre Gabriel himself. They disagree on the date (about 1725 and about 1740) and on the original pitch (about a′ = 402 and about 415 Hz); the instrument was later altered. {{frisch2018, p. 97; wenner2019}}",
+    drawing: { joints: 4, keys: 1, bore: "conical", material: "boxwood", rings: true, length: 0.86 },
+    sources: [{ label: "Martin Wenner: the copy of the flute and an essay on it", url: "https://wennerfloeten.de/en/products/transverse-flutes/buffardin-le-fils/" }],
+    links: ["buffardin", "baroque-four-piece", "quantz-flute"]
   },
   {
     id: "piccolo",

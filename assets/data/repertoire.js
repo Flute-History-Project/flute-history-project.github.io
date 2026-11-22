@@ -47,6 +47,8 @@ HFP.repertoire = [
   {
     id: "bach-bwv1013",
     group: "bach-flute-sonatas",
+    row: "Four dance movements for unaccompanied flute: Bach's only known work for the solo flute.",
+    mss: [{ text: "Copy of the 1720s: Berlin, Staatsbibliothek zu Berlin, Mus.ms. Bach P 968 (7), bound with a copy of the solo violin works.", links: [["scan on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/324760"], ["Staatsbibliothek digital", "https://digital.staatsbibliothek-berlin.de/werkansicht/?PPN=PPN780135172"], ["Bach Digital", "https://www.bach-digital.de/receive/BachDigitalWork_work_00001192?lang=en"]] }],
     composer: "Johann Sebastian Bach",
     name: "Partita in A minor for solo flute, BWV 1013",
     short: "Bach, Partita BWV 1013",
@@ -141,9 +143,12 @@ HFP.repertoire = [
      own sources and questions of date or authorship). All fold on the Flute Map under the overview. */
   {
     id: "mozart-flute-works",
+    dossier: "mozart",
+    news: { text: "On 19 June 2026 the Bibliothèque nationale de France announced the discovery of a 44-page notebook that records the composition lessons Mozart gave in Paris in 1778 to Marie-Louise-Philippine de Bonnières de Guînes, the harpist daughter of the Duc de Guînes, for whom he wrote the [[mozart-k299|Concerto for Flute and Harp]]. It holds composition exercises and seven pieces for flute and harp, six of them complete. The BnF says they are written for a flute that goes down to low C, like the concerto, and that the Duke had acquired such a flute while ambassador in London. {{bnf2026}}\n\nThe curator François-Pierre Goy recognised Mozart's hand on 2 February 2026; the attribution was confirmed by Laurence Decobert and, in April, by Armin Brinzing of the Mozarteum in Salzburg. The BnF announced the first public performance for 21 June 2026, by two musicians of the Orchestre Philharmonique de Radio France. As of November 2026 the pieces have not yet been published in an edition. {{bnf2026}}" },
+    summary: "Mozart wrote surprisingly little for the flute, and most of it dates from 1777–78, when he was looking for a post in Mannheim and Paris. What remains is two concertos (K. 313 and 314), an Andante (K. 315), the Concerto for Flute and Harp (K. 299), four quartets and a lost Paris Sinfonia concertante. {{adorjan2014; pohanka150, pp. III–VI}} It all begins with one commission: on 10 December 1777 Mozart told his father that, through his friend Wendling, an amateur flutist back from the service of the Dutch East India Company, Ferdinand Dejean, would pay 200 florins for three small, easy concertos and a couple of quartets. {{mozartletters, no. 388 (10 Dec 1777); goritzki2001, p. III}}",
     composer: "Wolfgang Amadeus Mozart",
-    name: "Mozart's Flute Works and the Dejean Commission: an overview",
-    short: "Mozart, Flute Works",
+    name: "Mozart: concertos and quartets with flute",
+    short: "Mozart: concertos & quartets",
     start: 1777, dates: "1777–1787",
     place: "Mannheim; Paris; Vienna",
     kind: "collection",
@@ -173,6 +178,8 @@ HFP.repertoire = [
   {
     id: "mozart-k313",
     group: "mozart-flute-works",
+    row: "The first flute concerto, written in Salzburg or Mannheim in 1777–78. Mozart left no cadenzas.",
+    mss: [{ text: "Autograph lost. First edition: Breitkopf & Härtel, Leipzig, 1803, from no known manuscript.", links: [["IMSLP page", "https://imslp.org/wiki/Flute_Concerto_in_G_major,_K.313/285c_(Mozart,_Wolfgang_Amadeus)"]] }],
     composer: "Wolfgang Amadeus Mozart",
     name: "Flute Concerto No. 1 in G major, K. 313 (285c)",
     short: "Mozart, Concerto K. 313",
@@ -195,6 +202,8 @@ HFP.repertoire = [
   {
     id: "mozart-k314",
     group: "mozart-flute-works",
+    row: "A transposition of the Oboe Concerto in C, which came first.",
+    mss: [{ text: "Autograph of the flute version lost; its oldest source is a set of Viennese parts of the early 1790s. The oboe version: parts found in 1920 in the Mozarteum, Salzburg.", links: [["IMSLP page", "https://imslp.org/wiki/Flute_Concerto_in_D_major,_K.314/285d_(Mozart,_Wolfgang_Amadeus)"]] }],
     composer: "Wolfgang Amadeus Mozart",
     name: "Flute Concerto No. 2 in D major, K. 314 (285d), after the Oboe Concerto in C",
     short: "Mozart, Concerto K. 314",
@@ -216,6 +225,8 @@ HFP.repertoire = [
   {
     id: "mozart-k315",
     group: "mozart-flute-works",
+    row: "A single slow movement, probably linked to the Dejean commission; perhaps an alternative to the slow movement of K. 313.",
+    mss: [{ text: "Autograph: Paris, Bibliothèque nationale de France, Ms. 229 (ten leaves).", links: [["scan on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/270208"]] }],
     composer: "Wolfgang Amadeus Mozart",
     name: "Andante in C major for flute and orchestra, K. 315 (285e)",
     short: "Mozart, Andante K. 315",
@@ -235,6 +246,8 @@ HFP.repertoire = [
   {
     id: "mozart-k285",
     group: "mozart-flute-works",
+    row: "The one quartet that can be tied to the Dejean commission: the autograph is dated Mannheim, 25 December 1777.",
+    mss: [{ text: "Autograph: Kraków, Biblioteka Jagiellońska (formerly in Berlin).", links: [["scan on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/387513"]] }],
     composer: "Wolfgang Amadeus Mozart",
     name: "Flute Quartet in D major, K. 285",
     short: "Mozart, Quartet K. 285",
@@ -254,6 +267,8 @@ HFP.repertoire = [
   {
     id: "mozart-k285a",
     group: "mozart-flute-works",
+    row: "Two movements, authorship not proved. Only early prints survive.",
+    mss: [{ text: "No autograph. The only sources are early prints, the first by Artaria, Vienna, 1792.", links: [["IMSLP page", "https://imslp.org/wiki/Flute_Quartet_in_G_major,_K.285a_(Mozart,_Wolfgang_Amadeus)"]] }],
     composer: "Wolfgang Amadeus Mozart (authorship not proved)",
     name: "Flute Quartet in G major, K. 285a",
     short: "Mozart, Quartet K. 285a",
@@ -271,6 +286,8 @@ HFP.repertoire = [
   {
     id: "mozart-k285b",
     group: "mozart-flute-works",
+    row: "Two movements. Date (1778 or 1781) and authorship are both debated; the slow movement is also in the 'Gran Partita'.",
+    mss: [{ text: "Only an autograph sketch of bars 149–158 of the first movement survives. First print: Bossler, Speyer, 1788.", links: [["sketch on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/497721"]] }],
     composer: "Wolfgang Amadeus Mozart (authorship disputed)",
     name: "Flute Quartet in C major, K. Anh. 171 (285b)",
     short: "Mozart, Quartet K. 285b",
@@ -289,6 +306,8 @@ HFP.repertoire = [
   {
     id: "mozart-k298",
     group: "mozart-flute-works",
+    row: "A light quartet on borrowed tunes, written in Vienna, probably in late 1786, not in Paris in 1778.",
+    mss: [{ text: "Autograph: Vienna, Österreichische Nationalbibliothek.", links: [["scan on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/563465"]] }],
     composer: "Wolfgang Amadeus Mozart",
     name: "Flute Quartet in A major, K. 298",
     short: "Mozart, Quartet K. 298",
@@ -307,6 +326,8 @@ HFP.repertoire = [
   {
     id: "mozart-k297b",
     group: "mozart-flute-works",
+    row: "Sinfonia concertante for flute, oboe, horn and bassoon, Paris 1778. The score is lost.",
+    mss: [{ text: "Lost. The Sinfonia concertante in E♭ found in Otto Jahn's estate is not Mozart's piece as it stands.", links: [] }],
     composer: "Wolfgang Amadeus Mozart (lost)",
     name: "Sinfonia concertante for flute, oboe, horn and bassoon, K. Anh. I, 9 (297B): lost",
     short: "Mozart, Paris Sinfonia concertante",
@@ -547,6 +568,8 @@ HFP.repertoire = [
   {
     id: "bach-bwv1020",
     group: "bach-flute-sonatas",
+    row: "Attributed to J. S. or C. P. E. Bach. The solo instrument is a violin in every source, but it is often played on the flute.",
+    mss: [{ text: "Among the sources: Berlin, Staatsbibliothek zu Berlin, Mus.ms. Bach P 1059 (copy of c. 1760–90).", links: [["IMSLP page", "https://imslp.org/wiki/Violin_Sonata_in_G_minor,_BWV_1020_(Bach,_Johann_Sebastian)"]] }],
     composer: "J. S. Bach or C. P. E. Bach (attributed)",
     name: "Sonata in G minor for flute (or violin) and harpsichord, BWV 1020",
     short: "Bach (attr.), Sonata BWV 1020",
@@ -567,9 +590,13 @@ HFP.repertoire = [
      One entry per work (they were never a set, and each has its own sources), plus an overview. */
   {
     id: "bach-flute-sonatas",
+    dossier: "bach",
+    summary: "There is no set of flute sonatas by Bach: what survives are separate works, written at different times and handed down in very different sources. Four sonatas are beyond doubt (BWV 1030, 1032, 1034 and 1035) and three are disputed (BWV 1020, 1031 and 1033). {{leisinger2003, p. V}} Besides them there are the Partita for solo flute (BWV 1013), two trio sonatas (BWV 1038 and 1039), the trio sonata of the Musical Offering (BWV 1079) and the Suite in B minor (BWV 1067). {{nbs1013; breig2003}}",
+    buffardin: { text: "[[buffardin|Pierre Gabriel Buffardin]], principal flutist of the Dresden orchestra, is the flutist most often named in connection with Bach, and the documents are few. Documented, through C. P. E. Bach's notes on the family genealogy: he had taught Bach's elder brother Johann Jacob, and he met Johann Sebastian, probably in 1717 and again in Leipzig. {{funkkunath2018, p. 225, nn. 2–3}} That Bach wrote anything for him is a theory. A concert programme note attributes to Robert Marshall the idea that Bach had Buffardin in mind for his earliest flute works; the Netherlands Bach Society states that the Partita BWV 1013 was written 'with him in mind', without giving a source; Frisch reports that Christoph Wolff has wondered about flute parts of the Mass in B minor; and the Henle facsimile of [[bach-bwv1030|BWV 1030]] mentions him and Quantz only as conjecture. {{oldpostroad; nbs1013; frisch2018, p. 96; tomita2024, pp. V–VI}}" },
+    cantatas: { text: "The transverse flute appears in many of Bach's vocal works. The site bach-cantatas.com has two pages on the subject (Part 1 and Part 2), made of posts from its mailing list between 2000 and 2006. The list in Part 1, compiled by Thomas Braatz in 2005, names 71 vocal works with transverse flute and gives the movements; they are listed below by BWV number. Another 22 works are listed with *flauto*, the recorder, and four of them (BWV 161, 180, 244 and 249) are in both lists. The pages give no sources for the lists and argue at length over whether *flauto* means recorder or flute, so check the score or Bach Digital before relying on a single entry. {{bachcantatas}}", bwv: ["8", "9", "11", "26", "30", "30a", "34", "36b", "45", "55", "67", "78", "79", "82", "94", "96", "99", "100", "101", "102", "103", "107", "110", "113", "114", "115", "117", "123", "125", "129", "130", "145", "146", "151", "157", "161", "164", "170", "172", "173", "173a", "180", "181", "184", "184a", "191", "192", "194a", "195", "197a", "198", "201", "204", "205", "206", "207", "209", "210", "211", "212", "214", "215", "216", "232", "234", "243", "244", "245", "247", "248", "249"], links: [["bach-cantatas.com: Flute in Bach's Vocal Works, Part 1", "https://www.bach-cantatas.com/Topics/Flute.htm"], ["bach-cantatas.com: Part 2", "https://www.bach-cantatas.com/Topics/Flute-2.htm"]] },
     composer: "Johann Sebastian Bach",
-    name: "Bach Flute Sonatas: an overview",
-    short: "Bach, Flute Sonatas",
+    name: "Bach: flute sonatas and partitas",
+    short: "Bach: sonatas & partitas",
     start: 1720, dates: "c. 1720s–1747",
     place: "Leipzig; Potsdam (BWV 1035, 1079)",
     kind: "collection",
@@ -580,7 +607,7 @@ HFP.repertoire = [
       "Four of them are beyond doubt: the sonatas in B minor ([[bach-bwv1030|BWV 1030]]) and A major ([[bach-bwv1032|BWV 1032]]) with obbligato harpsichord, and those in E minor ([[bach-bwv1034|BWV 1034]]) and E major ([[bach-bwv1035|BWV 1035]]) with continuo. The other three ([[bach-bwv1033|BWV 1033]], [[bach-bwv1031|BWV 1031]] and [[bach-bwv1020|BWV 1020]]) were set aside by the New Bach Edition in 1963 because their authenticity is disputed. {{leisinger2003, p. V}} Source studies recorded in the 2022 third edition of the Bach-Werke-Verzeichnis have since led the editors of the Henle facsimile of BWV 1030 to treat BWV 1031 and 1033 as Bach's again, although they may rest on works by other composers. {{tomita2024, p. V, n. 1}}\n\n" +
       "Why did Bach write them? The documents are silent, so the answers are mostly informed guesses. From 1729 to 1741, with short interruptions, he directed one of Leipzig's two collegia musica: about thirty semi-professional musicians, mostly university students, who gave weekly concerts in Zimmermann's coffee house and needed a large repertoire of solos, trios, quartets, concertos and overtures. {{leisinger2002; gruessTP193, p. IV}} Several works exist in more than one scoring, such as BWV 1039 and its twin for viola da gamba, BWV 1027, or the trio BWV 1038, which is tied to the violin works BWV 1021 and 1022. {{leisinger2002; wollny2013, pp. III–V}} Bach also taught composition to his sons and most gifted pupils, and some of these pieces may come from the lessons. {{leisinger2002; duerr1975, pp. 3–4; nbs1038}}\n\n" +
       "Two works are tied in the sources to a named recipient. The E major Sonata BWV 1035 was prepared, according to the copies, for the Privy Chamberlain Fredersdorf during a visit by Bach to Potsdam; the Trio Sonata in the *Musical Offering* ([[bach-bwv1079|BWV 1079]]) was undoubtedly meant as a gift for the flute-playing King Frederick II. {{leisinger2003, p. V; wolffBA5155}} For most of the others the sources are silent, and editors can only make suggestions, which are given in each entry.\n\n" +
-      "Where to go next. With obbligato harpsichord: [[bach-bwv1030|B minor, BWV 1030]] (autograph score of c. 1736–37), [[bach-bwv1032|A major, BWV 1032]] (autograph, incomplete) and the doubtful [[bach-bwv1031|E♭ major, BWV 1031]] (copies of c. 1748–55). With continuo: [[bach-bwv1034|E minor, BWV 1034]] (six copies, the oldest by Kellner), [[bach-bwv1035|E major, BWV 1035]] (late Berlin copies), the doubtful [[bach-bwv1033|C major, BWV 1033]] (copy by C. P. E. Bach, 1731) and [[bach-bwv1020|G minor, BWV 1020]]. {{leisinger2003, pp. V–VI; alves2021, pp. 8–9; nbs1033}} Trios: [[bach-bwv1038|BWV 1038]] for flute and scordatura violin (autograph parts), [[bach-bwv1039|BWV 1039]] for two flutes, and the trio of the [[bach-bwv1079|Musical Offering]]. {{wollny2013, pp. III–V; leisinger2002}} Beyond the sonatas, Bach's only known solo work for flute is the [[bach-bwv1013|Partita BWV 1013]], and his only work for flute and strings the [[bach-bwv1067|Suite in B minor, BWV 1067]]. {{nbs1013; breig2003}}",
+      "Where to go next. With obbligato harpsichord: [[bach-bwv1030|B minor, BWV 1030]] (autograph score of c. 1736–37), [[bach-bwv1032|A major, BWV 1032]] (autograph, incomplete) and the doubtful [[bach-bwv1031|E♭ major, BWV 1031]] (copies of c. 1748–55). With continuo: [[bach-bwv1034|E minor, BWV 1034]] (six copies, the oldest by Kellner), [[bach-bwv1035|E major, BWV 1035]] (late Berlin copies), the doubtful [[bach-bwv1033|C major, BWV 1033]] (copy by C. P. E. Bach, 1731) and [[bach-bwv1020|G minor, BWV 1020]]. {{leisinger2003, pp. V–VI; alves2021, pp. 8–9; nbs1033}} Trios: [[bach-bwv1038|BWV 1038]] for flute and scordatura violin (autograph parts), [[bach-bwv1039|BWV 1039]] for two flutes, and the trio of the [[bach-bwv1079|Musical Offering]]. {{wollny2013, pp. III–V; leisinger2002}} Beyond the sonatas, Bach's only known solo work for flute is the [[bach-bwv1013|Partita BWV 1013]]; in the [[bach-bwv1067|Suite in B minor, BWV 1067]] the flute is the solo instrument with the strings. {{nbs1013; breig2003}}",
     tips: "Editions differ because the sources differ. The B minor Sonata, for example, has a separate flute part copied by Bach's pupil Goldberg that carries slurs and an ornament missing from Bach's own score, so the flutist who reads only the score misses part of the original text. {{tomita2024, pp. XIII–XV}}\n\n" +
       "The two 'solos' for flute and continuo (BWV 1034 and 1035) call for a bass instrument, a keyboard, or both, in spite of the title. {{leisinger2003, p. V}} The Netherlands Bach Society films the E minor Sonata with viola da gamba and harpsichord and the trio for two flutes with gamba and theorbo: try different continuo groups. {{nbs1034; nbs1039}}",
     imslp: "Bach flute sonata BWV 1030",
@@ -590,11 +617,13 @@ HFP.repertoire = [
       { label: "Bach Digital: the catalogue of Bach's works and their sources", url: "https://www.bach-digital.de/" },
       { label: "Netherlands Bach Society, All of Bach: every work on video, with programme notes", url: "https://www.bachvereniging.nl/en/bwv/" }
     ],
-    links: ["bach-bwv1013", "bach-bwv1020", "bach-bwv1030", "bach-bwv1031", "bach-bwv1032", "bach-bwv1033", "bach-bwv1034", "bach-bwv1035", "bach-bwv1038", "bach-bwv1039", "bach-bwv1079", "bach-bwv1067", "quantz"]
+    links: ["bach-bwv1013", "bach-bwv1020", "bach-bwv1030", "bach-bwv1031", "bach-bwv1032", "bach-bwv1033", "bach-bwv1034", "bach-bwv1035", "bach-bwv1038", "bach-bwv1039", "bach-bwv1079", "bach-bwv1067", "quantz", "buffardin"]
   },
   {
     id: "bach-bwv1034",
     group: "bach-flute-sonatas",
+    row: "E minor, with continuo. No autograph, but six 18th-century copies.",
+    mss: [{ text: "Copies: Berlin, Staatsbibliothek zu Berlin, Mus.ms. Bach P 804 (by J. P. Kellner) and P 233; Leipzig, Ms R 17 (from the library of W. F. Bach).", links: [["Kellner copy on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/353029"], ["P 233 on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/361523"], ["Bach Digital", "https://www.bach-digital.de/receive/BachDigitalWork_work_00001216?lang=en"]] }],
     composer: "Johann Sebastian Bach",
     name: "Sonata in E minor for flute and basso continuo, BWV 1034",
     short: "Bach, Sonata BWV 1034",
@@ -622,6 +651,8 @@ HFP.repertoire = [
   {
     id: "bach-bwv1039",
     group: "bach-flute-sonatas",
+    row: "Trio sonata for two flutes and continuo; it also exists as a sonata for viola da gamba and harpsichord (BWV 1027).",
+    mss: [{ text: "Parts from C. P. E. Bach's collection: Berlin, Staatsbibliothek zu Berlin, Mus.ms. Bach St 431.", links: [["scan on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/407907"], ["Bach Digital", "https://www.bach-digital.de/receive/BachDigitalWork_work_00001221?lang=en"]] }],
     composer: "Johann Sebastian Bach",
     name: "Trio Sonata in G major for two flutes and basso continuo, BWV 1039",
     short: "Bach, Trio Sonata BWV 1039",
@@ -650,6 +681,8 @@ HFP.repertoire = [
   {
     id: "bach-bwv1033",
     group: "bach-flute-sonatas",
+    row: "C major, with continuo. Attribution doubtful; the earliest source is a copy by C. P. E. Bach of 1731.",
+    mss: [{ text: "Copy by C. P. E. Bach, 1731; the holding library is given on Bach Digital.", links: [["scan on IMSLP", "https://imslp.org/wiki/Flute_Sonata_in_C_major,_BWV_1033_(Bach,_Johann_Sebastian)"], ["Bach Digital", "https://www.bach-digital.de/receive/BachDigitalWork_work_00001215?lang=en"]] }],
     composer: "J. S. Bach (attributed)",
     name: "Sonata in C major for flute and basso continuo, BWV 1033",
     short: "Bach (attr.), Sonata BWV 1033",
@@ -674,6 +707,8 @@ HFP.repertoire = [
   {
     id: "bach-bwv1038",
     group: "bach-flute-sonatas",
+    row: "Trio sonata for flute, violin (scordatura) and continuo. The parts are in Bach's hand but carry no composer's name.",
+    mss: [{ text: "Autograph parts: Nuremberg, Germanisches Nationalmuseum, K. 27.", links: [["scan on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/416097"], ["Bach Digital", "https://www.bach-digital.de/receive/BachDigitalWork_work_00001219?lang=en"]] }],
     composer: "J. S. Bach (transmitted anonymously)",
     name: "Trio Sonata in G major for flute, violin and basso continuo, BWV 1038",
     short: "Bach, Trio Sonata BWV 1038",
@@ -700,6 +735,8 @@ HFP.repertoire = [
   {
     id: "bach-bwv1030",
     group: "bach-flute-sonatas",
+    row: "B minor, with harpsichord: the only flute sonata that survives complete in Bach's own hand (score of c. 1736–37).",
+    mss: [{ text: "Autograph score: Berlin, Staatsbibliothek zu Berlin, Mus.ms. Bach P 975, with a separate flute part copied by J. G. Goldberg.", links: [["scan on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/369079"], ["Bach Digital", "https://www.bach-digital.de/receive/BachDigitalSource_source_00001960?lang=en"], ["Deutsche Digitale Bibliothek", "https://www.deutsche-digitale-bibliothek.de/item/EHF2WL22DU4L6BY7XTN36VMTA6QOCUAG"]] }],
     composer: "Johann Sebastian Bach",
     name: "Sonata in B minor for flute and obbligato harpsichord, BWV 1030",
     short: "Bach, Sonata BWV 1030",
@@ -733,6 +770,8 @@ HFP.repertoire = [
   {
     id: "bach-bwv1032",
     group: "bach-flute-sonatas",
+    row: "A major, with harpsichord. Written on the empty staves of the autograph of the Concerto for two harpsichords BWV 1062; part of the first movement is lost.",
+    mss: [{ text: "Autograph: Berlin, Staatsbibliothek zu Berlin, Mus.ms. Bach P 612 (together with BWV 1062).", links: [["scan on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/153556"], ["Bach Digital", "https://www.bach-digital.de/receive/BachDigitalWork_work_00001214?lang=en"]] }],
     composer: "Johann Sebastian Bach",
     name: "Sonata in A major for flute and obbligato harpsichord, BWV 1032",
     short: "Bach, Sonata BWV 1032",
@@ -760,6 +799,8 @@ HFP.repertoire = [
   {
     id: "bach-bwv1031",
     group: "bach-flute-sonatas",
+    row: "E♭ major, with harpsichord. Attribution doubtful; the oldest copy dates from 1748–49.",
+    mss: [{ text: "No autograph. Berlin, Staatsbibliothek zu Berlin, Mus.ms. Bach P 649 (score of 1748–49) and P 1056 (c. 1755).", links: [["scan on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/276760"], ["Bach Digital", "https://www.bach-digital.de/receive/BachDigitalWork_work_00001213?lang=en"]] }],
     composer: "J. S. Bach (attributed)",
     name: "Sonata in E-flat major for flute and obbligato harpsichord, BWV 1031",
     short: "Bach (attr.), Sonata BWV 1031",
@@ -785,6 +826,8 @@ HFP.repertoire = [
   {
     id: "bach-bwv1035",
     group: "bach-flute-sonatas",
+    row: "E major, with continuo. The copies say it was prepared for the Privy Chamberlain Fredersdorf in Potsdam, in 1741 or 1747.",
+    mss: [{ text: "No autograph. Copies: Berlin, Staatsbibliothek zu Berlin, Mus.ms. Bach P 621 and P 622; Brussels, Conservatoire royal, XY 15.140.", links: [["IMSLP page", "https://imslp.org/wiki/Flute_Sonata_in_E_major,_BWV_1035_(Bach,_Johann_Sebastian)"], ["Bach Digital", "https://www.bach-digital.de/receive/BachDigitalWork_work_00001217?lang=en"]] }],
     composer: "Johann Sebastian Bach",
     name: "Sonata in E major for flute and basso continuo, BWV 1035",
     short: "Bach, Sonata BWV 1035",
@@ -810,6 +853,8 @@ HFP.repertoire = [
   {
     id: "bach-bwv1079",
     group: "bach-flute-sonatas",
+    row: "The trio sonata of the Musical Offering, a gift to the flute-playing Frederick II, 1747.",
+    mss: [{ text: "First edition (1747): Berlin, Staatsbibliothek zu Berlin, Am. B. 74.", links: [["scan on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/430601"], ["Staatsbibliothek digital", "https://digital.staatsbibliothek-berlin.de/werkansicht/?PPN=PPN82595973X"]] }],
     composer: "Johann Sebastian Bach",
     name: "Trio Sonata in C minor from the Musical Offering, BWV 1079",
     short: "Bach, Trio Sonata BWV 1079",
@@ -836,6 +881,8 @@ HFP.repertoire = [
   {
     id: "bach-bwv1067",
     group: "bach-flute-sonatas",
+    row: "Orchestral suite with the flute as solo instrument. Bach wrote out the flute and viola parts himself, c. 1738–39.",
+    mss: [{ text: "Original parts: Berlin, Staatsbibliothek zu Berlin, Mus.ms. Bach St 154.", links: [["scan on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/878122"], ["Staatsbibliothek digital", "https://digital.staatsbibliothek-berlin.de/werkansicht/?PPN=PPN873464885"], ["Bach Digital", "https://www.bach-digital.de/receive/BachDigitalWork_work_00001253?lang=en"]] }],
     composer: "Johann Sebastian Bach",
     name: "Orchestral Suite No. 2 in B minor, BWV 1067",
     short: "Bach, Suite BWV 1067",
@@ -845,7 +892,7 @@ HFP.repertoire = [
     scoring: "Flute, strings and basso continuo",
     flutes: ["baroque-four-piece"],
     description:
-      "Bach's only work for flute and string ensemble, and the only one of his four Overtures (the 'orchestral suites') in a minor key and in the form of the 'concerto overture' that Johann Adolph Scheibe described in 1745. The flute is the solo instrument. The number 2 comes from the old Bach-Gesellschaft edition of 1885, whose editor thought it the second oldest and a work of the Köthen years; recent research regards it as the latest of the four. {{breig2003}}\n\n" +
+      "The only one of Bach's four Overtures (the 'orchestral suites') in a minor key and in the form of the 'concerto overture' that Johann Adolph Scheibe described in 1745. The flute is the solo instrument. The number 2 comes from the old Bach-Gesellschaft edition of 1885, whose editor thought it the second oldest and a work of the Köthen years; recent research regards it as the latest of the four. {{breig2003}}\n\n" +
       "The main source is a set of parts in Berlin (Mus.ms. Bach St 154) in which Bach wrote out the flute and viola parts himself, probably around 1738–39. They may have been made when Bach took over the direction of the Collegium Musicum in Zimmermann's coffee house again, on 2 October 1739, after a two-year pause. {{gruessTP193, p. IV; breig2003}} The parts contain no duplicates, which may mean that Bach had the work played with one musician to a part. {{breig2003}}\n\n" +
       "The work we know is probably not the first version. Peculiarities of the score suggest that it began as a piece for four-part strings, perhaps with a solo violin in places, in the 1730s at the earliest; Werner Breig has published a reconstruction of this version. {{breig2003}} Heinrich Besseler had proposed, on grounds of style, a date around 1721, and the Polonaise seems to rest on a Polish melodic model. {{gruessTP193, p. IV}} The Netherlands Bach Society's note guesses that the flutist Bach had in mind was Pierre-Gabriel Buffardin, but this remains conjecture. {{nbs1067}} Only the closing Badinerie is clearly dominated by virtuosity, and it is one of Bach's most popular pieces. {{breig2003}}",
     tips: "In the slow part of the Ouverture the trills have a motivic function, so avoid adding more ornaments. The alla breve notation of the fast part and of the Rondeau and Bourrée probably points to a very fast tempo. {{gruessTP193, p. IV}}\n\n" +
@@ -864,6 +911,8 @@ HFP.repertoire = [
   {
     id: "mozart-k299",
     group: "mozart-flute-works",
+    row: "For the Duc de Guines and his daughter, Paris, April–May 1778. The flute part goes down to c′.",
+    mss: [{ text: "Autograph: Kraków, Biblioteka Jagiellońska (formerly in Berlin).", links: [["scan on IMSLP", "https://imslp.org/wiki/Special:ImagefromIndex/295484"]] }],
     composer: "Wolfgang Amadeus Mozart",
     name: "Concerto for Flute and Harp in C major, K. 299 (297c)",
     short: "Mozart, Flute and Harp Concerto K. 299",

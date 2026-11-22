@@ -12,7 +12,7 @@ HFP.treatises = [
     start: 1511,
     place: "Basel",
     language: "German",
-    tagline: "The first printed book about musical instruments, with the earliest written mention of the transverse flute's use.",
+    tagline: "The first printed book about musical instruments, and the first printed description of the transverse flute.",
     contents: [
       "Woodcuts and descriptions of the instruments of the time",
       "The transverse flute ('Zwerchpfeiff') described only as a military instrument",
@@ -66,7 +66,7 @@ HFP.treatises = [
     ],
     description:
       "Short, clear and practical, Jacques-Martin [[hotteterre|Hotteterre]]'s Principes was reprinted, translated and plagiarised for decades. {{vester1985, pp. 241–243}} It was the first treatise written for the one-keyed flute, the [[hotteterre-flute|three-piece baroque flute]] of the early French repertoire, and the preface to the second edition of Hotteterre's own [[hotteterre-op2|Pièces]] adds further advice. {{brown2002, pp. 8–9}}\n\n" +
-      "It was the first treatise written for the one-keyed flute. Concise as it is, it explains the favoured tu-ru articulation in depth, and counts the flattement (finger vibrato) among the ornaments 'absolutely necessary' for good playing. Hotteterre is an open-minded author: he sets out other views beside his own and lets the reader choose the fingering or tonguing that works best. His fingering chart is full of notes on turning the flute in or out and softening the breath, and further advice appears in the preface to the second edition of his Pièces. Prelleur's English [[prelleur-1731|Newest Method]] is based on it, and it was translated by David Lasocki in 1968. {{brown2002, pp. 8–9, 40, 147}}",
+      "Concise as it is, it explains the favoured tu-ru articulation in depth, and counts the flattement (finger vibrato) among the ornaments 'absolutely necessary' for good playing. Hotteterre is an open-minded author: he sets out other views beside his own and lets the reader choose the fingering or tonguing that works best. His fingering chart is full of notes on turning the flute in or out and softening the breath. Prelleur's English [[prelleur-1731|Newest Method]] is based on it, and it was translated by David Lasocki in 1968. {{brown2002, pp. 8–9, 40, 147}}",
     imslp: "Principes de la flûte traversière Hotteterre",
         image: { src: "assets/img/hfp/t-principes-title.jpg", caption: "Title page of the Principes, Paris edition of 1722", credit: "Bibliothèque nationale de France (Gallica) · public domain", url: "https://commons.wikimedia.org/wiki/File:Principes_de_la_flute_traversi%C3%A8re,_ou_flute_d%27Allemagne_;_de_la_flute_%C3%A0_bec,_ou_flute_douce_;_et_du_hautbois_;_diviser_par_traitez._Par_le_sieur_Hotteterre_le-Romain,_ordinaire_de_la_musique_du_roy_-_bpt6k9633016w_(011_of_140).jpg" },
     links: ["hotteterre-preluder", "prelleur-1731"]
@@ -135,7 +135,7 @@ HFP.treatises = [
     ],
     description:
       "[[devienne|Devienne]]'s method and Hugot and Wunderlich's Conservatoire method of 1804 mark the late arrival of the keyed flute in France: Devienne acknowledged the keys but never used them himself. {{brown2002, p. 11}}\n\n" +
-      "Devienne acknowledged the new keys but never used them himself. His method favours mellow tone colours, condemns hard sounds and describes an early form of the modern 'dou-gue' double tongue. Like most French tutors of the time it contains many preludes for improvising, some of them suitable as cadenzas. A decade later the Conservatoire's official [[hugot-wunderlich-1804|method by Hugot and Wunderlich]] fully embraced the four-keyed flute. {{brown2002, p. 11}}",
+      "His method favours mellow tone colours, condemns hard sounds and describes an early form of the modern 'dou-gue' double tongue. Like most French tutors of the time it contains many preludes for improvising, some of them suitable as cadenzas. A decade later the Conservatoire's official [[hugot-wunderlich-1804|method by Hugot and Wunderlich]] fully embraced the four-keyed flute. {{brown2002, p. 11}}",
     imslp: "Nouvelle méthode théorique et pratique pour la flûte Devienne",
         image: { src: "assets/img/hfp/t-devienne.jpg", caption: "Title page of Devienne's Nouvelle méthode (Paris, Imbault)", credit: "Bibliothèque nationale de France (Gallica) · public domain", url: "https://commons.wikimedia.org/wiki/File:Nouvelle_m%C3%A9thode_th%C3%A9orique_et_pratique_pour_la_fl%C3%BBte..._suivie_de_20_petits_airs,_18_petits_duos_et_6_sonates_gradu%C3%A9es_-_btv1b10862515z_(02_of_83).jpg" },
     links: ["hugot-wunderlich-1804", "dorus-1850"]
@@ -198,7 +198,7 @@ HFP.treatises = [
     ],
     description:
       "[[schwedler|Schwedler]], principal flute of the Leipzig Gewandhaus and the last opponent of the Boehm flute, set out in this book the ideals behind the [[german-keyed-flute|German conical flute]]. It was renamed *Flöte und Flötenspiel* in its second (1910) and third (1923) editions. {{brown2002, pp. 12, 149}}\n\n" +
-      "Schwedler, the last opponent of the Boehm flute, gives the 19th century's closest description of a vibrato used to ennoble and strengthen the tone in general, not as an ornament on single notes. He still used the old soft double tongue 'di-l'. An English translation by John Robert Bailey exists as a dissertation (1987). {{brown2002, pp. 8, 12, 112}}",
+      "He gives the 19th century's closest description of a vibrato used to ennoble and strengthen the tone in general, not as an ornament on single notes. He still used the old soft double tongue 'di-l'. An English translation by John Robert Bailey exists as a dissertation (1987). {{brown2002, pp. 8, 12, 112}}",
     imslp: "Schwedler Katechismus der Flöte",
         links: ["reform-flute"]
   },
@@ -613,7 +613,7 @@ HFP.treatises = [
     name: "L'Étude de la nouvelle flûte, méthode progressive arrangée d'après Devienne",
     short: "Dorus, L'Étude de la nouvelle flûte",
     author: "dorus",
-    start: 1850,
+    start: 1845,
     place: "Paris",
     language: "French",
     tagline: "Devienne's method adapted for the new Boehm flute.",
@@ -670,7 +670,7 @@ HFP.treatises = [
     name: "Méthode complète de flûte",
     short: "Gariboldi, Méthode complète",
     authorName: "Giuseppe Gariboldi",
-    start: 1876,
+    start: 1877,
     place: "Paris",
     language: "French",
     tagline: "A method by the Italian virtuoso settled in Paris, author of much-loved studies.",

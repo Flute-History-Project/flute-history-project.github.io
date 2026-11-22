@@ -501,3 +501,20 @@ sup.cite .cite-needed { color: #a0522d; font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- Deep-dive pages (Mozart, Bach) and the short entries that lead to them ---------- */
+.worklist { margin: 26px 0 8px; }
+.worklist h4 { margin: 0 0 8px; font-family: var(--sans); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.worklist ul { list-style: none; margin: 0; padding: 0; }
+.worklist li { display: grid; gap: 3px; padding: 13px 0; border-top: 1px solid var(--line); }
+.worklist li:last-child { border-bottom: 1px solid var(--line); }
+.worklist .work-title { font-weight: 600; font-size: 1.02rem; color: var(--ink); text-decoration-color: color-mix(in srgb, var(--ink) 30%, transparent); text-underline-offset: 3px; }
+.worklist .work-title:hover { text-decoration-color: currentColor; }
+.worklist .work-meta, .worklist .work-ms { font-family: var(--sans); font-size: .8rem; line-height: 1.5; color: var(--muted); }
+.worklist .work-ms strong { margin-right: 8px; font-size: .68rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--ink); }
+.worklist .work-ms a { white-space: nowrap; }
+.worklist .work-row { font-size: .98rem; line-height: 1.55; }
+.deep-link { margin: 22px 0 0; }
+.back-link { margin: -10px 0 22px; }
+.dd-section { margin-top: 56px; }
+.bwv-list { font-family: var(--sans); font-size: .92rem; line-height: 1.95; letter-spacing: .01em; }

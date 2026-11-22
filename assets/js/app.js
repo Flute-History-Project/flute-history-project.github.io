@@ -9,9 +9,13 @@
   const PAGES = [
     ["home", "index.html"], ["history", "history.html"], ["playing", "playing.html"], ["flutes", "flutes.html"],
     ["makers", "makers.html"], ["treatises", "treatises.html"], ["fingerings", "fingerings.html"], ["flutists", "flutists.html"],
-    ["repertoire", "repertoire.html"], ["recordings", "recordings.html"], ["map", "map.html"], ["sources", "sources.html"], ["contact", "contact.html"], ["credits", "credits.html"]
+    ["repertoire", "repertoire.html"], ["recordings", "recordings.html"], ["map", "map.html"], ["sources", "sources.html"], ["contact", "contact.html"], ["credits", "credits.html"],
+    ["mozart", "mozart.html"], ["bach", "bach.html"]   // deep dives: reached only from their entry on the Repertoire page
   ];
   const PAGE_FILE = Object.fromEntries(PAGES);
+  // A repertoire entry with `dossier: "<key>"` is a short entry on the Repertoire page (summary + list of its works) with a
+  // link to its own page; the entries folded under it (`group`) live on that page. DIVE[key] = { head id, page file }.
+  const DIVE = { mozart: { head: "mozart-flute-works", file: "mozart.html" }, bach: { head: "bach-flute-sonatas", file: "bach.html" } };
   const TYPES = ["flutes", "makers", "flutists", "treatises", "repertoire"];
 
   /* ---------------- Language ---------------- */
@@ -49,7 +53,11 @@
     const { e, type } = index[id];
     return e.roles ? e.roles.map((r) => (r === "maker" ? "makers" : "flutists")) : [type];
   };
-  const href = (id) => (index[id] ? PAGE_FILE[index[id].type] + "#" + id : recs[id] ? "recordings.html#" + id : fcById[id] ? "fingerings.html#" + id : "#");
+  // the head entries and their works are read on their own pages (the head at the top, each work at its anchor)
+  const diveOf = {};
+  Object.values(DIVE).forEach((d) => { diveOf[d.head] = d.file; (groups[d.head] || []).forEach((m) => (diveOf[m.id] = d.file)); });
+  const href = (id) => (diveOf[id] ? diveOf[id] + (id === Object.values(DIVE).find((d) => d.file === diveOf[id]).head ? "" : "#" + id)
+    : index[id] ? PAGE_FILE[index[id].type] + "#" + id : recs[id] ? "recordings.html#" + id : fcById[id] ? "fingerings.html#" + id : "#");
   const nameOf = (id) => {
     if (!index[id] && recs[id]) return recs[id].name;
     if (!index[id] && fcById[id]) return `${nameOf(fcById[id].treatise)} · ${tr("fc_see")}`;
@@ -183,13 +191,14 @@
   ];
 
   function renderChrome(page) {
+    const cur = DIVE[page] ? "repertoire" : page;   // a deep-dive page lights up its parent in the menu
     const head = document.getElementById("site-header");
     head.className = "site-header";
-    const item = (k) => `<a class="nav-item" href="${PAGE_FILE[k]}"${k === page ? ' aria-current="page"' : ""} style="--dot:var(--c-${k}, var(--accent))">
+    const item = (k) => `<a class="nav-item" href="${PAGE_FILE[k]}"${k === cur ? ' aria-current="page"' : ""} style="--dot:var(--c-${k}, var(--accent))">
         <span class="nav-title"><span class="nav-dot" aria-hidden="true"></span>${esc(tr("nav_" + k))}</span><span class="nav-desc">${esc(tr("navd_" + k))}</span></a>`;
     const group = (g) => g.page
-      ? `<a class="nav-top" href="${PAGE_FILE[g.page]}"${g.page === page ? ' aria-current="page"' : ""}>${esc(tr("nav_" + g.page))}</a>`
-      : `<div class="nav-group${g.pages.includes(page) ? " has-current" : ""}" style="--cols:${g.pages.length === 4 ? 2 : g.pages.length}">
+      ? `<a class="nav-top" href="${PAGE_FILE[g.page]}"${g.page === cur ? ' aria-current="page"' : ""}>${esc(tr("nav_" + g.page))}</a>`
+      : `<div class="nav-group${g.pages.includes(cur) ? " has-current" : ""}" style="--cols:${g.pages.length === 4 ? 2 : g.pages.length}">
           <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-${g.key}">${esc(tr("navg_" + g.key))}</button>
           <div class="nav-panel" id="nav-${g.key}">${g.pages.map(item).join("")}</div></div>`;
     head.innerHTML = `
@@ -298,12 +307,29 @@
     return blocks.length ? `<div class="related">${blocks.join("")}</div>` : "";
   }
 
-  function entryHTML(e, type) {
+  // The works of a head entry (Mozart, Bach) as a plain list: title, date, scoring, one line and where the manuscripts are.
+  function workListHTML(kids) {
+    if (!kids.length) return "";
+    const li = (k) => {
+      const ms = (k.mss || []).map((m) => `<span class="work-ms"><strong>${esc(tr("work_mss"))}</strong>${esc(loc(m.text))}${(m.links || []).map(([label, url]) =>
+        ` <a href="${url}" target="_blank" rel="noopener">${esc(label)} ↗</a>`).join("")}</span>`).join("");
+      const search = [k.name, k.short, k.composer, loc(k.row)].filter(Boolean).join(" ").toLowerCase();
+      return `<li data-search="${esc(search)}"><a class="work-title" href="${href(k.id)}">${esc(k.name)}</a>
+        <span class="work-meta">${[k.dates, k.scoring].filter(Boolean).map(esc).join(" · ")}</span>
+        ${k.row ? `<span class="work-row">${inline(loc(k.row))}</span>` : ""}${ms}</li>`;
+    };
+    return `<div class="worklist"><h4>${esc(tr("dd_works"))}</h4><ul>${kids.map(li).join("")}</ul></div>`;
+  }
+
+  function entryHTML(e, type, opts) {
+    opts = opts || {};
     const color = `var(--c-${type})`;
     let figure = "", aside = "", main = "", subs = "";
     const skip = new Set();
     const notes = newNotes(e.id);
-    const kids = (type === "repertoire" && groups[e.id]) || []; // works folded inside this entry
+    // On the Repertoire page a head entry (Mozart, Bach) shows its summary and the list of its works; opts.full gives the whole entry
+    const short = type === "repertoire" && !!e.dossier && !opts.full;
+    const kids = (short && groups[e.id]) || [];
 
     if (type === "flutes") {
       // prehistoric finds have no schematic drawing (drawing: null): the photograph stands alone
@@ -330,16 +356,15 @@
         `<ul class="features">${(e.contents || []).map((c) => `<li>${inline(loc(c))}</li>`).join("")}</ul>`;
     } else if (type === "repertoire") {
       (e.flutes || []).forEach((f) => skip.add(f));
-      kids.forEach((k) => skip.add(k.id)); // the folded works appear as drop-downs, not as chips
+      (groups[e.id] || []).forEach((k) => skip.add(k.id)); // the works are listed, not shown as chips
       aside = photo(e.image) + facts([["composer", esc(e.composer)], ["date", esc(e.dates)], ["place", esc(e.place)], ["scoring", esc(e.scoring)], ["kind", esc(tr("kind_" + e.kind))]]) +
         `<div class="related"><div><h4>${esc(tr("playable_on"))}</h4><div class="chips">${(e.flutes || []).map(chip).join("")}</div></div></div>`;
-      main = paras(loc(e.description), notes);
-      // the folded works get the full width of the entry, under the text
-      if (kids.length) subs = `<div class="subentries"><h4>${esc(tr("group_works").replace("{n}", kids.length))}</h4>${kids.map((k) => entryHTML(k, "repertoire")).join("")}</div>`;
+      main = paras(loc(short ? e.summary : e.description), notes);
+      if (short) main += workListHTML(kids) + `<p class="deep-link"><a class="btn" href="${DIVE[e.dossier].file}">${esc(tr("dd_" + e.dossier))} →</a></p>`;
     }
 
-    if (e.tips) main += `<div class="box box-tips"><h4>${esc(tr("tips"))}</h4>${paras(loc(e.tips), notes)}</div>`;
-    if (e.curio) main += `<div class="box box-curio"><h4>${esc(tr("did_you_know"))}</h4>${paras(loc(e.curio), notes)}</div>`;
+    if (e.tips && !short) main += `<div class="box box-tips"><h4>${esc(tr("tips"))}</h4>${paras(loc(e.tips), notes)}</div>`;
+    if (e.curio && !short) main += `<div class="box box-curio"><h4>${esc(tr("did_you_know"))}</h4>${paras(loc(e.curio), notes)}</div>`;
     // references, connections and further reading go in a side column next to the text (below it on narrower screens)
     let rail = refsHTML(notes) + relatedHTML(e, type, skip);
     // recordings on the Historical Recordings page that bear on this piece (ids of recordings.js entries)
@@ -366,7 +391,7 @@
     // a head entry is found by its own text (data-own) or by that of the works folded inside it
     const search = searchOf(e) + kids.map((k) => " " + searchOf(k)).join("");
 
-    return `<details class="entry" id="${e.id}" data-type="${type}" data-search="${esc(search)}"${kids.length ? ` data-own="${esc(searchOf(e))}"` : ""}>
+    return `<details class="entry" id="${e.id}" data-type="${type}" data-search="${esc(search)}"${kids.length ? ` data-own="${esc(searchOf(e))}"` : ""}${opts.open ? " open" : ""}>
       <summary>
         <span class="entry-title">${title}</span>
         <span class="chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
@@ -418,7 +443,7 @@
       app.querySelectorAll("#list > .entry[data-own]").forEach((head) => {
         const ownHit = !q || head.dataset.own.includes(q);
         let hit = false;
-        head.querySelectorAll(".subentries > .entry").forEach((s) => {
+        head.querySelectorAll(".worklist li").forEach((s) => {
           const ok = ownHit || s.dataset.search.includes(q);
           s.hidden = !ok; hit = hit || ok;
         });
@@ -435,6 +460,9 @@
 
     app.querySelectorAll("details.entry").forEach((d) =>
       d.addEventListener("toggle", () => { if (d.open) history.replaceState(null, "", "#" + d.id); }));
+    // an old link to a work that now lives on a deep-dive page (repertoire.html#bach-bwv1030) goes there
+    const moved = decodeURIComponent(location.hash.slice(1));
+    if (diveOf[moved] && !document.getElementById(moved)) { location.replace(href(moved)); return; }
     openFromHash();
     window.addEventListener("hashchange", openFromHash);
   }
@@ -457,6 +485,51 @@
       el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
     }
     setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 30);
+  }
+
+  /* ---------------- Deep-dive pages (Mozart, Bach) ---------------- */
+  // The vocal works with flute parts (Bach page): a short note and the BWV numbers.
+  function cantataHTML(head) {
+    const c = head.cantatas;
+    if (!c) return "";
+    const notes = newNotes("cantatas");
+    return `<section class="dd-section measure" id="cantatas"><div class="era"><h2>${esc(tr("dd_cantatas"))}</h2></div>${paras(loc(c.text), notes)}
+      <p class="bwv-list">${c.bwv.map((n) => "BWV " + n).join(", ")}</p>
+      <p class="small sans link-list">${c.links.map(([label, url]) => ext(url, label)).join("")}</p>${refsHTML(notes)}</section>`;
+  }
+
+  // A short dated news section (Mozart page).
+  function newsHTML(head) {
+    const c = head.news;
+    if (!c) return "";
+    const notes = newNotes("news");
+    return `<section class="dd-section measure" id="news"><div class="era"><h2>${esc(tr("dd_news"))}</h2></div>${paras(loc(c.text), notes)}${refsHTML(notes)}</section>`;
+  }
+
+  // "Bach and Buffardin": a short section of the Bach page.
+  function buffardinHTML(head) {
+    const c = head.buffardin;
+    if (!c) return "";
+    const notes = newNotes("buffardin");
+    return `<section class="dd-section measure" id="buffardin"><div class="era"><h2>${esc(tr("dd_buffardin"))}</h2></div>${paras(loc(c.text), notes)}${refsHTML(notes)}</section>`;
+  }
+
+  function renderDossier(app, key) {
+    const head = index[DIVE[key].head].e;
+    const works = (groups[head.id] || []).map((k) => entryHTML(k, "repertoire", { open: true })).join("");
+    app.innerHTML = `<div class="wrap">
+      ${pageHead(null, tr("nav_" + key), tr("intro_" + key))}
+      <p class="back-link sans small"><a href="repertoire.html#${head.id}">← ${esc(tr("dd_back"))}</a></p>
+      <div id="list">
+        ${entryHTML(head, "repertoire", { full: true, open: true })}
+        <div class="era"><h2>${esc(tr("dd_works"))}</h2></div>
+        ${works}
+      </div>
+      ${key === "bach" ? buffardinHTML(head) + cantataHTML(head) : newsHTML(head)}
+    </div>`;
+    // every work starts open, so no toggle listener here: it would rewrite the address with the last work's id
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
   }
 
   /* ---------------- Historical recordings ---------------- */
@@ -751,7 +824,7 @@
   function textUnits() {
     const units = Object.values(index).map(({ e, type }) => ({
       id: e.id, start: e.start || 0, chip: chip(e.id),
-      texts: ["description", "bio", "tips", "curio", "body"].map((f) => loc(e[f])).filter(Boolean)
+      texts: ["description", "bio", "tips", "curio", "body"].map((f) => loc(e[f])).concat(e.cantatas ? [loc(e.cantatas.text)] : [], e.buffardin ? [loc(e.buffardin.text)] : [], e.news ? [loc(e.news.text)] : []).filter(Boolean)
     }));
     [["history", H.history], ["playing", H.playing]].forEach(([key, list]) => (list || []).forEach((c) => units.push({
       id: c.id, start: 0, chip: `<a class="chip" href="${key}.html#${c.id}">${esc(loc(c.title))}</a>`, texts: [loc(c.body)]
@@ -833,6 +906,7 @@
   else if (page === "contact") renderContact(app);
   else if (page === "recordings") renderRecordings(app);
   else if (page === "fingerings") renderFingerings(app);
+  else if (DIVE[page]) renderDossier(app, page);
   else if (page === "credits") { renderCredits(app); openFromHash(); }
 
   if (usedFallback && lang !== "en") {
